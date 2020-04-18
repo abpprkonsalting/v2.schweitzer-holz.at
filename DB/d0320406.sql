@@ -65,6 +65,7 @@ CREATE TABLE `admin_system_messages` (
 
 LOCK TABLES `admin_system_messages` WRITE;
 /*!40000 ALTER TABLE `admin_system_messages` DISABLE KEYS */;
+INSERT INTO `admin_system_messages` VALUES ('0f0b53a05af28f18cad80bff04a6dbe8',1,'2020-04-18 04:16:53'),('da332d712f3215b9b94bfa268c398323',2,'2020-04-18 03:19:36');
 /*!40000 ALTER TABLE `admin_system_messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -107,7 +108,7 @@ CREATE TABLE `admin_user` (
 
 LOCK TABLES `admin_user` WRITE;
 /*!40000 ALTER TABLE `admin_user` DISABLE KEYS */;
-INSERT INTO `admin_user` VALUES (1,'Armando','Banos','armbp1972@gmail.com','admin','6e9c93df75b04c42c47da801dc8c2ba4da0a5a908b58c5210613a7ee82ac3766:Jf929q4o8Zab0gZIjTqUNwV7rXNwo5af:1','2020-04-18 02:38:40','2020-04-18 02:41:03','2020-04-18 02:41:03',1,0,1,NULL,NULL,NULL,'en_US',0,NULL,NULL,NULL);
+INSERT INTO `admin_user` VALUES (1,'Armando','Banos','armbp1972@gmail.com','admin','6e9c93df75b04c42c47da801dc8c2ba4da0a5a908b58c5210613a7ee82ac3766:Jf929q4o8Zab0gZIjTqUNwV7rXNwo5af:1','2020-04-18 02:38:40','2020-04-18 04:19:29','2020-04-18 04:19:29',3,0,1,'{\"configState\":{\"general_country\":\"0\",\"general_locale\":\"0\",\"general_store_information\":\"0\",\"web_unsecure\":\"1\",\"web_url\":\"0\",\"web_seo\":\"0\",\"web_secure\":\"0\",\"web_default\":\"0\",\"web_cookie\":\"0\",\"web_session\":\"0\",\"web_browser_capabilities\":\"0\",\"web_default_layouts\":\"0\"}}',NULL,NULL,'en_US',0,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `admin_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,7 +131,7 @@ CREATE TABLE `admin_user_session` (
   KEY `ADMIN_USER_SESSION_SESSION_ID` (`session_id`),
   KEY `ADMIN_USER_SESSION_USER_ID` (`user_id`),
   CONSTRAINT `ADMIN_USER_SESSION_USER_ID_ADMIN_USER_USER_ID` FOREIGN KEY (`user_id`) REFERENCES `admin_user` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Admin User sessions table';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Admin User sessions table';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -139,7 +140,7 @@ CREATE TABLE `admin_user_session` (
 
 LOCK TABLES `admin_user_session` WRITE;
 /*!40000 ALTER TABLE `admin_user_session` DISABLE KEYS */;
-INSERT INTO `admin_user_session` VALUES (1,'cchjj2e8psbgf29gvt7k2faro7',1,1,'2020-04-18 02:41:03','2020-04-18 03:00:57','127.0.0.1');
+INSERT INTO `admin_user_session` VALUES (1,'cchjj2e8psbgf29gvt7k2faro7',1,2,'2020-04-18 02:41:03','2020-04-18 04:12:29','127.0.0.1'),(2,'hm50jh4k88qie9jteb3reg633e',1,2,'2020-04-18 04:12:29','2020-04-18 04:19:29','127.0.0.1'),(3,'8he5ib1asdofi45mlraudkifcs',1,1,'2020-04-18 04:19:29','2020-04-18 04:19:29','127.0.0.1');
 /*!40000 ALTER TABLE `admin_user_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -823,6 +824,64 @@ CREATE TABLE `catalog_category_product_index_store1_replica` (
 LOCK TABLES `catalog_category_product_index_store1_replica` WRITE;
 /*!40000 ALTER TABLE `catalog_category_product_index_store1_replica` DISABLE KEYS */;
 /*!40000 ALTER TABLE `catalog_category_product_index_store1_replica` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `catalog_category_product_index_store2`
+--
+
+DROP TABLE IF EXISTS `catalog_category_product_index_store2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `catalog_category_product_index_store2` (
+  `category_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Category Id',
+  `product_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Product Id',
+  `position` int(11) DEFAULT NULL COMMENT 'Position',
+  `is_parent` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Is Parent',
+  `store_id` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Store Id',
+  `visibility` smallint(5) unsigned NOT NULL COMMENT 'Visibility',
+  PRIMARY KEY (`category_id`,`product_id`,`store_id`),
+  KEY `CAT_CTGR_PRD_IDX_STORE2_PRD_ID_STORE_ID_CTGR_ID_VISIBILITY` (`product_id`,`store_id`,`category_id`,`visibility`),
+  KEY `IDX_2AB6FE58F086547FA7E4590837296849` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Product Index Store2';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `catalog_category_product_index_store2`
+--
+
+LOCK TABLES `catalog_category_product_index_store2` WRITE;
+/*!40000 ALTER TABLE `catalog_category_product_index_store2` DISABLE KEYS */;
+/*!40000 ALTER TABLE `catalog_category_product_index_store2` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `catalog_category_product_index_store2_replica`
+--
+
+DROP TABLE IF EXISTS `catalog_category_product_index_store2_replica`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `catalog_category_product_index_store2_replica` (
+  `category_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Category Id',
+  `product_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Product Id',
+  `position` int(11) DEFAULT NULL COMMENT 'Position',
+  `is_parent` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Is Parent',
+  `store_id` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Store Id',
+  `visibility` smallint(5) unsigned NOT NULL COMMENT 'Visibility',
+  PRIMARY KEY (`category_id`,`product_id`,`store_id`),
+  KEY `IDX_87FCED52F67C72BB6992C79EB4DCFA8A` (`product_id`,`store_id`,`category_id`,`visibility`),
+  KEY `IDX_15B841C92B67D986A980051DF109F9D1` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Product Index Store2 Replica';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `catalog_category_product_index_store2_replica`
+--
+
+LOCK TABLES `catalog_category_product_index_store2_replica` WRITE;
+/*!40000 ALTER TABLE `catalog_category_product_index_store2_replica` DISABLE KEYS */;
+/*!40000 ALTER TABLE `catalog_category_product_index_store2_replica` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -3478,6 +3537,31 @@ LOCK TABLES `catalogsearch_fulltext_scope1` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `catalogsearch_fulltext_scope2`
+--
+
+DROP TABLE IF EXISTS `catalogsearch_fulltext_scope2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `catalogsearch_fulltext_scope2` (
+  `entity_id` int(10) unsigned NOT NULL COMMENT 'Entity ID',
+  `attribute_id` int(10) unsigned NOT NULL COMMENT 'Attribute_id',
+  `data_index` longtext COMMENT 'Data index',
+  PRIMARY KEY (`entity_id`,`attribute_id`),
+  FULLTEXT KEY `FTI_FULLTEXT_DATA_INDEX` (`data_index`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='catalogsearch_fulltext_scope2';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `catalogsearch_fulltext_scope2`
+--
+
+LOCK TABLES `catalogsearch_fulltext_scope2` WRITE;
+/*!40000 ALTER TABLE `catalogsearch_fulltext_scope2` DISABLE KEYS */;
+/*!40000 ALTER TABLE `catalogsearch_fulltext_scope2` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `catalogsearch_recommendations`
 --
 
@@ -3700,7 +3784,7 @@ CREATE TABLE `core_config_data` (
   `value` text COMMENT 'Config Value',
   PRIMARY KEY (`config_id`),
   UNIQUE KEY `CORE_CONFIG_DATA_SCOPE_SCOPE_ID_PATH` (`scope`,`scope_id`,`path`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COMMENT='Config Data';
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COMMENT='Config Data';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3709,7 +3793,7 @@ CREATE TABLE `core_config_data` (
 
 LOCK TABLES `core_config_data` WRITE;
 /*!40000 ALTER TABLE `core_config_data` DISABLE KEYS */;
-INSERT INTO `core_config_data` VALUES (1,'default',0,'web/unsecure/base_url','http://v2.schweitzer-holz.at/'),(2,'default',0,'general/region/display_all','1'),(3,'default',0,'general/region/state_required','AU,BR,CA,CH,EE,ES,HR,IN,LT,LV,RO,US'),(4,'default',0,'catalog/category/root_id','2'),(5,'default',0,'msp_securitysuite_twofactorauth/duo/application_key','lkK9rkk5sIQ0tSOxvRDaqTUDgYEJd69lFdSuXtsaYDC03sgG8xd0bgCJ7iS1VU9f'),(6,'default',0,'analytics/subscription/enabled','1'),(7,'default',0,'crontab/default/jobs/analytics_subscribe/schedule/cron_expr','0 * * * *'),(8,'default',0,'payment/authorizenet_acceptjs/cctypes','AE,VI,MC,DI,JCB,DN'),(9,'default',0,'payment/authorizenet_acceptjs/order_status','processing'),(10,'default',0,'payment/authorizenet_acceptjs/payment_action','authorize'),(11,'default',0,'payment/authorizenet_acceptjs/currency','USD'),(12,'websites',1,'payment/authorizenet_acceptjs/cctypes','AE,VI,MC,DI,JCB,DN'),(13,'websites',1,'payment/authorizenet_acceptjs/order_status','processing'),(14,'websites',1,'payment/authorizenet_acceptjs/payment_action','authorize'),(15,'websites',1,'payment/authorizenet_acceptjs/currency','USD'),(16,'website',0,'connector_configuration/transactional_data/order_statuses','canceled,closed,complete,fraud,holded,payment_review,paypal_canceled_reversal,paypal_reversed,pending,pending_payment,pending_paypal,processing'),(17,'website',0,'connector_configuration/catalog_sync/catalog_type','simple,virtual,configurable,downloadable,grouped,bundle'),(18,'website',0,'connector_configuration/catalog_sync/catalog_visibility','1,2,3,4'),(19,'default',0,'connector_dynamic_content/external_dynamic_content_urls/passcode','ICFdR7iPcd01oVk19Hc79ZBF98050t7F'),(20,'default',0,'connector_automation/review_settings/allow_non_subscribers','1'),(21,'default',0,'connector_configuration/abandoned_carts/allow_non_subscribers','1'),(22,'default',0,'sync_settings/addressbook/allow_non_subscribers','1');
+INSERT INTO `core_config_data` VALUES (1,'default',0,'web/unsecure/base_url','http://v2.gartenhaus-carport-gewachshaus.at/'),(2,'default',0,'general/region/display_all','1'),(3,'default',0,'general/region/state_required','AU,BR,CA,CH,EE,ES,HR,IN,LT,LV,RO,US'),(4,'default',0,'catalog/category/root_id','2'),(5,'default',0,'msp_securitysuite_twofactorauth/duo/application_key','lkK9rkk5sIQ0tSOxvRDaqTUDgYEJd69lFdSuXtsaYDC03sgG8xd0bgCJ7iS1VU9f'),(6,'default',0,'analytics/subscription/enabled','1'),(7,'default',0,'crontab/default/jobs/analytics_subscribe/schedule/cron_expr','0 * * * *'),(8,'default',0,'payment/authorizenet_acceptjs/cctypes','AE,VI,MC,DI,JCB,DN'),(9,'default',0,'payment/authorizenet_acceptjs/order_status','processing'),(10,'default',0,'payment/authorizenet_acceptjs/payment_action','authorize'),(11,'default',0,'payment/authorizenet_acceptjs/currency','USD'),(12,'websites',1,'payment/authorizenet_acceptjs/cctypes','AE,VI,MC,DI,JCB,DN'),(13,'websites',1,'payment/authorizenet_acceptjs/order_status','processing'),(14,'websites',1,'payment/authorizenet_acceptjs/payment_action','authorize'),(15,'websites',1,'payment/authorizenet_acceptjs/currency','USD'),(16,'website',0,'connector_configuration/transactional_data/order_statuses','canceled,closed,complete,fraud,holded,payment_review,paypal_canceled_reversal,paypal_reversed,pending,pending_payment,pending_paypal,processing'),(17,'website',0,'connector_configuration/catalog_sync/catalog_type','simple,virtual,configurable,downloadable,grouped,bundle'),(18,'website',0,'connector_configuration/catalog_sync/catalog_visibility','1,2,3,4'),(19,'default',0,'connector_dynamic_content/external_dynamic_content_urls/passcode','ICFdR7iPcd01oVk19Hc79ZBF98050t7F'),(20,'default',0,'connector_automation/review_settings/allow_non_subscribers','1'),(21,'default',0,'connector_configuration/abandoned_carts/allow_non_subscribers','1'),(22,'default',0,'sync_settings/addressbook/allow_non_subscribers','1'),(23,'websites',2,'web/unsecure/base_url','http://v2.jungle-gym-kinderspielplatz.at/'),(24,'websites',2,'web/unsecure/base_link_url','http://v2.jungle-gym-kinderspielplatz.at/'),(25,'default',0,'web/unsecure/base_static_url',NULL),(26,'default',0,'web/unsecure/base_media_url',NULL),(27,'default',0,'web/secure/base_url','http://v2.schweitzer-holz.at/'),(28,'default',0,'web/secure/base_static_url',NULL),(29,'default',0,'web/secure/base_media_url',NULL),(30,'default',0,'web/default_layouts/default_product_layout',NULL),(31,'default',0,'web/default_layouts/default_category_layout',NULL),(32,'default',0,'web/default_layouts/default_cms_layout','1column'),(33,'default',0,'web/cookie/cookie_path',NULL),(34,'default',0,'web/cookie/cookie_domain',NULL),(35,'default',0,'web/cookie/cookie_httponly','1');
 /*!40000 ALTER TABLE `core_config_data` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4358,7 +4442,7 @@ CREATE TABLE `customer_visitor` (
   PRIMARY KEY (`visitor_id`),
   KEY `CUSTOMER_VISITOR_CUSTOMER_ID` (`customer_id`),
   KEY `CUSTOMER_VISITOR_LAST_VISIT_AT` (`last_visit_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Visitor Table';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Visitor Table';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4367,6 +4451,7 @@ CREATE TABLE `customer_visitor` (
 
 LOCK TABLES `customer_visitor` WRITE;
 /*!40000 ALTER TABLE `customer_visitor` DISABLE KEYS */;
+INSERT INTO `customer_visitor` VALUES (1,NULL,'jnma9nmnmbhpe4887shhd36rfv','2020-04-18 03:33:58'),(2,NULL,'0jicepgc2pql0gq5pgabbn52bg','2020-04-18 04:13:16'),(3,NULL,'foslbei5ksej3p23p965csa6h4','2020-04-18 04:13:18');
 /*!40000 ALTER TABLE `customer_visitor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5961,7 +6046,7 @@ CREATE TABLE `flag` (
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Date of Last Flag Update',
   PRIMARY KEY (`flag_id`),
   KEY `FLAG_LAST_UPDATE` (`last_update`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Flag';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Flag';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5970,7 +6055,7 @@ CREATE TABLE `flag` (
 
 LOCK TABLES `flag` WRITE;
 /*!40000 ALTER TABLE `flag` DISABLE KEYS */;
-INSERT INTO `flag` VALUES (1,'analytics_link_attempts_reverse_counter',0,'24','2020-04-18 02:38:39');
+INSERT INTO `flag` VALUES (1,'analytics_link_attempts_reverse_counter',0,'24','2020-04-18 02:38:39'),(2,'catalog_website_attribute_is_sync_required',0,'2','2020-04-18 03:24:50');
 /*!40000 ALTER TABLE `flag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6105,7 +6190,7 @@ CREATE TABLE `indexer_state` (
 
 LOCK TABLES `indexer_state` WRITE;
 /*!40000 ALTER TABLE `indexer_state` DISABLE KEYS */;
-INSERT INTO `indexer_state` VALUES (1,'design_config_grid','valid','2020-04-18 02:52:27','34ec592bfa6c952bed4d0a1d58c98770'),(2,'customer_grid','valid','2020-04-18 02:52:27','b9632e06cf957d6e8103eb236ca38cc1'),(3,'catalog_category_product','valid','2020-04-18 02:52:27','2124d5bfcd83b609c67eee94a0e4708c'),(4,'catalog_product_category','valid','2020-04-18 02:52:27','77b6356629f3259568a68ea64c773238'),(5,'catalogrule_rule','valid','2020-04-18 02:52:27','c4f8344a2e6a7d8ebc065631454a4724'),(6,'catalog_product_attribute','valid','2020-04-18 02:52:27','f73cae77ec4dee3b587a60a2f38dd26a'),(7,'inventory','valid','2020-04-18 02:52:27','ff158179c0d7dcaeb1be1da0011eae73'),(8,'catalogrule_product','valid','2020-04-18 02:52:27','667205576ee3764b1ee81c4a076d10ae'),(9,'cataloginventory_stock','valid','2020-04-18 02:52:28','1bf66e64558a5171e523b32f25cb99ca'),(10,'catalog_product_price','valid','2020-04-18 02:52:28','0e6c8cd322db03524968ab671629718f'),(11,'catalogsearch_fulltext','valid','2020-04-18 02:52:28','fb6356539c73a2ee336bfb7c3d737d10');
+INSERT INTO `indexer_state` VALUES (1,'design_config_grid','invalid','2020-04-18 03:19:18','34ec592bfa6c952bed4d0a1d58c98770'),(2,'customer_grid','valid','2020-04-18 02:52:27','b9632e06cf957d6e8103eb236ca38cc1'),(3,'catalog_category_product','invalid','2020-04-18 03:24:51','2124d5bfcd83b609c67eee94a0e4708c'),(4,'catalog_product_category','valid','2020-04-18 02:52:27','77b6356629f3259568a68ea64c773238'),(5,'catalogrule_rule','valid','2020-04-18 02:52:27','c4f8344a2e6a7d8ebc065631454a4724'),(6,'catalog_product_attribute','invalid','2020-04-18 03:24:50','f73cae77ec4dee3b587a60a2f38dd26a'),(7,'inventory','valid','2020-04-18 02:52:27','ff158179c0d7dcaeb1be1da0011eae73'),(8,'catalogrule_product','valid','2020-04-18 02:52:27','667205576ee3764b1ee81c4a076d10ae'),(9,'cataloginventory_stock','invalid','2020-04-18 03:22:57','1bf66e64558a5171e523b32f25cb99ca'),(10,'catalog_product_price','valid','2020-04-18 02:52:28','0e6c8cd322db03524968ab671629718f'),(11,'catalogsearch_fulltext','invalid','2020-04-18 03:24:51','fb6356539c73a2ee336bfb7c3d737d10');
 /*!40000 ALTER TABLE `indexer_state` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6434,7 +6519,7 @@ CREATE TABLE `inventory_stock_sales_channel` (
 
 LOCK TABLES `inventory_stock_sales_channel` WRITE;
 /*!40000 ALTER TABLE `inventory_stock_sales_channel` DISABLE KEYS */;
-INSERT INTO `inventory_stock_sales_channel` VALUES ('website','base',1);
+INSERT INTO `inventory_stock_sales_channel` VALUES ('website','gartenhaus',1),('website','jungle_gym',1);
 /*!40000 ALTER TABLE `inventory_stock_sales_channel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10188,7 +10273,7 @@ CREATE TABLE `sales_sequence_meta` (
   `sequence_table` varchar(64) NOT NULL COMMENT 'table for sequence',
   PRIMARY KEY (`meta_id`),
   UNIQUE KEY `SALES_SEQUENCE_META_ENTITY_TYPE_STORE_ID` (`entity_type`,`store_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='sales_sequence_meta';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='sales_sequence_meta';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10197,7 +10282,7 @@ CREATE TABLE `sales_sequence_meta` (
 
 LOCK TABLES `sales_sequence_meta` WRITE;
 /*!40000 ALTER TABLE `sales_sequence_meta` DISABLE KEYS */;
-INSERT INTO `sales_sequence_meta` VALUES (1,'order',0,'sequence_order_0'),(2,'invoice',0,'sequence_invoice_0'),(3,'creditmemo',0,'sequence_creditmemo_0'),(4,'shipment',0,'sequence_shipment_0'),(5,'order',1,'sequence_order_1'),(6,'invoice',1,'sequence_invoice_1'),(7,'creditmemo',1,'sequence_creditmemo_1'),(8,'shipment',1,'sequence_shipment_1');
+INSERT INTO `sales_sequence_meta` VALUES (1,'order',0,'sequence_order_0'),(2,'invoice',0,'sequence_invoice_0'),(3,'creditmemo',0,'sequence_creditmemo_0'),(4,'shipment',0,'sequence_shipment_0'),(5,'order',1,'sequence_order_1'),(6,'invoice',1,'sequence_invoice_1'),(7,'creditmemo',1,'sequence_creditmemo_1'),(8,'shipment',1,'sequence_shipment_1'),(9,'order',2,'sequence_order_2'),(10,'invoice',2,'sequence_invoice_2'),(11,'creditmemo',2,'sequence_creditmemo_2'),(12,'shipment',2,'sequence_shipment_2');
 /*!40000 ALTER TABLE `sales_sequence_meta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -10221,7 +10306,7 @@ CREATE TABLE `sales_sequence_profile` (
   PRIMARY KEY (`profile_id`),
   UNIQUE KEY `SALES_SEQUENCE_PROFILE_META_ID_PREFIX_SUFFIX` (`meta_id`,`prefix`,`suffix`),
   CONSTRAINT `SALES_SEQUENCE_PROFILE_META_ID_SALES_SEQUENCE_META_META_ID` FOREIGN KEY (`meta_id`) REFERENCES `sales_sequence_meta` (`meta_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='sales_sequence_profile';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='sales_sequence_profile';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10230,7 +10315,7 @@ CREATE TABLE `sales_sequence_profile` (
 
 LOCK TABLES `sales_sequence_profile` WRITE;
 /*!40000 ALTER TABLE `sales_sequence_profile` DISABLE KEYS */;
-INSERT INTO `sales_sequence_profile` VALUES (1,1,NULL,NULL,1,1,4294967295,4294966295,1),(2,2,NULL,NULL,1,1,4294967295,4294966295,1),(3,3,NULL,NULL,1,1,4294967295,4294966295,1),(4,4,NULL,NULL,1,1,4294967295,4294966295,1),(5,5,NULL,NULL,1,1,4294967295,4294966295,1),(6,6,NULL,NULL,1,1,4294967295,4294966295,1),(7,7,NULL,NULL,1,1,4294967295,4294966295,1),(8,8,NULL,NULL,1,1,4294967295,4294966295,1);
+INSERT INTO `sales_sequence_profile` VALUES (1,1,NULL,NULL,1,1,4294967295,4294966295,1),(2,2,NULL,NULL,1,1,4294967295,4294966295,1),(3,3,NULL,NULL,1,1,4294967295,4294966295,1),(4,4,NULL,NULL,1,1,4294967295,4294966295,1),(5,5,NULL,NULL,1,1,4294967295,4294966295,1),(6,6,NULL,NULL,1,1,4294967295,4294966295,1),(7,7,NULL,NULL,1,1,4294967295,4294966295,1),(8,8,NULL,NULL,1,1,4294967295,4294966295,1),(9,9,'2',NULL,1,1,4294967295,4294966295,1),(10,10,'2',NULL,1,1,4294967295,4294966295,1),(11,11,'2',NULL,1,1,4294967295,4294966295,1),(12,12,'2',NULL,1,1,4294967295,4294966295,1);
 /*!40000 ALTER TABLE `sales_sequence_profile` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11001,6 +11086,28 @@ LOCK TABLES `sequence_creditmemo_1` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `sequence_creditmemo_2`
+--
+
+DROP TABLE IF EXISTS `sequence_creditmemo_2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `sequence_creditmemo_2` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sequence_creditmemo_2`
+--
+
+LOCK TABLES `sequence_creditmemo_2` WRITE;
+/*!40000 ALTER TABLE `sequence_creditmemo_2` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sequence_creditmemo_2` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `sequence_invoice_0`
 --
 
@@ -11042,6 +11149,28 @@ CREATE TABLE `sequence_invoice_1` (
 LOCK TABLES `sequence_invoice_1` WRITE;
 /*!40000 ALTER TABLE `sequence_invoice_1` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sequence_invoice_1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sequence_invoice_2`
+--
+
+DROP TABLE IF EXISTS `sequence_invoice_2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `sequence_invoice_2` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sequence_invoice_2`
+--
+
+LOCK TABLES `sequence_invoice_2` WRITE;
+/*!40000 ALTER TABLE `sequence_invoice_2` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sequence_invoice_2` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -11089,6 +11218,28 @@ LOCK TABLES `sequence_order_1` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `sequence_order_2`
+--
+
+DROP TABLE IF EXISTS `sequence_order_2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `sequence_order_2` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sequence_order_2`
+--
+
+LOCK TABLES `sequence_order_2` WRITE;
+/*!40000 ALTER TABLE `sequence_order_2` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sequence_order_2` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `sequence_shipment_0`
 --
 
@@ -11130,6 +11281,28 @@ CREATE TABLE `sequence_shipment_1` (
 LOCK TABLES `sequence_shipment_1` WRITE;
 /*!40000 ALTER TABLE `sequence_shipment_1` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sequence_shipment_1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sequence_shipment_2`
+--
+
+DROP TABLE IF EXISTS `sequence_shipment_2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `sequence_shipment_2` (
+  `sequence_value` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence_value`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sequence_shipment_2`
+--
+
+LOCK TABLES `sequence_shipment_2` WRITE;
+/*!40000 ALTER TABLE `sequence_shipment_2` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sequence_shipment_2` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -11298,7 +11471,7 @@ CREATE TABLE `store` (
   KEY `STORE_GROUP_ID` (`group_id`),
   CONSTRAINT `STORE_GROUP_ID_STORE_GROUP_GROUP_ID` FOREIGN KEY (`group_id`) REFERENCES `store_group` (`group_id`) ON DELETE CASCADE,
   CONSTRAINT `STORE_WEBSITE_ID_STORE_WEBSITE_WEBSITE_ID` FOREIGN KEY (`website_id`) REFERENCES `store_website` (`website_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Stores';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Stores';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11307,7 +11480,7 @@ CREATE TABLE `store` (
 
 LOCK TABLES `store` WRITE;
 /*!40000 ALTER TABLE `store` DISABLE KEYS */;
-INSERT INTO `store` VALUES (0,'admin',0,0,'Admin',0,1),(1,'default',1,1,'Default Store View',0,1);
+INSERT INTO `store` VALUES (0,'admin',0,0,'Admin',0,1),(1,'default',1,1,'Default Store View',0,1),(2,'jungle_gym',2,2,'default',0,1);
 /*!40000 ALTER TABLE `store` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11330,7 +11503,7 @@ CREATE TABLE `store_group` (
   KEY `STORE_GROUP_WEBSITE_ID` (`website_id`),
   KEY `STORE_GROUP_DEFAULT_STORE_ID` (`default_store_id`),
   CONSTRAINT `STORE_GROUP_WEBSITE_ID_STORE_WEBSITE_WEBSITE_ID` FOREIGN KEY (`website_id`) REFERENCES `store_website` (`website_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Store Groups';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Store Groups';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11339,7 +11512,7 @@ CREATE TABLE `store_group` (
 
 LOCK TABLES `store_group` WRITE;
 /*!40000 ALTER TABLE `store_group` DISABLE KEYS */;
-INSERT INTO `store_group` VALUES (0,0,'Default',0,0,'default'),(1,1,'Main Website Store',2,1,'main_website_store');
+INSERT INTO `store_group` VALUES (0,0,'Default',0,0,'default'),(1,1,'Main Website Store',2,1,'main_website_store'),(2,2,'default',2,2,'jungle_gym');
 /*!40000 ALTER TABLE `store_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11361,7 +11534,7 @@ CREATE TABLE `store_website` (
   UNIQUE KEY `STORE_WEBSITE_CODE` (`code`),
   KEY `STORE_WEBSITE_SORT_ORDER` (`sort_order`),
   KEY `STORE_WEBSITE_DEFAULT_GROUP_ID` (`default_group_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Websites';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Websites';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -11370,7 +11543,7 @@ CREATE TABLE `store_website` (
 
 LOCK TABLES `store_website` WRITE;
 /*!40000 ALTER TABLE `store_website` DISABLE KEYS */;
-INSERT INTO `store_website` VALUES (0,'admin','Admin',0,0,0),(1,'base','Main Website',0,1,1);
+INSERT INTO `store_website` VALUES (0,'admin','Admin',0,0,0),(1,'gartenhaus','gartenhaus-carport-gewächshaus.at',0,1,1),(2,'jungle_gym','jungle-gym-kinderspielplatz.at',0,2,0);
 /*!40000 ALTER TABLE `store_website` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12641,4 +12814,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-17 23:04:15
+-- Dump completed on 2020-04-18  0:21:53

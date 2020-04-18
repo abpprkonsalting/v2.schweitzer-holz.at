@@ -143,6 +143,11 @@
     Options +FollowSymLinks
     RewriteEngine on
 
+    SetEnvIf Host v2.gartenhaus-carport-gewachshaus.at MAGE_RUN_CODE=gartenhaus
+    SetEnvIf Host v2.gartenhaus-carport-gewachshaus.at MAGE_RUN_TYPE=website 
+    SetEnvIf Host v2.jungle-gym-kinderspielplatz.at MAGE_RUN_CODE=jungle_gym 
+    SetEnvIf Host v2.jungle-gym-kinderspielplatz.at MAGE_RUN_TYPE=website
+
 ############################################
 ## you can put here your magento root folder
 ## path relative to web root
