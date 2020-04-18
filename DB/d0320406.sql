@@ -139,7 +139,7 @@ CREATE TABLE `admin_user_session` (
 
 LOCK TABLES `admin_user_session` WRITE;
 /*!40000 ALTER TABLE `admin_user_session` DISABLE KEYS */;
-INSERT INTO `admin_user_session` VALUES (1,'cchjj2e8psbgf29gvt7k2faro7',1,2,'2020-04-18 02:41:03','2020-04-18 04:12:29','127.0.0.1'),(2,'hm50jh4k88qie9jteb3reg633e',1,2,'2020-04-18 04:12:29','2020-04-18 04:19:29','127.0.0.1'),(3,'8he5ib1asdofi45mlraudkifcs',1,1,'2020-04-18 04:19:29','2020-04-18 04:19:29','127.0.0.1'),(4,'4u171gcjcqh7p70udhthf49kvc',1,1,'2020-04-18 05:11:01','2020-04-18 20:46:34','127.0.0.1');
+INSERT INTO `admin_user_session` VALUES (1,'cchjj2e8psbgf29gvt7k2faro7',1,2,'2020-04-18 02:41:03','2020-04-18 04:12:29','127.0.0.1'),(2,'hm50jh4k88qie9jteb3reg633e',1,2,'2020-04-18 04:12:29','2020-04-18 04:19:29','127.0.0.1'),(3,'8he5ib1asdofi45mlraudkifcs',1,1,'2020-04-18 04:19:29','2020-04-18 04:19:29','127.0.0.1'),(4,'4u171gcjcqh7p70udhthf49kvc',1,1,'2020-04-18 05:11:01','2020-04-18 23:09:19','127.0.0.1');
 /*!40000 ALTER TABLE `admin_user_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3660,7 +3660,7 @@ CREATE TABLE `cms_block` (
   `is_active` smallint(6) NOT NULL DEFAULT '1' COMMENT 'Is Block Active',
   PRIMARY KEY (`block_id`),
   FULLTEXT KEY `CMS_BLOCK_TITLE_IDENTIFIER_CONTENT` (`title`,`identifier`,`content`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMS Block Table';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='CMS Block Table';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3669,6 +3669,7 @@ CREATE TABLE `cms_block` (
 
 LOCK TABLES `cms_block` WRITE;
 /*!40000 ALTER TABLE `cms_block` DISABLE KEYS */;
+INSERT INTO `cms_block` VALUES (1,'footer-block','footer-block','<div style=\"width: 50%; display: flex;\">\r\n<div style=\"width: 30%; display: flex; flex-direction: column; align-items: flex-end; padding-right: 40px;\"><img style=\"padding-right: 3px; width: 100px; float: right;\" src=\"{{media url=&quot;Logo-O-sterreichischer-Onlineshop.png&quot;}}\" alt=\"\"> <img style=\"float: right; padding-right: 3px; width: 80px; margin-top: 20px;\" src=\"{{media url=&quot;ssl.png&quot;}}\" alt=\"\"></div>\r\n<div style=\"width: 70%; display: flex; flex-direction: column; padding-left: 40px; color: white;\"><span style=\"margin-bottom: 5px; font-weight: 600;\">ROHRBACH</span> <span style=\"margin-bottom: 35px;\">Verkauf und Gartenausstellung</span> <span style=\"color: white; margin-bottom: 5px;\">A. Schweitzer GesmbH </span> <span style=\"color: white; margin-bottom: 5px;\">Gewerbeallee 22 </span> <span style=\"margin-bottom: 35px;\">A - 4150 Rohrbach-Berg</span> <span style=\"color: white; margin-bottom: 5px;\">Tel.: +43 7289 8977</span> <span style=\"color: white; margin-bottom: 5px;\">Fax: +43 7289 8977 17 </span> <span style=\"color: white;\">officeschweitzer-holz.at</span></div>\r\n</div>\r\n<div style=\"width: 50%; display: flex;\">\r\n<div style=\"width: 50%; display: flex; flex-direction: column; color: white;\"><span style=\"font-weight: 600;\">ALTENFELDEN</span> <span style=\"margin-bottom: 15px;\">Produktion</span> <span style=\"color: white;\">A. Schweitzer GesmbH</span> <span style=\"color: white;\"> Weigert 3</span> <span style=\"margin-bottom: 15px;\">A - 4121 Altenfelden</span> <span style=\"color: white;\">Tel.: +43 7286 8212</span> <span style=\"color: white;\"> Fax: +43 7286 8212 1</span> <span style=\"color: white;\"> produktionschweitzer-holz.at</span>\r\n<div style=\"margin-top: 20px;\"><img style=\"height: 35px; margin-right: 10px;\" src=\"{{media url=&quot;imagen_19.png&quot;}}\" alt=\"\"> <img style=\"height: 35px;\" src=\"{{media url=&quot;imagen_20.png&quot;}}\" alt=\"\"></div>\r\n</div>\r\n<div style=\"width: 50%; display: flex; flex-direction: column; color: white;\"><a style=\"color: white;margin-bottom: 15px;\" href=\"#\">Datenschutz</a> <a style=\"color: white;margin-bottom: 15px;\" href=\"#\">Impressum</a> <a style=\"color: white; margin-bottom: 15px;\" href=\"#\">AGB</a> <img style=\"width: 150px;\" src=\"{{media url=&quot;imagen_18.png&quot;}}\" alt=\"\"></div>\r\n</div>','2020-04-18 21:12:57','2020-04-18 23:09:01',1);
 /*!40000 ALTER TABLE `cms_block` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3695,6 +3696,7 @@ CREATE TABLE `cms_block_store` (
 
 LOCK TABLES `cms_block_store` WRITE;
 /*!40000 ALTER TABLE `cms_block_store` DISABLE KEYS */;
+INSERT INTO `cms_block_store` VALUES (1,1);
 /*!40000 ALTER TABLE `cms_block_store` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6601,7 +6603,7 @@ CREATE TABLE `layout_link` (
   CONSTRAINT `LAYOUT_LINK_LAYOUT_UPDATE_ID_LAYOUT_UPDATE_LAYOUT_UPDATE_ID` FOREIGN KEY (`layout_update_id`) REFERENCES `layout_update` (`layout_update_id`) ON DELETE CASCADE,
   CONSTRAINT `LAYOUT_LINK_STORE_ID_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE,
   CONSTRAINT `LAYOUT_LINK_THEME_ID_THEME_THEME_ID` FOREIGN KEY (`theme_id`) REFERENCES `theme` (`theme_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Layout Link';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Layout Link';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6610,6 +6612,7 @@ CREATE TABLE `layout_link` (
 
 LOCK TABLES `layout_link` WRITE;
 /*!40000 ALTER TABLE `layout_link` DISABLE KEYS */;
+INSERT INTO `layout_link` VALUES (1,1,4,1,0);
 /*!40000 ALTER TABLE `layout_link` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6628,7 +6631,7 @@ CREATE TABLE `layout_update` (
   `updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT 'Last Update Timestamp',
   PRIMARY KEY (`layout_update_id`),
   KEY `LAYOUT_UPDATE_HANDLE` (`handle`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Layout Updates';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Layout Updates';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6637,6 +6640,7 @@ CREATE TABLE `layout_update` (
 
 LOCK TABLES `layout_update` WRITE;
 /*!40000 ALTER TABLE `layout_update` DISABLE KEYS */;
+INSERT INTO `layout_update` VALUES (1,'default','<body><referenceContainer name=\"footer\"><block class=\"Magento\\Cms\\Block\\Widget\\Block\" name=\"F3qN7dvzmonbaDKJrsW6lOEJhvF7uYWG\" template=\"widget/static_block/default.phtml\"><action method=\"setData\"><argument name=\"name\" xsi:type=\"string\">block_id</argument><argument name=\"value\" xsi:type=\"string\">1</argument></action></block></referenceContainer></body>',0,'0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `layout_update` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12625,7 +12629,7 @@ CREATE TABLE `widget_instance` (
   PRIMARY KEY (`instance_id`),
   KEY `WIDGET_INSTANCE_THEME_ID_THEME_THEME_ID` (`theme_id`),
   CONSTRAINT `WIDGET_INSTANCE_THEME_ID_THEME_THEME_ID` FOREIGN KEY (`theme_id`) REFERENCES `theme` (`theme_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Instances of Widget for Package Theme';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Instances of Widget for Package Theme';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12634,6 +12638,7 @@ CREATE TABLE `widget_instance` (
 
 LOCK TABLES `widget_instance` WRITE;
 /*!40000 ALTER TABLE `widget_instance` DISABLE KEYS */;
+INSERT INTO `widget_instance` VALUES (1,'Magento\\Cms\\Block\\Widget\\Block',4,'widget-footer','1','{\"block_id\":\"1\"}',0);
 /*!40000 ALTER TABLE `widget_instance` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12656,7 +12661,7 @@ CREATE TABLE `widget_instance_page` (
   PRIMARY KEY (`page_id`),
   KEY `WIDGET_INSTANCE_PAGE_INSTANCE_ID` (`instance_id`),
   CONSTRAINT `WIDGET_INSTANCE_PAGE_INSTANCE_ID_WIDGET_INSTANCE_INSTANCE_ID` FOREIGN KEY (`instance_id`) REFERENCES `widget_instance` (`instance_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Instance of Widget on Page';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Instance of Widget on Page';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12665,6 +12670,7 @@ CREATE TABLE `widget_instance_page` (
 
 LOCK TABLES `widget_instance_page` WRITE;
 /*!40000 ALTER TABLE `widget_instance_page` DISABLE KEYS */;
+INSERT INTO `widget_instance_page` VALUES (1,1,'all_pages','default','footer','all','','widget/static_block/default.phtml');
 /*!40000 ALTER TABLE `widget_instance_page` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12691,6 +12697,7 @@ CREATE TABLE `widget_instance_page_layout` (
 
 LOCK TABLES `widget_instance_page_layout` WRITE;
 /*!40000 ALTER TABLE `widget_instance_page_layout` DISABLE KEYS */;
+INSERT INTO `widget_instance_page_layout` VALUES (1,1);
 /*!40000 ALTER TABLE `widget_instance_page_layout` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12813,4 +12820,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-18 17:01:17
+-- Dump completed on 2020-04-18 19:12:15

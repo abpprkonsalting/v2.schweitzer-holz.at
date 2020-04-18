@@ -227,14 +227,16 @@ height: auto;width: auto;position: relative;margin-right: 15px;
 /*************************************************************************/
 /******************* Footer **********************************************/
 
-.footer.content {display:flex;}
+.page-footer {
+    background: #aaa08e;
+}
 
-.footer.content .block.newsletter {display:none;}
+.footer.content {display:flex;}
 
 .footer.content .block-static-block {
     width: 100%;
     display: flex;
-    padding: 60px 20px;
+    padding: 0 20px 50px;
 }
 
 /*************************************************************************/
