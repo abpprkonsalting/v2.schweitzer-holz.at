@@ -1,0 +1,43 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+
+$columnsLimit = $block->getColumnsLimit() ?: 0;
+$_menuHtml = $block->getHtml('level-top', 'submenu', $columnsLimit)
+?>
+
+<?php
+    $currentUrl = $block->getCurrentUrl();
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+?>
+
+<nav class="navigation" data-action="navigation">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+        <li class="level0 home <?php if($currentUrl == '/'): ?>active<?php endif; ?>">
+            <a href="<?php echo $storeManager->getStore()->getBaseUrl(); ?>" title="<?php echo __('Home') ?>" class="level-top">
+                <span><?php echo __('Home') ?></span>
+            </a>
+        </li>
+        <?= /* @noEscape */ $_menuHtml?>
+        <?= $block->getChildHtml() ?>
+        <li class="level0 <?php if($currentUrl == '/uber-uns'): ?>active<?php endif; ?>">
+            <a href="<?php echo $storeManager->getStore()->getBaseUrl().'uber-uns'; ?>" title="<?php echo __('About Us') ?>" class="level-top">
+                <span><?php echo __('About Us') ?></span>
+            </a>
+        </li>
+        <li class="level0 <?php if($currentUrl == '/kontakt'): ?>active<?php endif; ?>">
+            <a href="<?php echo $storeManager->getStore()->getBaseUrl().'kontakt'; ?>" title="<?php echo __('Contact') ?>" class="level-top">
+                <span><?php echo __('Contact') ?></span>
+            </a>
+        </li>
+    </ul>
+</nav>

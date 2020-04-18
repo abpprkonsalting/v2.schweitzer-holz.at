@@ -1,0 +1,253 @@
+/*************************************************************************/
+/******************* All pages general ***********************************/
+
+body {
+    color: #5e5e5e;
+}
+/*************************************************************************/
+/******************* Header **********************************************/
+.page-wrapper .page-header .header.content {
+    display: flex;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.page-wrapper .page-header a, .page-wrapper .page-header .alink {
+    color: #5e5e5e;
+}
+
+.page-header .logo {
+    margin: 0 auto 0 40px;
+}
+
+.page-header .logo img {
+    padding: 10px;
+    width: 250px;
+}
+
+.page-header .newsletter-wrapper {
+    position: relative;margin-left: 50px;
+}
+
+.page-header .newsletter-wrapper .newsletter-link {
+    display:flex;align-items: center;
+    z-index: 10;
+}
+
+.page-header .block.newsletter {
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 25px;
+    visibility: hidden;
+    padding-top: 10px;
+    
+}
+
+.page-header .newsletter-wrapper .newsletter-link:hover ~ .block.newsletter {
+    visibility:visible;
+}
+
+.page-header .newsletter-wrapper .block.newsletter:hover {
+    visibility:visible;
+}
+
+.page-header .newsletter-wrapper .field.newsletter {
+    width: 300px;
+}
+
+.page-header .newsletter-wrapper .block.newsletter .action.subscribe {
+    background: #007255 !important;
+    border-radius: 0;
+}
+
+.page-header .header.links {
+    margin: 0 10px;
+}
+
+.page-header .header.links img {
+    width: 25px;
+    height: 25px;
+}
+
+.page-header .header.links .customer-welcome {
+    display: none;
+}
+
+.page-header .minicart-wrapper {
+    margin-left: 50px;
+}
+
+.page-header .minicart-wrapper .action.showcart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.page-header .minicart-wrapper .action.showcart:before {
+    content: '';
+    height: 25px;
+    width: 25px;
+    background-image: url(../images/cart.png);
+    background-size: contain;
+}
+
+.page-header .minicart-wrapper .action.showcart .text{
+height: auto;width: auto;position: relative;margin-right: 15px;
+}
+
+
+.page-header .minicart-wrapper .action.showcart .counter.qty:not(.empty) {
+    position: absolute;
+    right: -10px;
+    top: -5px;
+    height: 16px;
+    line-height: 14px;
+    width: 16px;
+    border-radius: 45px;
+    display: block;
+    min-width: 0;
+    margin: 0;
+    padding: 2px;
+}
+
+.page-header .minicart-wrapper .action.showcart .counter.qty .counter-number {
+    font-size: 10px;
+}
+
+.page-header .dropdown-block.language-block{
+    margin-left: 20px;
+    margin-bottom: 4px;
+}
+
+.page-header .dropdown-block.language-block .lang-switcher {
+    position: relative;
+}
+
+.page-header .dropdown-block.language-block .dropdown-toggle .flag {
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: #007255;
+    color: white;
+    border-radius: 50px;
+    text-transform: uppercase;
+    padding-left: 1px !important;
+    font-size: 80%;
+    background-image: none !important;
+}
+
+.page-header .dropdown-block.language-block .dropdown-list {
+    display: none;
+    cursor: default;
+    position: absolute;
+    right: 0px;
+    background-color: #fff;
+    border: 1px solid #f3f3f3;
+    padding: 20px 25px;
+    z-index: 11;
+    min-width: 120%;
+    box-shadow: 3px 4px 2px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 3px 4px 2px 0 rgba(0, 0, 0, 0.2);
+    top: 100%;
+    list-style: none;
+}
+
+.page-header .dropdown-block:hover .dropdown-list {
+    display: block;
+}
+
+.page-header .dropdown-block.language-block .flag-icon {
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+/*************************************************************************/
+/******************* Menu ************************************************/
+
+.page-wrapper .sections.nav-sections {
+    margin-bottom: 0;
+}
+
+.page-wrapper .sections.nav-sections .navigation {
+}
+
+.page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) {
+    background-color: #007255 !important;
+    padding-left: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) .level0.ui-menu-item {
+    padding: 10px 0;
+    margin: 0;
+}
+
+.page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) .level0.ui-menu-item > a{
+    line-height: 16px;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+.page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) .level0.ui-menu-item > a{
+    border-bottom: none;
+}
+
+.page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) .level0.ui-menu-item:not(:last-child) > a{
+    border-right: 2px solid white;
+}
+
+.page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) .level0.ui-menu-item > a > span {
+    color: white;
+    line-height: 16px;
+}
+
+.page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) .level0.ui-menu-item.active {
+
+    background: #ffcc33;
+}
+
+.page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) .level0.ui-menu-item.active > a {
+    border: none;
+}
+
+.page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) .level0.ui-menu-item.active > a > span {
+    color: #007255;
+}
+
+.page-wrapper .sections.nav-sections .navigation .submenu a:hover {
+    background-color: rgba(0, 114, 85, 0.5);
+}
+
+/*************************************************************************/
+/******************* Footer **********************************************/
+
+.footer.content {display:flex;}
+
+.footer.content .block.newsletter {display:none;}
+
+.footer.content .block-static-block {
+    width: 100%;
+    display: flex;
+    padding: 60px 20px;
+}
+
+/*************************************************************************/
+/******************* Home ************************************************/
+
+
+/*************************************************************************/
+/******************* Uber-uns & kontakt **********************************/
+
+
+/*************************************************************************/
+/******************* Catalog Category ************************************/
+
+
+/*************************************************************************/
+/******************* Checkout Page ***************************************/

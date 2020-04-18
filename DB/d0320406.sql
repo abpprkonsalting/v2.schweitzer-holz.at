@@ -65,7 +65,6 @@ CREATE TABLE `admin_system_messages` (
 
 LOCK TABLES `admin_system_messages` WRITE;
 /*!40000 ALTER TABLE `admin_system_messages` DISABLE KEYS */;
-INSERT INTO `admin_system_messages` VALUES ('0f0b53a05af28f18cad80bff04a6dbe8',1,'2020-04-18 04:16:53'),('da332d712f3215b9b94bfa268c398323',2,'2020-04-18 03:19:36');
 /*!40000 ALTER TABLE `admin_system_messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,7 +107,7 @@ CREATE TABLE `admin_user` (
 
 LOCK TABLES `admin_user` WRITE;
 /*!40000 ALTER TABLE `admin_user` DISABLE KEYS */;
-INSERT INTO `admin_user` VALUES (1,'Armando','Banos','armbp1972@gmail.com','admin','6e9c93df75b04c42c47da801dc8c2ba4da0a5a908b58c5210613a7ee82ac3766:Jf929q4o8Zab0gZIjTqUNwV7rXNwo5af:1','2020-04-18 02:38:40','2020-04-18 04:19:29','2020-04-18 04:19:29',3,0,1,'{\"configState\":{\"general_country\":\"0\",\"general_locale\":\"0\",\"general_store_information\":\"0\",\"web_unsecure\":\"1\",\"web_url\":\"0\",\"web_seo\":\"0\",\"web_secure\":\"0\",\"web_default\":\"0\",\"web_cookie\":\"0\",\"web_session\":\"0\",\"web_browser_capabilities\":\"0\",\"web_default_layouts\":\"0\"}}',NULL,NULL,'en_US',0,NULL,NULL,NULL);
+INSERT INTO `admin_user` VALUES (1,'Armando','Banos','armbp1972@gmail.com','admin','6e9c93df75b04c42c47da801dc8c2ba4da0a5a908b58c5210613a7ee82ac3766:Jf929q4o8Zab0gZIjTqUNwV7rXNwo5af:1','2020-04-18 02:38:40','2020-04-18 17:15:30','2020-04-18 05:11:01',4,0,1,'{\"configState\":{\"general_country\":\"1\",\"general_locale\":\"1\",\"general_store_information\":\"1\",\"web_unsecure\":\"0\",\"web_url\":\"0\",\"web_seo\":\"0\",\"web_secure\":\"0\",\"web_default\":\"0\",\"web_cookie\":\"0\",\"web_session\":\"0\",\"web_browser_capabilities\":\"0\",\"web_default_layouts\":\"0\",\"general_region\":\"1\",\"general_single_store_mode\":\"0\",\"newsletter_general\":\"1\",\"newsletter_subscription\":\"1\"}}',NULL,NULL,'en_US',0,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `admin_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,7 +130,7 @@ CREATE TABLE `admin_user_session` (
   KEY `ADMIN_USER_SESSION_SESSION_ID` (`session_id`),
   KEY `ADMIN_USER_SESSION_USER_ID` (`user_id`),
   CONSTRAINT `ADMIN_USER_SESSION_USER_ID_ADMIN_USER_USER_ID` FOREIGN KEY (`user_id`) REFERENCES `admin_user` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Admin User sessions table';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Admin User sessions table';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -140,7 +139,7 @@ CREATE TABLE `admin_user_session` (
 
 LOCK TABLES `admin_user_session` WRITE;
 /*!40000 ALTER TABLE `admin_user_session` DISABLE KEYS */;
-INSERT INTO `admin_user_session` VALUES (1,'cchjj2e8psbgf29gvt7k2faro7',1,2,'2020-04-18 02:41:03','2020-04-18 04:12:29','127.0.0.1'),(2,'hm50jh4k88qie9jteb3reg633e',1,2,'2020-04-18 04:12:29','2020-04-18 04:19:29','127.0.0.1'),(3,'8he5ib1asdofi45mlraudkifcs',1,1,'2020-04-18 04:19:29','2020-04-18 04:19:29','127.0.0.1');
+INSERT INTO `admin_user_session` VALUES (1,'cchjj2e8psbgf29gvt7k2faro7',1,2,'2020-04-18 02:41:03','2020-04-18 04:12:29','127.0.0.1'),(2,'hm50jh4k88qie9jteb3reg633e',1,2,'2020-04-18 04:12:29','2020-04-18 04:19:29','127.0.0.1'),(3,'8he5ib1asdofi45mlraudkifcs',1,1,'2020-04-18 04:19:29','2020-04-18 04:19:29','127.0.0.1'),(4,'4u171gcjcqh7p70udhthf49kvc',1,1,'2020-04-18 05:11:01','2020-04-18 20:46:34','127.0.0.1');
 /*!40000 ALTER TABLE `admin_user_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -501,7 +500,7 @@ CREATE TABLE `catalog_category_entity` (
   PRIMARY KEY (`entity_id`),
   KEY `CATALOG_CATEGORY_ENTITY_LEVEL` (`level`),
   KEY `CATALOG_CATEGORY_ENTITY_PATH` (`path`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Catalog Category Table';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Catalog Category Table';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -510,7 +509,7 @@ CREATE TABLE `catalog_category_entity` (
 
 LOCK TABLES `catalog_category_entity` WRITE;
 /*!40000 ALTER TABLE `catalog_category_entity` DISABLE KEYS */;
-INSERT INTO `catalog_category_entity` VALUES (1,3,0,'2020-04-18 02:38:37','2020-04-18 02:38:38','1',0,0,1),(2,3,1,'2020-04-18 02:38:38','2020-04-18 02:38:38','1/2',1,1,0);
+INSERT INTO `catalog_category_entity` VALUES (1,3,0,'2020-04-18 02:38:37','2020-04-18 20:46:54','1',0,0,2),(2,3,1,'2020-04-18 02:38:38','2020-04-18 20:46:54','1/2',1,1,1),(3,3,2,'2020-04-18 20:46:54','2020-04-18 20:46:54','1/2/3',1,2,0);
 /*!40000 ALTER TABLE `catalog_category_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -601,7 +600,7 @@ CREATE TABLE `catalog_category_entity_int` (
   CONSTRAINT `CATALOG_CATEGORY_ENTITY_INT_STORE_ID_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE,
   CONSTRAINT `CAT_CTGR_ENTT_INT_ATTR_ID_EAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE,
   CONSTRAINT `CAT_CTGR_ENTT_INT_ENTT_ID_CAT_CTGR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `catalog_category_entity` (`entity_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Catalog Category Integer Attribute Backend Table';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='Catalog Category Integer Attribute Backend Table';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -610,7 +609,7 @@ CREATE TABLE `catalog_category_entity_int` (
 
 LOCK TABLES `catalog_category_entity_int` WRITE;
 /*!40000 ALTER TABLE `catalog_category_entity_int` DISABLE KEYS */;
-INSERT INTO `catalog_category_entity_int` VALUES (1,69,0,1,1),(2,46,0,2,1),(3,69,0,2,1);
+INSERT INTO `catalog_category_entity_int` VALUES (1,69,0,1,1),(2,46,0,2,1),(3,69,0,2,1),(4,46,0,3,1),(5,54,0,3,1),(6,69,0,3,1),(7,70,0,3,0),(8,71,0,3,0);
 /*!40000 ALTER TABLE `catalog_category_entity_int` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -668,7 +667,7 @@ CREATE TABLE `catalog_category_entity_varchar` (
   CONSTRAINT `CATALOG_CATEGORY_ENTITY_VARCHAR_STORE_ID_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE,
   CONSTRAINT `CAT_CTGR_ENTT_VCHR_ATTR_ID_EAV_ATTR_ATTR_ID` FOREIGN KEY (`attribute_id`) REFERENCES `eav_attribute` (`attribute_id`) ON DELETE CASCADE,
   CONSTRAINT `CAT_CTGR_ENTT_VCHR_ENTT_ID_CAT_CTGR_ENTT_ENTT_ID` FOREIGN KEY (`entity_id`) REFERENCES `catalog_category_entity` (`entity_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Catalog Category Varchar Attribute Backend Table';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='Catalog Category Varchar Attribute Backend Table';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -677,7 +676,7 @@ CREATE TABLE `catalog_category_entity_varchar` (
 
 LOCK TABLES `catalog_category_entity_varchar` WRITE;
 /*!40000 ALTER TABLE `catalog_category_entity_varchar` DISABLE KEYS */;
-INSERT INTO `catalog_category_entity_varchar` VALUES (1,45,0,1,'Root Catalog'),(2,45,0,2,'Default Category'),(3,52,0,2,'PRODUCTS');
+INSERT INTO `catalog_category_entity_varchar` VALUES (1,45,0,1,'Root Catalog'),(2,45,0,2,'Default Category'),(3,52,0,2,'PRODUCTS'),(4,45,0,3,'Kategorien'),(5,52,0,3,'PRODUCTS'),(6,119,0,3,'kategorien'),(7,120,0,3,'kategorien');
 /*!40000 ALTER TABLE `catalog_category_entity_varchar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2521,7 +2520,7 @@ CREATE TABLE `catalog_product_index_website` (
 
 LOCK TABLES `catalog_product_index_website` WRITE;
 /*!40000 ALTER TABLE `catalog_product_index_website` DISABLE KEYS */;
-INSERT INTO `catalog_product_index_website` VALUES (1,1,'2020-04-17',1);
+INSERT INTO `catalog_product_index_website` VALUES (1,1,'2020-04-18',1),(2,2,'2020-04-18',1);
 /*!40000 ALTER TABLE `catalog_product_index_website` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3784,7 +3783,7 @@ CREATE TABLE `core_config_data` (
   `value` text COMMENT 'Config Value',
   PRIMARY KEY (`config_id`),
   UNIQUE KEY `CORE_CONFIG_DATA_SCOPE_SCOPE_ID_PATH` (`scope`,`scope_id`,`path`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COMMENT='Config Data';
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8 COMMENT='Config Data';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3793,7 +3792,7 @@ CREATE TABLE `core_config_data` (
 
 LOCK TABLES `core_config_data` WRITE;
 /*!40000 ALTER TABLE `core_config_data` DISABLE KEYS */;
-INSERT INTO `core_config_data` VALUES (1,'default',0,'web/unsecure/base_url','http://v2.gartenhaus-carport-gewachshaus.at/'),(2,'default',0,'general/region/display_all','1'),(3,'default',0,'general/region/state_required','AU,BR,CA,CH,EE,ES,HR,IN,LT,LV,RO,US'),(4,'default',0,'catalog/category/root_id','2'),(5,'default',0,'msp_securitysuite_twofactorauth/duo/application_key','lkK9rkk5sIQ0tSOxvRDaqTUDgYEJd69lFdSuXtsaYDC03sgG8xd0bgCJ7iS1VU9f'),(6,'default',0,'analytics/subscription/enabled','1'),(7,'default',0,'crontab/default/jobs/analytics_subscribe/schedule/cron_expr','0 * * * *'),(8,'default',0,'payment/authorizenet_acceptjs/cctypes','AE,VI,MC,DI,JCB,DN'),(9,'default',0,'payment/authorizenet_acceptjs/order_status','processing'),(10,'default',0,'payment/authorizenet_acceptjs/payment_action','authorize'),(11,'default',0,'payment/authorizenet_acceptjs/currency','USD'),(12,'websites',1,'payment/authorizenet_acceptjs/cctypes','AE,VI,MC,DI,JCB,DN'),(13,'websites',1,'payment/authorizenet_acceptjs/order_status','processing'),(14,'websites',1,'payment/authorizenet_acceptjs/payment_action','authorize'),(15,'websites',1,'payment/authorizenet_acceptjs/currency','USD'),(16,'website',0,'connector_configuration/transactional_data/order_statuses','canceled,closed,complete,fraud,holded,payment_review,paypal_canceled_reversal,paypal_reversed,pending,pending_payment,pending_paypal,processing'),(17,'website',0,'connector_configuration/catalog_sync/catalog_type','simple,virtual,configurable,downloadable,grouped,bundle'),(18,'website',0,'connector_configuration/catalog_sync/catalog_visibility','1,2,3,4'),(19,'default',0,'connector_dynamic_content/external_dynamic_content_urls/passcode','ICFdR7iPcd01oVk19Hc79ZBF98050t7F'),(20,'default',0,'connector_automation/review_settings/allow_non_subscribers','1'),(21,'default',0,'connector_configuration/abandoned_carts/allow_non_subscribers','1'),(22,'default',0,'sync_settings/addressbook/allow_non_subscribers','1'),(23,'websites',2,'web/unsecure/base_url','http://v2.jungle-gym-kinderspielplatz.at/'),(24,'websites',2,'web/unsecure/base_link_url','http://v2.jungle-gym-kinderspielplatz.at/'),(25,'default',0,'web/unsecure/base_static_url',NULL),(26,'default',0,'web/unsecure/base_media_url',NULL),(27,'default',0,'web/secure/base_url','http://v2.schweitzer-holz.at/'),(28,'default',0,'web/secure/base_static_url',NULL),(29,'default',0,'web/secure/base_media_url',NULL),(30,'default',0,'web/default_layouts/default_product_layout',NULL),(31,'default',0,'web/default_layouts/default_category_layout',NULL),(32,'default',0,'web/default_layouts/default_cms_layout','1column'),(33,'default',0,'web/cookie/cookie_path',NULL),(34,'default',0,'web/cookie/cookie_domain',NULL),(35,'default',0,'web/cookie/cookie_httponly','1');
+INSERT INTO `core_config_data` VALUES (1,'default',0,'web/unsecure/base_url','http://v2.gartenhaus-carport-gewachshaus.at/'),(2,'default',0,'general/region/display_all','1'),(3,'default',0,'general/region/state_required','AU,BR,CA,HR,EE,IN,LV,LT,RO,ES,CH,US'),(4,'default',0,'catalog/category/root_id','2'),(5,'default',0,'msp_securitysuite_twofactorauth/duo/application_key','lkK9rkk5sIQ0tSOxvRDaqTUDgYEJd69lFdSuXtsaYDC03sgG8xd0bgCJ7iS1VU9f'),(6,'default',0,'analytics/subscription/enabled','1'),(7,'default',0,'crontab/default/jobs/analytics_subscribe/schedule/cron_expr','0 * * * *'),(8,'default',0,'payment/authorizenet_acceptjs/cctypes','AE,VI,MC,DI,JCB,DN'),(9,'default',0,'payment/authorizenet_acceptjs/order_status','processing'),(10,'default',0,'payment/authorizenet_acceptjs/payment_action','authorize'),(11,'default',0,'payment/authorizenet_acceptjs/currency','USD'),(12,'websites',1,'payment/authorizenet_acceptjs/cctypes','AE,VI,MC,DI,JCB,DN'),(13,'websites',1,'payment/authorizenet_acceptjs/order_status','processing'),(14,'websites',1,'payment/authorizenet_acceptjs/payment_action','authorize'),(15,'websites',1,'payment/authorizenet_acceptjs/currency','USD'),(16,'website',0,'connector_configuration/transactional_data/order_statuses','canceled,closed,complete,fraud,holded,payment_review,paypal_canceled_reversal,paypal_reversed,pending,pending_payment,pending_paypal,processing'),(17,'website',0,'connector_configuration/catalog_sync/catalog_type','simple,virtual,configurable,downloadable,grouped,bundle'),(18,'website',0,'connector_configuration/catalog_sync/catalog_visibility','1,2,3,4'),(19,'default',0,'connector_dynamic_content/external_dynamic_content_urls/passcode','ICFdR7iPcd01oVk19Hc79ZBF98050t7F'),(20,'default',0,'connector_automation/review_settings/allow_non_subscribers','1'),(21,'default',0,'connector_configuration/abandoned_carts/allow_non_subscribers','1'),(22,'default',0,'sync_settings/addressbook/allow_non_subscribers','1'),(23,'websites',2,'web/unsecure/base_url','http://v2.jungle-gym-kinderspielplatz.at/'),(24,'websites',2,'web/unsecure/base_link_url','http://v2.jungle-gym-kinderspielplatz.at/'),(25,'default',0,'web/unsecure/base_static_url',NULL),(26,'default',0,'web/unsecure/base_media_url',NULL),(27,'default',0,'web/secure/base_url','http://v2.schweitzer-holz.at/'),(28,'default',0,'web/secure/base_static_url',NULL),(29,'default',0,'web/secure/base_media_url',NULL),(30,'default',0,'web/default_layouts/default_product_layout',NULL),(31,'default',0,'web/default_layouts/default_category_layout',NULL),(32,'default',0,'web/default_layouts/default_cms_layout','1column'),(33,'default',0,'web/cookie/cookie_path',NULL),(34,'default',0,'web/cookie/cookie_domain',NULL),(35,'default',0,'web/cookie/cookie_httponly','1'),(36,'default',0,'crontab/default/jobs/analytics_collect_data/schedule/cron_expr','00 02 * * *'),(37,'default',0,'crontab/default/jobs/vertex_log_rotation/schedule/cron_expr','0 0 * * 1'),(38,'default',0,'general/country/default','DE'),(39,'default',0,'general/country/destinations',NULL),(40,'default',0,'general/locale/timezone','Europe/Vienna'),(41,'default',0,'general/locale/code','de_DE'),(42,'default',0,'general/store_information/name',NULL),(43,'default',0,'general/store_information/phone',NULL),(44,'default',0,'general/store_information/hours',NULL),(45,'default',0,'general/store_information/country_id',NULL),(46,'default',0,'general/store_information/region_id',NULL),(47,'default',0,'general/store_information/postcode',NULL),(48,'default',0,'general/store_information/city',NULL),(49,'default',0,'general/store_information/street_line1',NULL),(50,'default',0,'general/store_information/street_line2',NULL),(51,'default',0,'general/store_information/merchant_vat_number',NULL),(52,'default',0,'general/single_store_mode/enabled','0'),(53,'websites',1,'design/theme/theme_id','4'),(54,'websites',1,'design/pagination/pagination_frame_skip',NULL),(55,'websites',1,'design/pagination/anchor_text_for_previous',NULL),(56,'websites',1,'design/pagination/anchor_text_for_next',NULL),(57,'websites',1,'design/head/title_prefix',NULL),(58,'websites',1,'design/head/title_suffix',NULL),(59,'websites',1,'design/head/default_description',NULL),(60,'websites',1,'design/head/default_keywords',NULL),(61,'websites',1,'design/head/includes',NULL),(62,'websites',1,'design/header/logo_width',NULL),(63,'websites',1,'design/header/logo_height',NULL),(64,'websites',1,'design/header/logo_alt',NULL),(65,'websites',1,'design/footer/absolute_footer',NULL),(66,'websites',1,'design/search_engine_robots/custom_instructions',NULL),(67,'websites',1,'design/watermark/image_size',NULL),(68,'websites',1,'design/watermark/image_imageOpacity',NULL),(69,'websites',1,'design/watermark/small_image_size',NULL),(70,'websites',1,'design/watermark/small_image_imageOpacity',NULL),(71,'websites',1,'design/watermark/thumbnail_size',NULL),(72,'websites',1,'design/watermark/thumbnail_imageOpacity',NULL),(73,'websites',1,'design/email/logo_alt',NULL),(74,'websites',1,'design/email/logo_width',NULL),(75,'websites',1,'design/email/logo_height',NULL),(76,'websites',1,'design/watermark/swatch_image_size',NULL),(77,'websites',1,'design/watermark/swatch_image_imageOpacity',NULL),(78,'websites',1,'design/head/shortcut_icon','websites/1/logo.png'),(79,'websites',1,'design/head/default_title','Gartenhaus'),(80,'websites',1,'design/header/logo_src','websites/1/logo_1.png'),(81,'websites',1,'design/header/welcome',NULL),(82,'websites',1,'design/footer/copyright',NULL);
 /*!40000 ALTER TABLE `core_config_data` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4087,7 +4086,7 @@ CREATE TABLE `customer_eav_attribute_website` (
 
 LOCK TABLES `customer_eav_attribute_website` WRITE;
 /*!40000 ALTER TABLE `customer_eav_attribute_website` DISABLE KEYS */;
-INSERT INTO `customer_eav_attribute_website` VALUES (1,1,NULL,NULL,NULL,NULL),(3,1,NULL,NULL,NULL,NULL),(5,1,NULL,NULL,NULL,NULL),(6,1,NULL,NULL,NULL,NULL),(7,1,NULL,NULL,NULL,NULL),(9,1,NULL,NULL,NULL,NULL),(10,1,NULL,NULL,NULL,NULL),(11,1,NULL,NULL,NULL,NULL),(17,1,NULL,NULL,NULL,NULL),(18,1,NULL,NULL,NULL,NULL),(19,1,NULL,NULL,NULL,NULL),(20,1,NULL,NULL,NULL,NULL),(21,1,NULL,NULL,NULL,NULL),(23,1,NULL,NULL,NULL,NULL),(24,1,NULL,NULL,NULL,NULL),(25,1,NULL,NULL,NULL,NULL),(27,1,NULL,NULL,NULL,NULL),(28,1,NULL,NULL,NULL,NULL),(29,1,NULL,NULL,NULL,NULL),(30,1,NULL,NULL,NULL,NULL),(31,1,NULL,NULL,NULL,NULL),(32,1,NULL,NULL,NULL,NULL),(33,1,NULL,NULL,NULL,NULL),(34,1,NULL,NULL,NULL,NULL),(35,1,NULL,NULL,NULL,NULL),(36,1,NULL,NULL,NULL,NULL);
+INSERT INTO `customer_eav_attribute_website` VALUES (1,1,NULL,NULL,NULL,NULL),(3,1,NULL,NULL,NULL,NULL),(4,1,NULL,NULL,NULL,NULL),(5,1,NULL,NULL,NULL,NULL),(6,1,NULL,NULL,NULL,NULL),(7,1,NULL,NULL,NULL,NULL),(8,1,NULL,NULL,NULL,NULL),(9,1,NULL,NULL,NULL,NULL),(10,1,NULL,NULL,NULL,NULL),(11,1,NULL,NULL,NULL,NULL),(17,1,NULL,NULL,NULL,NULL),(18,1,NULL,NULL,NULL,NULL),(19,1,NULL,NULL,NULL,NULL),(20,1,NULL,NULL,NULL,NULL),(21,1,NULL,NULL,NULL,NULL),(22,1,NULL,NULL,NULL,NULL),(23,1,NULL,NULL,NULL,NULL),(24,1,NULL,NULL,NULL,NULL),(25,1,NULL,NULL,NULL,NULL),(26,1,NULL,NULL,NULL,NULL),(27,1,NULL,NULL,NULL,NULL),(28,1,NULL,NULL,NULL,NULL),(29,1,NULL,NULL,NULL,NULL),(30,1,NULL,NULL,NULL,NULL),(31,1,NULL,NULL,NULL,NULL),(32,1,NULL,NULL,NULL,NULL),(33,1,NULL,NULL,NULL,NULL),(34,1,NULL,NULL,NULL,NULL),(35,1,NULL,NULL,NULL,NULL),(36,1,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `customer_eav_attribute_website` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4442,7 +4441,7 @@ CREATE TABLE `customer_visitor` (
   PRIMARY KEY (`visitor_id`),
   KEY `CUSTOMER_VISITOR_CUSTOMER_ID` (`customer_id`),
   KEY `CUSTOMER_VISITOR_LAST_VISIT_AT` (`last_visit_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Visitor Table';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='Visitor Table';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4451,7 +4450,7 @@ CREATE TABLE `customer_visitor` (
 
 LOCK TABLES `customer_visitor` WRITE;
 /*!40000 ALTER TABLE `customer_visitor` DISABLE KEYS */;
-INSERT INTO `customer_visitor` VALUES (1,NULL,'jnma9nmnmbhpe4887shhd36rfv','2020-04-18 03:33:58'),(2,NULL,'0jicepgc2pql0gq5pgabbn52bg','2020-04-18 04:13:16'),(3,NULL,'foslbei5ksej3p23p965csa6h4','2020-04-18 04:13:18');
+INSERT INTO `customer_visitor` VALUES (1,NULL,'jnma9nmnmbhpe4887shhd36rfv','2020-04-18 03:33:58'),(2,NULL,'0jicepgc2pql0gq5pgabbn52bg','2020-04-18 04:13:16'),(3,NULL,'foslbei5ksej3p23p965csa6h4','2020-04-18 04:13:18'),(4,NULL,'e9tf3hiu88fpmgi5r667mohdpr','2020-04-18 05:45:48'),(5,NULL,'uk8ilcb764911qnqerqlujsru2','2020-04-18 05:46:01'),(6,NULL,'6f3ng9u089ej10hvelbuorkpum','2020-04-18 05:46:02'),(7,NULL,'es8umuh05oregcodvgrvpjpqk2','2020-04-18 05:47:55'),(8,NULL,'i4i1llt2ftbcjbuehib5gdso6m','2020-04-18 05:48:08'),(9,NULL,'t3o6jmu6v4mm51ojfb45278kfd','2020-04-18 05:48:08'),(10,NULL,'49ljrdvape6ha97dnr4gv2ko9r','2020-04-18 16:05:12');
 /*!40000 ALTER TABLE `customer_visitor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4510,7 +4509,7 @@ CREATE TABLE `design_config_grid_flat` (
 
 LOCK TABLES `design_config_grid_flat` WRITE;
 /*!40000 ALTER TABLE `design_config_grid_flat` DISABLE KEYS */;
-INSERT INTO `design_config_grid_flat` VALUES (0,NULL,NULL,NULL,''),(1,1,NULL,NULL,''),(2,1,1,1,'');
+INSERT INTO `design_config_grid_flat` VALUES (0,NULL,NULL,NULL,''),(1,1,NULL,NULL,'4'),(2,1,1,1,'4'),(3,2,NULL,NULL,''),(4,2,2,2,'');
 /*!40000 ALTER TABLE `design_config_grid_flat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6046,7 +6045,7 @@ CREATE TABLE `flag` (
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Date of Last Flag Update',
   PRIMARY KEY (`flag_id`),
   KEY `FLAG_LAST_UPDATE` (`last_update`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Flag';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Flag';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6055,7 +6054,7 @@ CREATE TABLE `flag` (
 
 LOCK TABLES `flag` WRITE;
 /*!40000 ALTER TABLE `flag` DISABLE KEYS */;
-INSERT INTO `flag` VALUES (1,'analytics_link_attempts_reverse_counter',0,'24','2020-04-18 02:38:39'),(2,'catalog_website_attribute_is_sync_required',0,'2','2020-04-18 03:24:50');
+INSERT INTO `flag` VALUES (1,'analytics_link_attempts_reverse_counter',0,'24','2020-04-18 02:38:39'),(2,'catalog_website_attribute_is_sync_required',0,'2','2020-04-18 03:24:50'),(3,'config_hash',0,'{\"scopes\":\"bb7763fb63df249db2eaf6a35723e1394491f5b2\",\"themes\":\"51cc4f4e63ecab48cb1ab1ba4f45ffa06b47c5f9\",\"system\":\"ff7bc549913790318dbd8f48a094ed87bcbf60c5\"}','2020-04-18 05:42:40'),(4,'system_config_snapshot',0,'{\"default\":{\"admin\":{\"security\":{\"use_form_key\":\"1\",\"admin_account_sharing\":\"0\",\"password_reset_protection_type\":\"1\",\"max_number_password_reset_requests\":\"5\",\"min_time_between_password_reset_requests\":\"10\",\"password_reset_link_expiration_period\":\"2\",\"lockout_failures\":\"6\",\"lockout_threshold\":\"30\",\"password_lifetime\":\"90\",\"password_is_forced\":\"1\",\"session_lifetime\":\"900000\"},\"url\":{\"custom\":null}},\"dev\":{\"js\":{\"session_storage_key\":\"collected_errors\"},\"restrict\":{\"allow_ips\":null}},\"system\":{\"smtp\":{\"host\":\"localhost\",\"port\":\"25\"}},\"web\":{\"unsecure\":{\"base_url\":\"http:\\/\\/v2.gartenhaus-carport-gewachshaus.at\\/\",\"base_link_url\":\"{{unsecure_base_url}}\",\"base_static_url\":null,\"base_media_url\":null},\"secure\":{\"base_url\":\"http:\\/\\/v2.schweitzer-holz.at\\/\",\"base_link_url\":\"{{secure_base_url}}\",\"base_static_url\":null,\"base_media_url\":null},\"default\":{\"front\":\"cms\"},\"cookie\":{\"cookie_path\":null,\"cookie_domain\":null}},\"currency\":{\"import\":{\"error_email\":null}},\"customer\":{\"create_account\":{\"email_domain\":\"example.com\"}},\"catalog\":{\"search\":{\"elasticsearch_server_hostname\":\"localhost\",\"elasticsearch_server_port\":\"9200\",\"elasticsearch_index_prefix\":\"magento2\",\"elasticsearch_enable_auth\":\"0\",\"elasticsearch_server_timeout\":\"15\",\"elasticsearch5_server_hostname\":\"localhost\",\"elasticsearch5_server_port\":\"9200\",\"elasticsearch5_index_prefix\":\"magento2\",\"elasticsearch5_enable_auth\":\"0\",\"elasticsearch5_server_timeout\":\"15\"},\"productalert_cron\":{\"error_email\":null}},\"payment\":{\"payflowpro\":{\"user\":null,\"pwd\":null},\"payflow_link\":{\"pwd\":null,\"url_method\":\"GET\"},\"payflow_advanced\":{\"user\":\"PayPal\",\"pwd\":null,\"url_method\":\"GET\"},\"authorizenet_directpost\":{\"debug\":\"0\",\"email_customer\":\"0\",\"login\":null,\"merchant_email\":null,\"test\":\"1\",\"trans_key\":null,\"trans_md5\":null,\"cgi_url\":\"https:\\/\\/secure.authorize.net\\/gateway\\/transact.dll\",\"cgi_url_td\":\"https:\\/\\/api2.authorize.net\\/xml\\/v1\\/request.api\"},\"authorizenet_acceptjs\":{\"email_customer\":\"0\",\"login\":null,\"trans_key\":null,\"trans_md5\":null},\"braintree\":{\"private_key\":null}},\"cataloginventory\":{\"source_selection_distance_based_google\":{\"api_key\":null}},\"contact\":{\"email\":{\"recipient_email\":\"hello@example.com\"}},\"trans_email\":{\"ident_custom1\":{\"email\":\"custom1@example.com\",\"name\":\"Custom 1\"},\"ident_custom2\":{\"email\":\"custom2@example.com\",\"name\":\"Custom 2\"},\"ident_general\":{\"email\":\"owner@example.com\",\"name\":\"Owner\"},\"ident_sales\":{\"email\":\"sales@example.com\",\"name\":\"Sales\"},\"ident_support\":{\"email\":\"support@example.com\",\"name\":\"CustomerSupport\"}},\"paypal\":{\"wpp\":{\"api_password\":null,\"api_signature\":null,\"api_username\":null},\"fetch_reports\":{\"ftp_login\":null,\"ftp_password\":null}},\"analytics\":{\"url\":{\"signup\":\"https:\\/\\/advancedreporting.rjmetrics.com\\/signup\",\"update\":\"https:\\/\\/advancedreporting.rjmetrics.com\\/update\",\"bi_essentials\":\"https:\\/\\/dashboard.rjmetrics.com\\/v2\\/magento\\/signup\",\"otp\":\"https:\\/\\/advancedreporting.rjmetrics.com\\/otp\",\"report\":\"https:\\/\\/advancedreporting.rjmetrics.com\\/report\",\"notify_data_changed\":\"https:\\/\\/advancedreporting.rjmetrics.com\\/report\"}},\"carriers\":{\"dhl\":{\"account\":null,\"gateway_url\":\"https:\\/\\/xmlpi-ea.dhl.com\\/XMLShippingServlet\",\"id\":null,\"password\":null},\"fedex\":{\"account\":null,\"meter_number\":null,\"key\":null,\"password\":null,\"sandbox_mode\":\"0\",\"production_webservices_url\":\"https:\\/\\/ws.fedex.com:443\\/web-services\\/\",\"sandbox_webservices_url\":\"https:\\/\\/wsbeta.fedex.com:443\\/web-services\\/\"},\"ups\":{\"access_license_number\":null,\"gateway_url\":\"http:\\/\\/www.ups.com\\/using\\/services\\/rave\\/qcostcgi.cgi\",\"gateway_xml_url\":\"https:\\/\\/onlinetools.ups.com\\/ups.app\\/xml\\/Rate\",\"tracking_xml_url\":\"https:\\/\\/onlinetools.ups.com\\/ups.app\\/xml\\/Track\",\"username\":null,\"password\":null,\"is_account_live\":\"0\"},\"usps\":{\"gateway_url\":\"http:\\/\\/production.shippingapis.com\\/ShippingAPI.dll\",\"gateway_secure_url\":\"https:\\/\\/secure.shippingapis.com\\/ShippingAPI.dll\",\"userid\":null,\"password\":null}},\"newrelicreporting\":{\"general\":{\"api_url\":\"https:\\/\\/api.newrelic.com\\/deployments.xml\",\"insights_api_url\":\"https:\\/\\/insights-collector.newrelic.com\\/v1\\/accounts\\/%s\\/events\"}},\"fraud_protection\":{\"signifyd\":{\"api_url\":\"https:\\/\\/api.signifyd.com\\/v2\\/\",\"api_key\":null}},\"sitemap\":{\"generate\":{\"error_email\":null}},\"crontab\":{\"default\":{\"jobs\":{\"analytics_subscribe\":{\"schedule\":{\"cron_expr\":\"0 * * * *\"}}}}}},\"websites\":{\"jungle_gym\":{\"web\":{\"unsecure\":{\"base_url\":\"http:\\/\\/v2.jungle-gym-kinderspielplatz.at\\/\",\"base_link_url\":\"http:\\/\\/v2.jungle-gym-kinderspielplatz.at\\/\"}}}}}','2020-04-18 05:42:40');
 /*!40000 ALTER TABLE `flag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6190,7 +6189,7 @@ CREATE TABLE `indexer_state` (
 
 LOCK TABLES `indexer_state` WRITE;
 /*!40000 ALTER TABLE `indexer_state` DISABLE KEYS */;
-INSERT INTO `indexer_state` VALUES (1,'design_config_grid','invalid','2020-04-18 03:19:18','34ec592bfa6c952bed4d0a1d58c98770'),(2,'customer_grid','valid','2020-04-18 02:52:27','b9632e06cf957d6e8103eb236ca38cc1'),(3,'catalog_category_product','invalid','2020-04-18 03:24:51','2124d5bfcd83b609c67eee94a0e4708c'),(4,'catalog_product_category','valid','2020-04-18 02:52:27','77b6356629f3259568a68ea64c773238'),(5,'catalogrule_rule','valid','2020-04-18 02:52:27','c4f8344a2e6a7d8ebc065631454a4724'),(6,'catalog_product_attribute','invalid','2020-04-18 03:24:50','f73cae77ec4dee3b587a60a2f38dd26a'),(7,'inventory','valid','2020-04-18 02:52:27','ff158179c0d7dcaeb1be1da0011eae73'),(8,'catalogrule_product','valid','2020-04-18 02:52:27','667205576ee3764b1ee81c4a076d10ae'),(9,'cataloginventory_stock','invalid','2020-04-18 03:22:57','1bf66e64558a5171e523b32f25cb99ca'),(10,'catalog_product_price','valid','2020-04-18 02:52:28','0e6c8cd322db03524968ab671629718f'),(11,'catalogsearch_fulltext','invalid','2020-04-18 03:24:51','fb6356539c73a2ee336bfb7c3d737d10');
+INSERT INTO `indexer_state` VALUES (1,'design_config_grid','valid','2020-04-18 20:47:13','34ec592bfa6c952bed4d0a1d58c98770'),(2,'customer_grid','valid','2020-04-18 20:47:14','b9632e06cf957d6e8103eb236ca38cc1'),(3,'catalog_category_product','valid','2020-04-18 20:47:14','2124d5bfcd83b609c67eee94a0e4708c'),(4,'catalog_product_category','valid','2020-04-18 02:52:27','77b6356629f3259568a68ea64c773238'),(5,'catalogrule_rule','valid','2020-04-18 20:47:15','c4f8344a2e6a7d8ebc065631454a4724'),(6,'catalog_product_attribute','valid','2020-04-18 20:47:15','f73cae77ec4dee3b587a60a2f38dd26a'),(7,'inventory','valid','2020-04-18 20:47:15','ff158179c0d7dcaeb1be1da0011eae73'),(8,'catalogrule_product','valid','2020-04-18 02:52:27','667205576ee3764b1ee81c4a076d10ae'),(9,'cataloginventory_stock','valid','2020-04-18 20:47:15','1bf66e64558a5171e523b32f25cb99ca'),(10,'catalog_product_price','valid','2020-04-18 20:47:16','0e6c8cd322db03524968ab671629718f'),(11,'catalogsearch_fulltext','valid','2020-04-18 20:47:16','fb6356539c73a2ee336bfb7c3d737d10');
 /*!40000 ALTER TABLE `indexer_state` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -11350,7 +11349,7 @@ CREATE TABLE `setup_module` (
 
 LOCK TABLES `setup_module` WRITE;
 /*!40000 ALTER TABLE `setup_module` DISABLE KEYS */;
-INSERT INTO `setup_module` VALUES ('Amazon_Core','3.1.4','3.1.4'),('Amazon_Login','3.1.4','3.1.4'),('Amazon_Payment','3.1.4','3.1.4'),('Dotdigitalgroup_Email','3.1.1','3.1.1'),('Klarna_Core','5.1.0','5.1.0'),('Klarna_Kp','6.1.0','6.1.0'),('Klarna_Ordermanagement','5.0.2','5.0.2'),('Magento_AuthorizenetAcceptjs','1.0.0','1.0.0'),('Magento_Inventory','1.0.0','1.0.0'),('Magento_InventoryAdminUi','1.0.0','1.0.0'),('Magento_InventoryApi','1.0.0','1.0.0'),('Magento_InventoryBundleProduct','1.0.0','1.0.0'),('Magento_InventoryBundleProductAdminUi','1.0.0','1.0.0'),('Magento_InventoryCache','1.0.0','1.0.0'),('Magento_InventoryCatalog','1.0.0','1.0.0'),('Magento_InventoryCatalogAdminUi','1.0.0','1.0.0'),('Magento_InventoryCatalogApi','1.0.0','1.0.0'),('Magento_InventoryCatalogSearch','1.0.0','1.0.0'),('Magento_InventoryConfigurableProduct','1.0.0','1.0.0'),('Magento_InventoryConfigurableProductAdminUi','1.0.0','1.0.0'),('Magento_InventoryConfigurableProductIndexer','1.0.0','1.0.0'),('Magento_InventoryConfiguration','1.0.0','1.0.0'),('Magento_InventoryConfigurationApi','1.0.0','1.0.0'),('Magento_InventoryElasticsearch','1.0.0','1.0.0'),('Magento_InventoryGroupedProduct','1.0.0','1.0.0'),('Magento_InventoryGroupedProductAdminUi','1.0.0','1.0.0'),('Magento_InventoryGroupedProductIndexer','1.0.0','1.0.0'),('Magento_InventoryImportExport','1.0.0','1.0.0'),('Magento_InventoryIndexer','1.0.0','1.0.0'),('Magento_InventoryLowQuantityNotification','1.0.0','1.0.0'),('Magento_InventoryLowQuantityNotificationAdminUi','1.0.0','1.0.0'),('Magento_InventoryLowQuantityNotificationApi','1.0.0','1.0.0'),('Magento_InventoryMultiDimensionalIndexerApi','1.0.0','1.0.0'),('Magento_InventoryProductAlert','1.0.0','1.0.0'),('Magento_InventoryReservations','1.0.0','1.0.0'),('Magento_InventoryReservationsApi','1.0.0','1.0.0'),('Magento_InventorySales','1.0.0','1.0.0'),('Magento_InventorySalesAdminUi','1.0.0','1.0.0'),('Magento_InventorySalesApi','1.0.0','1.0.0'),('Magento_InventoryShipping','1.0.0','1.0.0'),('Magento_InventoryShippingAdminUi','1.0.0','1.0.0'),('Magento_InventorySourceDeductionApi','1.0.0','1.0.0'),('Magento_InventorySourceSelection','1.0.0','1.0.0'),('Magento_InventorySourceSelectionApi','1.0.0','1.0.0'),('MSP_ReCaptcha','1.5.0','1.5.0'),('MSP_TwoFactorAuth','2.2.0','2.2.0'),('Temando_Shipping','1.5.0','1.5.0'),('Vertex_Tax','100.3.0','100.3.0');
+INSERT INTO `setup_module` VALUES ('Amazon_Core','3.1.4','3.1.4'),('Amazon_Login','3.1.4','3.1.4'),('Amazon_Payment','3.1.4','3.1.4'),('Dotdigitalgroup_Email','3.1.1','3.1.1'),('Klarna_Core','5.1.0','5.1.0'),('Klarna_Kp','6.1.0','6.1.0'),('Klarna_Ordermanagement','5.0.2','5.0.2'),('Magento_AuthorizenetAcceptjs','1.0.0','1.0.0'),('Magento_Inventory','1.0.0','1.0.0'),('Magento_InventoryAdminUi','1.0.0','1.0.0'),('Magento_InventoryApi','1.0.0','1.0.0'),('Magento_InventoryBundleProduct','1.0.0','1.0.0'),('Magento_InventoryBundleProductAdminUi','1.0.0','1.0.0'),('Magento_InventoryCache','1.0.0','1.0.0'),('Magento_InventoryCatalog','1.0.0','1.0.0'),('Magento_InventoryCatalogAdminUi','1.0.0','1.0.0'),('Magento_InventoryCatalogApi','1.0.0','1.0.0'),('Magento_InventoryCatalogSearch','1.0.0','1.0.0'),('Magento_InventoryConfigurableProduct','1.0.0','1.0.0'),('Magento_InventoryConfigurableProductAdminUi','1.0.0','1.0.0'),('Magento_InventoryConfigurableProductIndexer','1.0.0','1.0.0'),('Magento_InventoryConfiguration','1.0.0','1.0.0'),('Magento_InventoryConfigurationApi','1.0.0','1.0.0'),('Magento_InventoryElasticsearch','1.0.0','1.0.0'),('Magento_InventoryGroupedProduct','1.0.0','1.0.0'),('Magento_InventoryGroupedProductAdminUi','1.0.0','1.0.0'),('Magento_InventoryGroupedProductIndexer','1.0.0','1.0.0'),('Magento_InventoryImportExport','1.0.0','1.0.0'),('Magento_InventoryIndexer','1.0.0','1.0.0'),('Magento_InventoryLowQuantityNotification','1.0.0','1.0.0'),('Magento_InventoryLowQuantityNotificationAdminUi','1.0.0','1.0.0'),('Magento_InventoryLowQuantityNotificationApi','1.0.0','1.0.0'),('Magento_InventoryMultiDimensionalIndexerApi','1.0.0','1.0.0'),('Magento_InventoryProductAlert','1.0.0','1.0.0'),('Magento_InventoryReservations','1.0.0','1.0.0'),('Magento_InventoryReservationsApi','1.0.0','1.0.0'),('Magento_InventorySales','1.0.0','1.0.0'),('Magento_InventorySalesAdminUi','1.0.0','1.0.0'),('Magento_InventorySalesApi','1.0.0','1.0.0'),('Magento_InventoryShipping','1.0.0','1.0.0'),('Magento_InventoryShippingAdminUi','1.0.0','1.0.0'),('Magento_InventorySourceDeductionApi','1.0.0','1.0.0'),('Magento_InventorySourceSelection','1.0.0','1.0.0'),('Magento_InventorySourceSelectionApi','1.0.0','1.0.0'),('Mageplaza_Core','1.0.0','1.0.0'),('MSP_ReCaptcha','1.5.0','1.5.0'),('MSP_TwoFactorAuth','2.2.0','2.2.0'),('Temando_Shipping','1.5.0','1.5.0'),('Vertex_Tax','100.3.0','100.3.0');
 /*!40000 ALTER TABLE `setup_module` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12045,7 +12044,7 @@ CREATE TABLE `theme` (
   `type` smallint(6) NOT NULL COMMENT 'Theme type: 0:physical, 1:virtual, 2:staging',
   `code` text COMMENT 'Full theme code, including package',
   PRIMARY KEY (`theme_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Core theme';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Core theme';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12054,7 +12053,7 @@ CREATE TABLE `theme` (
 
 LOCK TABLES `theme` WRITE;
 /*!40000 ALTER TABLE `theme` DISABLE KEYS */;
-INSERT INTO `theme` VALUES (1,NULL,'Magento/blank','Magento Blank','preview_image_5e9a682bca31a.jpeg',0,'frontend',0,'Magento/blank'),(2,1,'Magento/luma','Magento Luma','preview_image_5e9a682be34a3.jpeg',0,'frontend',0,'Magento/luma'),(3,NULL,'Magento/backend','Magento 2 backend',NULL,0,'adminhtml',0,'Magento/backend');
+INSERT INTO `theme` VALUES (1,NULL,'Magento/blank','Magento Blank','preview_image_5e9a682bca31a.jpeg',0,'frontend',0,'Magento/blank'),(2,1,'Magento/luma','Magento Luma','preview_image_5e9a682be34a3.jpeg',0,'frontend',0,'Magento/luma'),(3,NULL,'Magento/backend','Magento 2 backend',NULL,0,'adminhtml',0,'Magento/backend'),(4,2,'Webdirect/Gartenhaus','Gartenhaus','preview_image_5e9a8b0413d6f.png',0,'frontend',0,'Webdirect/Gartenhaus');
 /*!40000 ALTER TABLE `theme` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12137,7 +12136,7 @@ CREATE TABLE `ui_bookmark` (
   PRIMARY KEY (`bookmark_id`),
   KEY `UI_BOOKMARK_USER_ID_NAMESPACE_IDENTIFIER` (`user_id`,`namespace`,`identifier`),
   CONSTRAINT `UI_BOOKMARK_USER_ID_ADMIN_USER_USER_ID` FOREIGN KEY (`user_id`) REFERENCES `admin_user` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Bookmark';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='Bookmark';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12146,6 +12145,7 @@ CREATE TABLE `ui_bookmark` (
 
 LOCK TABLES `ui_bookmark` WRITE;
 /*!40000 ALTER TABLE `ui_bookmark` DISABLE KEYS */;
+INSERT INTO `ui_bookmark` VALUES (1,1,'design_theme_listing','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"displayMode\":\"grid\",\"positions\":{\"theme_id\":0,\"theme_title\":1,\"parent_theme_title\":2,\"theme_path\":3,\"actions\":4},\"columns\":{\"theme_id\":{\"visible\":false,\"sorting\":\"asc\"},\"theme_title\":{\"visible\":true,\"sorting\":false},\"parent_theme_title\":{\"visible\":true,\"sorting\":false},\"theme_path\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"filters\":{\"applied\":{\"placeholder\":true}},\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,1,'design_theme_listing','current',0,NULL,'{\"current\":{\"displayMode\":\"grid\",\"positions\":{\"theme_id\":0,\"theme_title\":1,\"parent_theme_title\":2,\"theme_path\":3,\"actions\":4},\"columns\":{\"theme_id\":{\"visible\":false,\"sorting\":\"asc\"},\"theme_title\":{\"visible\":true,\"sorting\":false},\"parent_theme_title\":{\"visible\":true,\"sorting\":false},\"theme_path\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"filters\":{\"applied\":{\"placeholder\":true}},\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(3,1,'design_config_listing','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"displayMode\":\"grid\",\"columns\":{\"store_website_id\":{\"visible\":true,\"sorting\":false},\"store_group_id\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"theme_theme_id\":{\"visible\":true,\"sorting\":false},\"default\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"positions\":{\"default\":0,\"store_website_id\":1,\"store_group_id\":2,\"store_id\":3,\"actions\":4,\"theme_theme_id\":5},\"filters\":{\"applied\":{\"placeholder\":true}},\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(4,1,'design_config_listing','current',0,NULL,'{\"current\":{\"displayMode\":\"grid\",\"columns\":{\"store_website_id\":{\"visible\":true,\"sorting\":false},\"store_group_id\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"theme_theme_id\":{\"visible\":true,\"sorting\":false},\"default\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"positions\":{\"default\":0,\"store_website_id\":1,\"store_group_id\":2,\"store_id\":3,\"actions\":4,\"theme_theme_id\":5},\"filters\":{\"applied\":{\"placeholder\":true}},\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(5,1,'cms_block_listing','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"block_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false},\"creation_time\":{\"visible\":true,\"sorting\":false},\"update_time\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false}},\"search\":{\"value\":\"\"},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"block_id\":1,\"title\":2,\"identifier\":3,\"store_id\":4,\"is_active\":5,\"creation_time\":6,\"update_time\":7,\"actions\":8}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(6,1,'cms_block_listing','current',0,NULL,'{\"current\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"block_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false},\"creation_time\":{\"visible\":true,\"sorting\":false},\"update_time\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false}},\"search\":{\"value\":\"\"},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"block_id\":1,\"title\":2,\"identifier\":3,\"store_id\":4,\"is_active\":5,\"creation_time\":6,\"update_time\":7,\"actions\":8}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(7,1,'cms_page_listing','current',0,NULL,'{\"current\":{\"search\":{\"value\":\"\"},\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"page_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"meta_title\":{\"visible\":false,\"sorting\":false},\"meta_keywords\":{\"visible\":false,\"sorting\":false},\"meta_description\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"page_layout\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false},\"custom_theme\":{\"visible\":false,\"sorting\":false},\"custom_root_template\":{\"visible\":false,\"sorting\":false},\"creation_time\":{\"visible\":true,\"sorting\":false},\"update_time\":{\"visible\":true,\"sorting\":false},\"custom_theme_from\":{\"visible\":false,\"sorting\":false},\"custom_theme_to\":{\"visible\":false,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"page_id\":1,\"title\":2,\"identifier\":3,\"page_layout\":4,\"store_id\":5,\"is_active\":6,\"creation_time\":7,\"update_time\":8,\"custom_theme_from\":9,\"custom_theme_to\":10,\"custom_theme\":11,\"custom_root_template\":12,\"meta_title\":13,\"meta_keywords\":14,\"meta_description\":15,\"actions\":16}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(8,1,'cms_page_listing','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"search\":{\"value\":\"\"},\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"page_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"meta_title\":{\"visible\":false,\"sorting\":false},\"meta_keywords\":{\"visible\":false,\"sorting\":false},\"meta_description\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"page_layout\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false},\"custom_theme\":{\"visible\":false,\"sorting\":false},\"custom_root_template\":{\"visible\":false,\"sorting\":false},\"creation_time\":{\"visible\":true,\"sorting\":false},\"update_time\":{\"visible\":true,\"sorting\":false},\"custom_theme_from\":{\"visible\":false,\"sorting\":false},\"custom_theme_to\":{\"visible\":false,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"page_id\":1,\"title\":2,\"identifier\":3,\"page_layout\":4,\"store_id\":5,\"is_active\":6,\"creation_time\":7,\"update_time\":8,\"custom_theme_from\":9,\"custom_theme_to\":10,\"custom_theme\":11,\"custom_root_template\":12,\"meta_title\":13,\"meta_keywords\":14,\"meta_description\":15,\"actions\":16}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `ui_bookmark` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12171,7 +12171,7 @@ CREATE TABLE `url_rewrite` (
   UNIQUE KEY `URL_REWRITE_REQUEST_PATH_STORE_ID` (`request_path`,`store_id`),
   KEY `URL_REWRITE_TARGET_PATH` (`target_path`),
   KEY `URL_REWRITE_STORE_ID_ENTITY_ID` (`store_id`,`entity_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Url Rewrites';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='Url Rewrites';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12180,7 +12180,7 @@ CREATE TABLE `url_rewrite` (
 
 LOCK TABLES `url_rewrite` WRITE;
 /*!40000 ALTER TABLE `url_rewrite` DISABLE KEYS */;
-INSERT INTO `url_rewrite` VALUES (1,'cms-page',1,'no-route','cms/page/view/page_id/1',0,1,NULL,1,NULL),(2,'cms-page',2,'home','cms/page/view/page_id/2',0,1,NULL,1,NULL),(3,'cms-page',3,'enable-cookies','cms/page/view/page_id/3',0,1,NULL,1,NULL),(4,'cms-page',4,'privacy-policy-cookie-restriction-mode','cms/page/view/page_id/4',0,1,NULL,1,NULL);
+INSERT INTO `url_rewrite` VALUES (1,'cms-page',1,'no-route','cms/page/view/page_id/1',0,1,NULL,1,NULL),(2,'cms-page',2,'home','cms/page/view/page_id/2',0,1,NULL,1,NULL),(3,'cms-page',3,'enable-cookies','cms/page/view/page_id/3',0,1,NULL,1,NULL),(4,'cms-page',4,'privacy-policy-cookie-restriction-mode','cms/page/view/page_id/4',0,1,NULL,1,NULL),(5,'category',3,'kategorien.html','catalog/category/view/id/3',0,2,NULL,1,NULL),(6,'category',3,'kategorien.html','catalog/category/view/id/3',0,1,NULL,1,NULL);
 /*!40000 ALTER TABLE `url_rewrite` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12773,8 +12773,7 @@ CREATE TABLE `wishlist_item_option` (
   PRIMARY KEY (`option_id`),
   KEY `FK_A014B30B04B72DD0EAB3EECD779728D6` (`wishlist_item_id`),
   KEY `WISHLIST_ITEM_OPTION_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID` (`product_id`),
-  CONSTRAINT `FK_A014B30B04B72DD0EAB3EECD779728D6` FOREIGN KEY (`wishlist_item_id`) REFERENCES `wishlist_item` (`wishlist_item_id`) ON DELETE CASCADE,
-  CONSTRAINT `WISHLIST_ITEM_OPTION_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID` FOREIGN KEY (`product_id`) REFERENCES `catalog_product_entity` (`entity_id`) ON DELETE CASCADE
+  CONSTRAINT `FK_A014B30B04B72DD0EAB3EECD779728D6` FOREIGN KEY (`wishlist_item_id`) REFERENCES `wishlist_item` (`wishlist_item_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Wishlist Item Option Table';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -12814,4 +12813,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-18  0:21:53
+-- Dump completed on 2020-04-18 17:01:17
