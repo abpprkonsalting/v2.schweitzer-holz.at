@@ -107,7 +107,7 @@ CREATE TABLE `admin_user` (
 
 LOCK TABLES `admin_user` WRITE;
 /*!40000 ALTER TABLE `admin_user` DISABLE KEYS */;
-INSERT INTO `admin_user` VALUES (1,'Armando','Banos','armbp1972@gmail.com','admin','6e9c93df75b04c42c47da801dc8c2ba4da0a5a908b58c5210613a7ee82ac3766:Jf929q4o8Zab0gZIjTqUNwV7rXNwo5af:1','2020-04-18 02:38:40','2020-04-18 17:15:30','2020-04-18 05:11:01',4,0,1,'{\"configState\":{\"general_country\":\"1\",\"general_locale\":\"1\",\"general_store_information\":\"1\",\"web_unsecure\":\"0\",\"web_url\":\"0\",\"web_seo\":\"0\",\"web_secure\":\"0\",\"web_default\":\"0\",\"web_cookie\":\"0\",\"web_session\":\"0\",\"web_browser_capabilities\":\"0\",\"web_default_layouts\":\"0\",\"general_region\":\"1\",\"general_single_store_mode\":\"0\",\"newsletter_general\":\"1\",\"newsletter_subscription\":\"1\"}}',NULL,NULL,'en_US',0,NULL,NULL,NULL);
+INSERT INTO `admin_user` VALUES (1,'Armando','Banos','armbp1972@gmail.com','admin','6e9c93df75b04c42c47da801dc8c2ba4da0a5a908b58c5210613a7ee82ac3766:Jf929q4o8Zab0gZIjTqUNwV7rXNwo5af:1','2020-04-18 02:38:40','2020-04-19 18:58:55','2020-04-19 16:21:39',6,0,1,'{\"configState\":{\"general_country\":\"1\",\"general_locale\":\"1\",\"general_store_information\":\"1\",\"web_unsecure\":\"0\",\"web_url\":\"0\",\"web_seo\":\"0\",\"web_secure\":\"0\",\"web_default\":\"1\",\"web_cookie\":\"0\",\"web_session\":\"0\",\"web_browser_capabilities\":\"0\",\"web_default_layouts\":\"1\",\"general_region\":\"1\",\"general_single_store_mode\":\"0\",\"newsletter_general\":\"1\",\"newsletter_subscription\":\"1\",\"weltpixel_owl_carousel_config_general\":\"1\",\"weltpixel_owl_carousel_config_new_products\":\"0\"}}',NULL,NULL,'en_US',0,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `admin_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,7 +130,7 @@ CREATE TABLE `admin_user_session` (
   KEY `ADMIN_USER_SESSION_SESSION_ID` (`session_id`),
   KEY `ADMIN_USER_SESSION_USER_ID` (`user_id`),
   CONSTRAINT `ADMIN_USER_SESSION_USER_ID_ADMIN_USER_USER_ID` FOREIGN KEY (`user_id`) REFERENCES `admin_user` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Admin User sessions table';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='Admin User sessions table';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -139,7 +139,7 @@ CREATE TABLE `admin_user_session` (
 
 LOCK TABLES `admin_user_session` WRITE;
 /*!40000 ALTER TABLE `admin_user_session` DISABLE KEYS */;
-INSERT INTO `admin_user_session` VALUES (1,'cchjj2e8psbgf29gvt7k2faro7',1,2,'2020-04-18 02:41:03','2020-04-18 04:12:29','127.0.0.1'),(2,'hm50jh4k88qie9jteb3reg633e',1,2,'2020-04-18 04:12:29','2020-04-18 04:19:29','127.0.0.1'),(3,'8he5ib1asdofi45mlraudkifcs',1,1,'2020-04-18 04:19:29','2020-04-18 04:19:29','127.0.0.1'),(4,'4u171gcjcqh7p70udhthf49kvc',1,1,'2020-04-18 05:11:01','2020-04-18 23:09:19','127.0.0.1');
+INSERT INTO `admin_user_session` VALUES (1,'cchjj2e8psbgf29gvt7k2faro7',1,2,'2020-04-18 02:41:03','2020-04-18 04:12:29','127.0.0.1'),(2,'hm50jh4k88qie9jteb3reg633e',1,2,'2020-04-18 04:12:29','2020-04-18 04:19:29','127.0.0.1'),(3,'8he5ib1asdofi45mlraudkifcs',1,2,'2020-04-18 04:19:29','2020-04-19 16:20:51','127.0.0.1'),(4,'4u171gcjcqh7p70udhthf49kvc',1,2,'2020-04-18 05:11:01','2020-04-19 16:20:51','127.0.0.1'),(5,'arvdq1d1hule8mguc3ua2rf153',1,2,'2020-04-19 16:20:51','2020-04-19 16:21:48','127.0.0.1'),(6,'ckkg34jlcmbge8pglcua3hig80',1,1,'2020-04-19 16:21:48','2020-04-19 22:47:12','127.0.0.1');
 /*!40000 ALTER TABLE `admin_user_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -782,9 +782,9 @@ CREATE TABLE `catalog_category_product_index_store1` (
   `store_id` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Store Id',
   `visibility` smallint(5) unsigned NOT NULL COMMENT 'Visibility',
   PRIMARY KEY (`category_id`,`product_id`,`store_id`),
-  KEY `IDX_4B965DC45C352D6E4C9DC0FF50B1FCF5` (`product_id`,`store_id`,`category_id`,`visibility`),
-  KEY `IDX_47AB760CD6A893ACEA69A9C2E0112C60` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Product Index Store1 Replica';
+  KEY `CAT_CTGR_PRD_IDX_STORE1_PRD_ID_STORE_ID_CTGR_ID_VISIBILITY` (`product_id`,`store_id`,`category_id`,`visibility`),
+  KEY `IDX_216E521C8AD125E066D2B0BAB4A08412` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Product Index Store1';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -811,9 +811,9 @@ CREATE TABLE `catalog_category_product_index_store1_replica` (
   `store_id` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Store Id',
   `visibility` smallint(5) unsigned NOT NULL COMMENT 'Visibility',
   PRIMARY KEY (`category_id`,`product_id`,`store_id`),
-  KEY `CAT_CTGR_PRD_IDX_STORE1_PRD_ID_STORE_ID_CTGR_ID_VISIBILITY` (`product_id`,`store_id`,`category_id`,`visibility`),
-  KEY `IDX_216E521C8AD125E066D2B0BAB4A08412` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Product Index Store1';
+  KEY `IDX_4B965DC45C352D6E4C9DC0FF50B1FCF5` (`product_id`,`store_id`,`category_id`,`visibility`),
+  KEY `IDX_47AB760CD6A893ACEA69A9C2E0112C60` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Product Index Store1 Replica';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -840,9 +840,9 @@ CREATE TABLE `catalog_category_product_index_store2` (
   `store_id` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Store Id',
   `visibility` smallint(5) unsigned NOT NULL COMMENT 'Visibility',
   PRIMARY KEY (`category_id`,`product_id`,`store_id`),
-  KEY `CAT_CTGR_PRD_IDX_STORE2_PRD_ID_STORE_ID_CTGR_ID_VISIBILITY` (`product_id`,`store_id`,`category_id`,`visibility`),
-  KEY `IDX_2AB6FE58F086547FA7E4590837296849` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Product Index Store2';
+  KEY `IDX_87FCED52F67C72BB6992C79EB4DCFA8A` (`product_id`,`store_id`,`category_id`,`visibility`),
+  KEY `IDX_15B841C92B67D986A980051DF109F9D1` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Product Index Store2 Replica';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -869,9 +869,9 @@ CREATE TABLE `catalog_category_product_index_store2_replica` (
   `store_id` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Store Id',
   `visibility` smallint(5) unsigned NOT NULL COMMENT 'Visibility',
   PRIMARY KEY (`category_id`,`product_id`,`store_id`),
-  KEY `IDX_87FCED52F67C72BB6992C79EB4DCFA8A` (`product_id`,`store_id`,`category_id`,`visibility`),
-  KEY `IDX_15B841C92B67D986A980051DF109F9D1` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Product Index Store2 Replica';
+  KEY `CAT_CTGR_PRD_IDX_STORE2_PRD_ID_STORE_ID_CTGR_ID_VISIBILITY` (`product_id`,`store_id`,`category_id`,`visibility`),
+  KEY `IDX_2AB6FE58F086547FA7E4590837296849` (`store_id`,`category_id`,`visibility`,`is_parent`,`position`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category Product Index Store2';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2520,7 +2520,7 @@ CREATE TABLE `catalog_product_index_website` (
 
 LOCK TABLES `catalog_product_index_website` WRITE;
 /*!40000 ALTER TABLE `catalog_product_index_website` DISABLE KEYS */;
-INSERT INTO `catalog_product_index_website` VALUES (1,1,'2020-04-18',1),(2,2,'2020-04-18',1);
+INSERT INTO `catalog_product_index_website` VALUES (1,1,'2020-04-19',1),(2,2,'2020-04-19',1);
 /*!40000 ALTER TABLE `catalog_product_index_website` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3739,7 +3739,7 @@ CREATE TABLE `cms_page` (
 
 LOCK TABLES `cms_page` WRITE;
 /*!40000 ALTER TABLE `cms_page` DISABLE KEYS */;
-INSERT INTO `cms_page` VALUES (1,'404 Not Found','2columns-right','Page keywords','Page description','no-route','Whoops, our bad...','<dl>\r\n<dt>The page you requested was not found, and we have a fine guess why.</dt>\r\n<dd>\r\n<ul class=\"disc\">\r\n<li>If you typed the URL directly, please make sure the spelling is correct.</li>\r\n<li>If you clicked on a link to get here, the link is outdated.</li>\r\n</ul></dd>\r\n</dl>\r\n<dl>\r\n<dt>What can you do?</dt>\r\n<dd>Have no fear, help is near! There are many ways you can get back on track with Magento Store.</dd>\r\n<dd>\r\n<ul class=\"disc\">\r\n<li><a href=\"#\" onclick=\"history.go(-1); return false;\">Go back</a> to the previous page.</li>\r\n<li>Use the search bar at the top of the page to search for your products.</li>\r\n<li>Follow these links to get you back on track!<br /><a href=\"{{store url=\"\"}}\">Store Home</a> <span class=\"separator\">|</span> <a href=\"{{store url=\"customer/account\"}}\">My Account</a></li></ul></dd></dl>\r\n','2020-04-18 02:38:37','2020-04-18 02:38:37',1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'Home page','1column',NULL,NULL,'home','Home Page','<p>CMS homepage content goes here.</p>\r\n','2020-04-18 02:38:37','2020-04-18 02:38:39',1,0,'<!--\n    <referenceContainer name=\"right\">\n        <referenceBlock name=\"catalog.compare.sidebar\" remove=\"true\" />\n    </referenceContainer>-->',NULL,NULL,NULL,NULL,NULL,NULL),(3,'Enable Cookies','1column',NULL,NULL,'enable-cookies','What are Cookies?','<div class=\"enable-cookies cms-content\">\r\n<p>\"Cookies\" are little pieces of data we send when you visit our store. Cookies help us get to know you better and personalize your experience. Plus they help protect you and other shoppers from fraud.</p>\r\n<p style=\"margin-bottom: 20px;\">Set your browser to accept cookies so you can buy items, save items, and receive customized recommendations. Here’s how:</p>\r\n<ul>\r\n<li><a href=\"https://support.google.com/accounts/answer/61416?hl=en\" target=\"_blank\">Google Chrome</a></li>\r\n<li><a href=\"http://windows.microsoft.com/en-us/internet-explorer/delete-manage-cookies\" target=\"_blank\">Internet Explorer</a></li>\r\n<li><a href=\"http://support.apple.com/kb/PH19214\" target=\"_blank\">Safari</a></li>\r\n<li><a href=\"https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences\" target=\"_blank\">Mozilla/Firefox</a></li>\r\n</ul>\r\n</div>','2020-04-18 02:38:37','2020-04-18 02:38:37',1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,'Privacy and Cookie Policy','1column',NULL,NULL,'privacy-policy-cookie-restriction-mode','Privacy and Cookie Policy','<div class=\"privacy-policy cms-content\">\n    <div class=\"message info\">\n        <span>\n            Please replace this text with you Privacy Policy.\n            Please add any additional cookies your website uses below (e.g. Google Analytics).\n        </span>\n    </div>\n    <p>\n        This privacy policy sets out how this website (hereafter \"the Store\") uses and protects any information that\n        you give the Store while using this website. The Store is committed to ensuring that your privacy is protected.\n        Should we ask you to provide certain information by which you can be identified when using this website, then\n        you can be assured that it will only be used in accordance with this privacy statement. The Store may change\n        this policy from time to time by updating this page. You should check this page from time to time to ensure\n        that you are happy with any changes.\n    </p>\n    <h2>What we collect</h2>\n    <p>We may collect the following information:</p>\n    <ul>\n        <li>name</li>\n        <li>contact information including email address</li>\n        <li>demographic information such as postcode, preferences and interests</li>\n        <li>other information relevant to customer surveys and/or offers</li>\n    </ul>\n    <p>\n        For the exhaustive list of cookies we collect see the <a href=\"#list\">List of cookies we collect</a> section.\n    </p>\n    <h2>What we do with the information we gather</h2>\n    <p>\n        We require this information to understand your needs and provide you with a better service,\n        and in particular for the following reasons:\n    </p>\n    <ul>\n        <li>Internal record keeping.</li>\n        <li>We may use the information to improve our products and services.</li>\n        <li>\n            We may periodically send promotional emails about new products, special offers or other information which we\n            think you may find interesting using the email address which you have provided.\n        </li>\n        <li>\n            From time to time, we may also use your information to contact you for market research purposes.\n            We may contact you by email, phone, fax or mail. We may use the information to customise the website\n            according to your interests.\n        </li>\n    </ul>\n    <h2>Security</h2>\n    <p>\n        We are committed to ensuring that your information is secure. In order to prevent unauthorised access or\n        disclosure, we have put in place suitable physical, electronic and managerial procedures to safeguard and\n        secure the information we collect online.\n    </p>\n    <h2>How we use cookies</h2>\n    <p>\n        A cookie is a small file which asks permission to be placed on your computer\'s hard drive.\n        Once you agree, the file is added and the cookie helps analyse web traffic or lets you know when you visit\n        a particular site. Cookies allow web applications to respond to you as an individual. The web application\n        can tailor its operations to your needs, likes and dislikes by gathering and remembering information about\n        your preferences.\n    </p>\n    <p>\n        We use traffic log cookies to identify which pages are being used. This helps us analyse data about web page\n        traffic and improve our website in order to tailor it to customer needs. We only use this information for\n        statistical analysis purposes and then the data is removed from the system.\n    </p>\n    <p>\n        Overall, cookies help us provide you with a better website, by enabling us to monitor which pages you find\n        useful and which you do not. A cookie in no way gives us access to your computer or any information about you,\n        other than the data you choose to share with us. You can choose to accept or decline cookies.\n        Most web browsers automatically accept cookies, but you can usually modify your browser setting\n        to decline cookies if you prefer. This may prevent you from taking full advantage of the website.\n    </p>\n    <h2>Links to other websites</h2>\n    <p>\n        Our website may contain links to other websites of interest. However, once you have used these links\n        to leave our site, you should note that we do not have any control over that other website.\n        Therefore, we cannot be responsible for the protection and privacy of any information which you provide whilst\n        visiting such sites and such sites are not governed by this privacy statement.\n        You should exercise caution and look at the privacy statement applicable to the website in question.\n    </p>\n    <h2>Controlling your personal information</h2>\n    <p>You may choose to restrict the collection or use of your personal information in the following ways:</p>\n    <ul>\n        <li>\n            whenever you are asked to fill in a form on the website, look for the box that you can click to indicate\n            that you do not want the information to be used by anybody for direct marketing purposes\n        </li>\n        <li>\n            if you have previously agreed to us using your personal information for direct marketing purposes,\n            you may change your mind at any time by letting us know using our Contact Us information\n        </li>\n    </ul>\n    <p>\n        We will not sell, distribute or lease your personal information to third parties unless we have your permission\n        or are required by law to do so. We may use your personal information to send you promotional information\n        about third parties which we think you may find interesting if you tell us that you wish this to happen.\n    </p>\n    <p>\n        You may request details of personal information which we hold about you under the Data Protection Act 1998.\n        A small fee will be payable. If you would like a copy of the information held on you please email us this\n        request using our Contact Us information.\n    </p>\n    <p>\n        If you believe that any information we are holding on you is incorrect or incomplete,\n        please write to or email us as soon as possible, at the above address.\n        We will promptly correct any information found to be incorrect.\n    </p>\n    <h2><a name=\"list\"></a>List of cookies we collect</h2>\n    <p>The table below lists the cookies we collect and what information they store.</p>\n    <table class=\"data-table data-table-definition-list\">\n        <thead>\n        <tr>\n            <th>Cookie Name</th>\n            <th>Cookie Description</th>\n        </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <th>FORM_KEY</th>\n                <td>Stores randomly generated key used to prevent forged requests.</td>\n            </tr>\n            <tr>\n                <th>PHPSESSID</th>\n                <td>Your session ID on the server.</td>\n            </tr>\n            <tr>\n                <th>GUEST-VIEW</th>\n                <td>Allows guests to view and edit their orders.</td>\n            </tr>\n            <tr>\n                <th>PERSISTENT_SHOPPING_CART</th>\n                <td>A link to information about your cart and viewing history, if you have asked for this.</td>\n            </tr>\n            <tr>\n                <th>STF</th>\n                <td>Information on products you have emailed to friends.</td>\n            </tr>\n            <tr>\n                <th>STORE</th>\n                <td>The store view or language you have selected.</td>\n            </tr>\n            <tr>\n                <th>USER_ALLOWED_SAVE_COOKIE</th>\n                <td>Indicates whether a customer allowed to use cookies.</td>\n            </tr>\n            <tr>\n                <th>MAGE-CACHE-SESSID</th>\n                <td>Facilitates caching of content on the browser to make pages load faster.</td>\n            </tr>\n            <tr>\n                <th>MAGE-CACHE-STORAGE</th>\n                <td>Facilitates caching of content on the browser to make pages load faster.</td>\n            </tr>\n            <tr>\n                <th>MAGE-CACHE-STORAGE-SECTION-INVALIDATION</th>\n                <td>Facilitates caching of content on the browser to make pages load faster.</td>\n            </tr>\n            <tr>\n                <th>MAGE-CACHE-TIMEOUT</th>\n                <td>Facilitates caching of content on the browser to make pages load faster.</td>\n            </tr>\n            <tr>\n                <th>SECTION-DATA-IDS</th>\n                <td>Facilitates caching of content on the browser to make pages load faster.</td>\n            </tr>\n            <tr>\n                <th>PRIVATE_CONTENT_VERSION</th>\n                <td>Facilitates caching of content on the browser to make pages load faster.</td>\n            </tr>\n            <tr>\n                <th>X-MAGENTO-VARY</th>\n                <td>Facilitates caching of content on the server to make pages load faster.</td>\n            </tr>\n            <tr>\n                <th>MAGE-TRANSLATION-FILE-VERSION</th>\n                <td>Facilitates translation of content to other languages.</td>\n            </tr>\n            <tr>\n                <th>MAGE-TRANSLATION-STORAGE</th>\n                <td>Facilitates translation of content to other languages.</td>\n            </tr>\n        </tbody>\n    </table>\n</div>','2020-04-18 02:38:37','2020-04-18 02:38:37',1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `cms_page` VALUES (1,'404 Not Found','2columns-right','Page keywords','Page description','no-route','Whoops, our bad...','<dl>\r\n<dt>The page you requested was not found, and we have a fine guess why.</dt>\r\n<dd>\r\n<ul class=\"disc\">\r\n<li>If you typed the URL directly, please make sure the spelling is correct.</li>\r\n<li>If you clicked on a link to get here, the link is outdated.</li>\r\n</ul></dd>\r\n</dl>\r\n<dl>\r\n<dt>What can you do?</dt>\r\n<dd>Have no fear, help is near! There are many ways you can get back on track with Magento Store.</dd>\r\n<dd>\r\n<ul class=\"disc\">\r\n<li><a href=\"#\" onclick=\"history.go(-1); return false;\">Go back</a> to the previous page.</li>\r\n<li>Use the search bar at the top of the page to search for your products.</li>\r\n<li>Follow these links to get you back on track!<br /><a href=\"{{store url=\"\"}}\">Store Home</a> <span class=\"separator\">|</span> <a href=\"{{store url=\"customer/account\"}}\">My Account</a></li></ul></dd></dl>\r\n','2020-04-18 02:38:37','2020-04-18 02:38:37',1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'Gartenhaus','1column','','','home','','','2020-04-18 02:38:37','2020-04-19 18:40:00',1,0,'<!--\r\n    <referenceContainer name=\"right\">\r\n        <referenceBlock name=\"catalog.compare.sidebar\" remove=\"true\" />\r\n    </referenceContainer>-->','','',NULL,NULL,NULL,''),(3,'Enable Cookies','1column',NULL,NULL,'enable-cookies','What are Cookies?','<div class=\"enable-cookies cms-content\">\r\n<p>\"Cookies\" are little pieces of data we send when you visit our store. Cookies help us get to know you better and personalize your experience. Plus they help protect you and other shoppers from fraud.</p>\r\n<p style=\"margin-bottom: 20px;\">Set your browser to accept cookies so you can buy items, save items, and receive customized recommendations. Here’s how:</p>\r\n<ul>\r\n<li><a href=\"https://support.google.com/accounts/answer/61416?hl=en\" target=\"_blank\">Google Chrome</a></li>\r\n<li><a href=\"http://windows.microsoft.com/en-us/internet-explorer/delete-manage-cookies\" target=\"_blank\">Internet Explorer</a></li>\r\n<li><a href=\"http://support.apple.com/kb/PH19214\" target=\"_blank\">Safari</a></li>\r\n<li><a href=\"https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences\" target=\"_blank\">Mozilla/Firefox</a></li>\r\n</ul>\r\n</div>','2020-04-18 02:38:37','2020-04-18 02:38:37',1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,'Privacy and Cookie Policy','1column',NULL,NULL,'privacy-policy-cookie-restriction-mode','Privacy and Cookie Policy','<div class=\"privacy-policy cms-content\">\n    <div class=\"message info\">\n        <span>\n            Please replace this text with you Privacy Policy.\n            Please add any additional cookies your website uses below (e.g. Google Analytics).\n        </span>\n    </div>\n    <p>\n        This privacy policy sets out how this website (hereafter \"the Store\") uses and protects any information that\n        you give the Store while using this website. The Store is committed to ensuring that your privacy is protected.\n        Should we ask you to provide certain information by which you can be identified when using this website, then\n        you can be assured that it will only be used in accordance with this privacy statement. The Store may change\n        this policy from time to time by updating this page. You should check this page from time to time to ensure\n        that you are happy with any changes.\n    </p>\n    <h2>What we collect</h2>\n    <p>We may collect the following information:</p>\n    <ul>\n        <li>name</li>\n        <li>contact information including email address</li>\n        <li>demographic information such as postcode, preferences and interests</li>\n        <li>other information relevant to customer surveys and/or offers</li>\n    </ul>\n    <p>\n        For the exhaustive list of cookies we collect see the <a href=\"#list\">List of cookies we collect</a> section.\n    </p>\n    <h2>What we do with the information we gather</h2>\n    <p>\n        We require this information to understand your needs and provide you with a better service,\n        and in particular for the following reasons:\n    </p>\n    <ul>\n        <li>Internal record keeping.</li>\n        <li>We may use the information to improve our products and services.</li>\n        <li>\n            We may periodically send promotional emails about new products, special offers or other information which we\n            think you may find interesting using the email address which you have provided.\n        </li>\n        <li>\n            From time to time, we may also use your information to contact you for market research purposes.\n            We may contact you by email, phone, fax or mail. We may use the information to customise the website\n            according to your interests.\n        </li>\n    </ul>\n    <h2>Security</h2>\n    <p>\n        We are committed to ensuring that your information is secure. In order to prevent unauthorised access or\n        disclosure, we have put in place suitable physical, electronic and managerial procedures to safeguard and\n        secure the information we collect online.\n    </p>\n    <h2>How we use cookies</h2>\n    <p>\n        A cookie is a small file which asks permission to be placed on your computer\'s hard drive.\n        Once you agree, the file is added and the cookie helps analyse web traffic or lets you know when you visit\n        a particular site. Cookies allow web applications to respond to you as an individual. The web application\n        can tailor its operations to your needs, likes and dislikes by gathering and remembering information about\n        your preferences.\n    </p>\n    <p>\n        We use traffic log cookies to identify which pages are being used. This helps us analyse data about web page\n        traffic and improve our website in order to tailor it to customer needs. We only use this information for\n        statistical analysis purposes and then the data is removed from the system.\n    </p>\n    <p>\n        Overall, cookies help us provide you with a better website, by enabling us to monitor which pages you find\n        useful and which you do not. A cookie in no way gives us access to your computer or any information about you,\n        other than the data you choose to share with us. You can choose to accept or decline cookies.\n        Most web browsers automatically accept cookies, but you can usually modify your browser setting\n        to decline cookies if you prefer. This may prevent you from taking full advantage of the website.\n    </p>\n    <h2>Links to other websites</h2>\n    <p>\n        Our website may contain links to other websites of interest. However, once you have used these links\n        to leave our site, you should note that we do not have any control over that other website.\n        Therefore, we cannot be responsible for the protection and privacy of any information which you provide whilst\n        visiting such sites and such sites are not governed by this privacy statement.\n        You should exercise caution and look at the privacy statement applicable to the website in question.\n    </p>\n    <h2>Controlling your personal information</h2>\n    <p>You may choose to restrict the collection or use of your personal information in the following ways:</p>\n    <ul>\n        <li>\n            whenever you are asked to fill in a form on the website, look for the box that you can click to indicate\n            that you do not want the information to be used by anybody for direct marketing purposes\n        </li>\n        <li>\n            if you have previously agreed to us using your personal information for direct marketing purposes,\n            you may change your mind at any time by letting us know using our Contact Us information\n        </li>\n    </ul>\n    <p>\n        We will not sell, distribute or lease your personal information to third parties unless we have your permission\n        or are required by law to do so. We may use your personal information to send you promotional information\n        about third parties which we think you may find interesting if you tell us that you wish this to happen.\n    </p>\n    <p>\n        You may request details of personal information which we hold about you under the Data Protection Act 1998.\n        A small fee will be payable. If you would like a copy of the information held on you please email us this\n        request using our Contact Us information.\n    </p>\n    <p>\n        If you believe that any information we are holding on you is incorrect or incomplete,\n        please write to or email us as soon as possible, at the above address.\n        We will promptly correct any information found to be incorrect.\n    </p>\n    <h2><a name=\"list\"></a>List of cookies we collect</h2>\n    <p>The table below lists the cookies we collect and what information they store.</p>\n    <table class=\"data-table data-table-definition-list\">\n        <thead>\n        <tr>\n            <th>Cookie Name</th>\n            <th>Cookie Description</th>\n        </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <th>FORM_KEY</th>\n                <td>Stores randomly generated key used to prevent forged requests.</td>\n            </tr>\n            <tr>\n                <th>PHPSESSID</th>\n                <td>Your session ID on the server.</td>\n            </tr>\n            <tr>\n                <th>GUEST-VIEW</th>\n                <td>Allows guests to view and edit their orders.</td>\n            </tr>\n            <tr>\n                <th>PERSISTENT_SHOPPING_CART</th>\n                <td>A link to information about your cart and viewing history, if you have asked for this.</td>\n            </tr>\n            <tr>\n                <th>STF</th>\n                <td>Information on products you have emailed to friends.</td>\n            </tr>\n            <tr>\n                <th>STORE</th>\n                <td>The store view or language you have selected.</td>\n            </tr>\n            <tr>\n                <th>USER_ALLOWED_SAVE_COOKIE</th>\n                <td>Indicates whether a customer allowed to use cookies.</td>\n            </tr>\n            <tr>\n                <th>MAGE-CACHE-SESSID</th>\n                <td>Facilitates caching of content on the browser to make pages load faster.</td>\n            </tr>\n            <tr>\n                <th>MAGE-CACHE-STORAGE</th>\n                <td>Facilitates caching of content on the browser to make pages load faster.</td>\n            </tr>\n            <tr>\n                <th>MAGE-CACHE-STORAGE-SECTION-INVALIDATION</th>\n                <td>Facilitates caching of content on the browser to make pages load faster.</td>\n            </tr>\n            <tr>\n                <th>MAGE-CACHE-TIMEOUT</th>\n                <td>Facilitates caching of content on the browser to make pages load faster.</td>\n            </tr>\n            <tr>\n                <th>SECTION-DATA-IDS</th>\n                <td>Facilitates caching of content on the browser to make pages load faster.</td>\n            </tr>\n            <tr>\n                <th>PRIVATE_CONTENT_VERSION</th>\n                <td>Facilitates caching of content on the browser to make pages load faster.</td>\n            </tr>\n            <tr>\n                <th>X-MAGENTO-VARY</th>\n                <td>Facilitates caching of content on the server to make pages load faster.</td>\n            </tr>\n            <tr>\n                <th>MAGE-TRANSLATION-FILE-VERSION</th>\n                <td>Facilitates translation of content to other languages.</td>\n            </tr>\n            <tr>\n                <th>MAGE-TRANSLATION-STORAGE</th>\n                <td>Facilitates translation of content to other languages.</td>\n            </tr>\n        </tbody>\n    </table>\n</div>','2020-04-18 02:38:37','2020-04-18 02:38:37',1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `cms_page` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3766,7 +3766,7 @@ CREATE TABLE `cms_page_store` (
 
 LOCK TABLES `cms_page_store` WRITE;
 /*!40000 ALTER TABLE `cms_page_store` DISABLE KEYS */;
-INSERT INTO `cms_page_store` VALUES (1,0),(2,0),(3,0),(4,0);
+INSERT INTO `cms_page_store` VALUES (1,0),(3,0),(4,0),(2,1);
 /*!40000 ALTER TABLE `cms_page_store` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3785,7 +3785,7 @@ CREATE TABLE `core_config_data` (
   `value` text COMMENT 'Config Value',
   PRIMARY KEY (`config_id`),
   UNIQUE KEY `CORE_CONFIG_DATA_SCOPE_SCOPE_ID_PATH` (`scope`,`scope_id`,`path`)
-) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8 COMMENT='Config Data';
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8 COMMENT='Config Data';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3794,7 +3794,7 @@ CREATE TABLE `core_config_data` (
 
 LOCK TABLES `core_config_data` WRITE;
 /*!40000 ALTER TABLE `core_config_data` DISABLE KEYS */;
-INSERT INTO `core_config_data` VALUES (1,'default',0,'web/unsecure/base_url','http://v2.gartenhaus-carport-gewachshaus.at/'),(2,'default',0,'general/region/display_all','1'),(3,'default',0,'general/region/state_required','AU,BR,CA,HR,EE,IN,LV,LT,RO,ES,CH,US'),(4,'default',0,'catalog/category/root_id','2'),(5,'default',0,'msp_securitysuite_twofactorauth/duo/application_key','lkK9rkk5sIQ0tSOxvRDaqTUDgYEJd69lFdSuXtsaYDC03sgG8xd0bgCJ7iS1VU9f'),(6,'default',0,'analytics/subscription/enabled','1'),(7,'default',0,'crontab/default/jobs/analytics_subscribe/schedule/cron_expr','0 * * * *'),(8,'default',0,'payment/authorizenet_acceptjs/cctypes','AE,VI,MC,DI,JCB,DN'),(9,'default',0,'payment/authorizenet_acceptjs/order_status','processing'),(10,'default',0,'payment/authorizenet_acceptjs/payment_action','authorize'),(11,'default',0,'payment/authorizenet_acceptjs/currency','USD'),(12,'websites',1,'payment/authorizenet_acceptjs/cctypes','AE,VI,MC,DI,JCB,DN'),(13,'websites',1,'payment/authorizenet_acceptjs/order_status','processing'),(14,'websites',1,'payment/authorizenet_acceptjs/payment_action','authorize'),(15,'websites',1,'payment/authorizenet_acceptjs/currency','USD'),(16,'website',0,'connector_configuration/transactional_data/order_statuses','canceled,closed,complete,fraud,holded,payment_review,paypal_canceled_reversal,paypal_reversed,pending,pending_payment,pending_paypal,processing'),(17,'website',0,'connector_configuration/catalog_sync/catalog_type','simple,virtual,configurable,downloadable,grouped,bundle'),(18,'website',0,'connector_configuration/catalog_sync/catalog_visibility','1,2,3,4'),(19,'default',0,'connector_dynamic_content/external_dynamic_content_urls/passcode','ICFdR7iPcd01oVk19Hc79ZBF98050t7F'),(20,'default',0,'connector_automation/review_settings/allow_non_subscribers','1'),(21,'default',0,'connector_configuration/abandoned_carts/allow_non_subscribers','1'),(22,'default',0,'sync_settings/addressbook/allow_non_subscribers','1'),(23,'websites',2,'web/unsecure/base_url','http://v2.jungle-gym-kinderspielplatz.at/'),(24,'websites',2,'web/unsecure/base_link_url','http://v2.jungle-gym-kinderspielplatz.at/'),(25,'default',0,'web/unsecure/base_static_url',NULL),(26,'default',0,'web/unsecure/base_media_url',NULL),(27,'default',0,'web/secure/base_url','http://v2.schweitzer-holz.at/'),(28,'default',0,'web/secure/base_static_url',NULL),(29,'default',0,'web/secure/base_media_url',NULL),(30,'default',0,'web/default_layouts/default_product_layout',NULL),(31,'default',0,'web/default_layouts/default_category_layout',NULL),(32,'default',0,'web/default_layouts/default_cms_layout','1column'),(33,'default',0,'web/cookie/cookie_path',NULL),(34,'default',0,'web/cookie/cookie_domain',NULL),(35,'default',0,'web/cookie/cookie_httponly','1'),(36,'default',0,'crontab/default/jobs/analytics_collect_data/schedule/cron_expr','00 02 * * *'),(37,'default',0,'crontab/default/jobs/vertex_log_rotation/schedule/cron_expr','0 0 * * 1'),(38,'default',0,'general/country/default','DE'),(39,'default',0,'general/country/destinations',NULL),(40,'default',0,'general/locale/timezone','Europe/Vienna'),(41,'default',0,'general/locale/code','de_DE'),(42,'default',0,'general/store_information/name',NULL),(43,'default',0,'general/store_information/phone',NULL),(44,'default',0,'general/store_information/hours',NULL),(45,'default',0,'general/store_information/country_id',NULL),(46,'default',0,'general/store_information/region_id',NULL),(47,'default',0,'general/store_information/postcode',NULL),(48,'default',0,'general/store_information/city',NULL),(49,'default',0,'general/store_information/street_line1',NULL),(50,'default',0,'general/store_information/street_line2',NULL),(51,'default',0,'general/store_information/merchant_vat_number',NULL),(52,'default',0,'general/single_store_mode/enabled','0'),(53,'websites',1,'design/theme/theme_id','4'),(54,'websites',1,'design/pagination/pagination_frame_skip',NULL),(55,'websites',1,'design/pagination/anchor_text_for_previous',NULL),(56,'websites',1,'design/pagination/anchor_text_for_next',NULL),(57,'websites',1,'design/head/title_prefix',NULL),(58,'websites',1,'design/head/title_suffix',NULL),(59,'websites',1,'design/head/default_description',NULL),(60,'websites',1,'design/head/default_keywords',NULL),(61,'websites',1,'design/head/includes',NULL),(62,'websites',1,'design/header/logo_width',NULL),(63,'websites',1,'design/header/logo_height',NULL),(64,'websites',1,'design/header/logo_alt',NULL),(65,'websites',1,'design/footer/absolute_footer',NULL),(66,'websites',1,'design/search_engine_robots/custom_instructions',NULL),(67,'websites',1,'design/watermark/image_size',NULL),(68,'websites',1,'design/watermark/image_imageOpacity',NULL),(69,'websites',1,'design/watermark/small_image_size',NULL),(70,'websites',1,'design/watermark/small_image_imageOpacity',NULL),(71,'websites',1,'design/watermark/thumbnail_size',NULL),(72,'websites',1,'design/watermark/thumbnail_imageOpacity',NULL),(73,'websites',1,'design/email/logo_alt',NULL),(74,'websites',1,'design/email/logo_width',NULL),(75,'websites',1,'design/email/logo_height',NULL),(76,'websites',1,'design/watermark/swatch_image_size',NULL),(77,'websites',1,'design/watermark/swatch_image_imageOpacity',NULL),(78,'websites',1,'design/head/shortcut_icon','websites/1/logo.png'),(79,'websites',1,'design/head/default_title','Gartenhaus'),(80,'websites',1,'design/header/logo_src','websites/1/logo_1.png'),(81,'websites',1,'design/header/welcome',NULL),(82,'websites',1,'design/footer/copyright',NULL);
+INSERT INTO `core_config_data` VALUES (1,'default',0,'web/unsecure/base_url','http://v2.gartenhaus-carport-gewachshaus.at/'),(2,'default',0,'general/region/display_all','1'),(3,'default',0,'general/region/state_required','AU,BR,CA,HR,EE,IN,LV,LT,RO,ES,CH,US'),(4,'default',0,'catalog/category/root_id','2'),(5,'default',0,'msp_securitysuite_twofactorauth/duo/application_key','lkK9rkk5sIQ0tSOxvRDaqTUDgYEJd69lFdSuXtsaYDC03sgG8xd0bgCJ7iS1VU9f'),(6,'default',0,'analytics/subscription/enabled','1'),(7,'default',0,'crontab/default/jobs/analytics_subscribe/schedule/cron_expr','0 * * * *'),(8,'default',0,'payment/authorizenet_acceptjs/cctypes','AE,VI,MC,DI,JCB,DN'),(9,'default',0,'payment/authorizenet_acceptjs/order_status','processing'),(10,'default',0,'payment/authorizenet_acceptjs/payment_action','authorize'),(11,'default',0,'payment/authorizenet_acceptjs/currency','USD'),(12,'websites',1,'payment/authorizenet_acceptjs/cctypes','AE,VI,MC,DI,JCB,DN'),(13,'websites',1,'payment/authorizenet_acceptjs/order_status','processing'),(14,'websites',1,'payment/authorizenet_acceptjs/payment_action','authorize'),(15,'websites',1,'payment/authorizenet_acceptjs/currency','USD'),(16,'website',0,'connector_configuration/transactional_data/order_statuses','canceled,closed,complete,fraud,holded,payment_review,paypal_canceled_reversal,paypal_reversed,pending,pending_payment,pending_paypal,processing'),(17,'website',0,'connector_configuration/catalog_sync/catalog_type','simple,virtual,configurable,downloadable,grouped,bundle'),(18,'website',0,'connector_configuration/catalog_sync/catalog_visibility','1,2,3,4'),(19,'default',0,'connector_dynamic_content/external_dynamic_content_urls/passcode','ICFdR7iPcd01oVk19Hc79ZBF98050t7F'),(20,'default',0,'connector_automation/review_settings/allow_non_subscribers','1'),(21,'default',0,'connector_configuration/abandoned_carts/allow_non_subscribers','1'),(22,'default',0,'sync_settings/addressbook/allow_non_subscribers','1'),(23,'websites',2,'web/unsecure/base_url','http://v2.jungle-gym-kinderspielplatz.at/'),(24,'websites',2,'web/unsecure/base_link_url','http://v2.jungle-gym-kinderspielplatz.at/'),(25,'default',0,'web/unsecure/base_static_url',NULL),(26,'default',0,'web/unsecure/base_media_url',NULL),(27,'default',0,'web/secure/base_url','http://v2.schweitzer-holz.at/'),(28,'default',0,'web/secure/base_static_url',NULL),(29,'default',0,'web/secure/base_media_url',NULL),(30,'default',0,'web/default_layouts/default_product_layout',NULL),(31,'default',0,'web/default_layouts/default_category_layout',NULL),(32,'default',0,'web/default_layouts/default_cms_layout','1column'),(33,'default',0,'web/cookie/cookie_path',NULL),(34,'default',0,'web/cookie/cookie_domain',NULL),(35,'default',0,'web/cookie/cookie_httponly','1'),(36,'default',0,'crontab/default/jobs/analytics_collect_data/schedule/cron_expr','00 02 * * *'),(37,'default',0,'crontab/default/jobs/vertex_log_rotation/schedule/cron_expr','0 0 * * 1'),(38,'default',0,'general/country/default','DE'),(39,'default',0,'general/country/destinations',NULL),(40,'default',0,'general/locale/timezone','Europe/Vienna'),(41,'default',0,'general/locale/code','de_DE'),(42,'default',0,'general/store_information/name',NULL),(43,'default',0,'general/store_information/phone',NULL),(44,'default',0,'general/store_information/hours',NULL),(45,'default',0,'general/store_information/country_id',NULL),(46,'default',0,'general/store_information/region_id',NULL),(47,'default',0,'general/store_information/postcode',NULL),(48,'default',0,'general/store_information/city',NULL),(49,'default',0,'general/store_information/street_line1',NULL),(50,'default',0,'general/store_information/street_line2',NULL),(51,'default',0,'general/store_information/merchant_vat_number',NULL),(52,'default',0,'general/single_store_mode/enabled','0'),(53,'websites',1,'design/theme/theme_id','4'),(54,'websites',1,'design/pagination/pagination_frame_skip',NULL),(55,'websites',1,'design/pagination/anchor_text_for_previous',NULL),(56,'websites',1,'design/pagination/anchor_text_for_next',NULL),(57,'websites',1,'design/head/title_prefix',NULL),(58,'websites',1,'design/head/title_suffix',NULL),(59,'websites',1,'design/head/default_description',NULL),(60,'websites',1,'design/head/default_keywords',NULL),(61,'websites',1,'design/head/includes',NULL),(62,'websites',1,'design/header/logo_width',NULL),(63,'websites',1,'design/header/logo_height',NULL),(64,'websites',1,'design/header/logo_alt',NULL),(65,'websites',1,'design/footer/absolute_footer',NULL),(66,'websites',1,'design/search_engine_robots/custom_instructions',NULL),(67,'websites',1,'design/watermark/image_size',NULL),(68,'websites',1,'design/watermark/image_imageOpacity',NULL),(69,'websites',1,'design/watermark/small_image_size',NULL),(70,'websites',1,'design/watermark/small_image_imageOpacity',NULL),(71,'websites',1,'design/watermark/thumbnail_size',NULL),(72,'websites',1,'design/watermark/thumbnail_imageOpacity',NULL),(73,'websites',1,'design/email/logo_alt',NULL),(74,'websites',1,'design/email/logo_width',NULL),(75,'websites',1,'design/email/logo_height',NULL),(76,'websites',1,'design/watermark/swatch_image_size',NULL),(77,'websites',1,'design/watermark/swatch_image_imageOpacity',NULL),(78,'websites',1,'design/head/shortcut_icon','websites/1/logo.png'),(79,'websites',1,'design/head/default_title','Gartenhaus'),(80,'websites',1,'design/header/logo_src','websites/1/logo_1.png'),(81,'websites',1,'design/header/welcome',NULL),(82,'websites',1,'design/footer/copyright',NULL),(83,'default',0,'weltpixel/crontab/license','20 3 * * 0'),(84,'default',0,'wp/info/WeltPixel_Backend','0'),(85,'default',0,'wp/info/WeltPixel_OwlCarouselSlider_Free','0'),(86,'default',0,'wp/flag/info','1'),(87,'default',0,'web/default/cms_home_page','home');
 /*!40000 ALTER TABLE `core_config_data` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4443,7 +4443,7 @@ CREATE TABLE `customer_visitor` (
   PRIMARY KEY (`visitor_id`),
   KEY `CUSTOMER_VISITOR_CUSTOMER_ID` (`customer_id`),
   KEY `CUSTOMER_VISITOR_LAST_VISIT_AT` (`last_visit_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='Visitor Table';
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='Visitor Table';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4452,7 +4452,7 @@ CREATE TABLE `customer_visitor` (
 
 LOCK TABLES `customer_visitor` WRITE;
 /*!40000 ALTER TABLE `customer_visitor` DISABLE KEYS */;
-INSERT INTO `customer_visitor` VALUES (1,NULL,'jnma9nmnmbhpe4887shhd36rfv','2020-04-18 03:33:58'),(2,NULL,'0jicepgc2pql0gq5pgabbn52bg','2020-04-18 04:13:16'),(3,NULL,'foslbei5ksej3p23p965csa6h4','2020-04-18 04:13:18'),(4,NULL,'e9tf3hiu88fpmgi5r667mohdpr','2020-04-18 05:45:48'),(5,NULL,'uk8ilcb764911qnqerqlujsru2','2020-04-18 05:46:01'),(6,NULL,'6f3ng9u089ej10hvelbuorkpum','2020-04-18 05:46:02'),(7,NULL,'es8umuh05oregcodvgrvpjpqk2','2020-04-18 05:47:55'),(8,NULL,'i4i1llt2ftbcjbuehib5gdso6m','2020-04-18 05:48:08'),(9,NULL,'t3o6jmu6v4mm51ojfb45278kfd','2020-04-18 05:48:08'),(10,NULL,'49ljrdvape6ha97dnr4gv2ko9r','2020-04-18 16:05:12');
+INSERT INTO `customer_visitor` VALUES (1,NULL,'jnma9nmnmbhpe4887shhd36rfv','2020-04-18 03:33:58'),(2,NULL,'0jicepgc2pql0gq5pgabbn52bg','2020-04-18 04:13:16'),(3,NULL,'foslbei5ksej3p23p965csa6h4','2020-04-18 04:13:18'),(4,NULL,'e9tf3hiu88fpmgi5r667mohdpr','2020-04-18 05:45:48'),(5,NULL,'uk8ilcb764911qnqerqlujsru2','2020-04-18 05:46:01'),(6,NULL,'6f3ng9u089ej10hvelbuorkpum','2020-04-18 05:46:02'),(7,NULL,'es8umuh05oregcodvgrvpjpqk2','2020-04-18 05:47:55'),(8,NULL,'i4i1llt2ftbcjbuehib5gdso6m','2020-04-18 05:48:08'),(9,NULL,'t3o6jmu6v4mm51ojfb45278kfd','2020-04-18 05:48:08'),(10,NULL,'49ljrdvape6ha97dnr4gv2ko9r','2020-04-18 16:05:12'),(11,NULL,'g8802nif9c0rsv1a3kpledfe6d','2020-04-19 14:59:02'),(12,NULL,'ihd82u93u5rpv1u8l145ethaun','2020-04-19 14:59:05'),(13,NULL,'quijnia63up0q0ouedmea31e8c','2020-04-19 14:59:06'),(14,NULL,'2p9euu5p6tjtaou4c4oevupmmu','2020-04-19 18:28:31'),(15,NULL,'4ddocmeun6016goh1k861u2nn0','2020-04-19 18:28:55'),(16,NULL,'buk54lqqj92otd9gihtcbvue9a','2020-04-19 18:28:55'),(17,NULL,'9qr44ic34deo4cf90ead4gevn0','2020-04-19 21:43:10');
 /*!40000 ALTER TABLE `customer_visitor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6191,7 +6191,7 @@ CREATE TABLE `indexer_state` (
 
 LOCK TABLES `indexer_state` WRITE;
 /*!40000 ALTER TABLE `indexer_state` DISABLE KEYS */;
-INSERT INTO `indexer_state` VALUES (1,'design_config_grid','valid','2020-04-18 20:47:13','34ec592bfa6c952bed4d0a1d58c98770'),(2,'customer_grid','valid','2020-04-18 20:47:14','b9632e06cf957d6e8103eb236ca38cc1'),(3,'catalog_category_product','valid','2020-04-18 20:47:14','2124d5bfcd83b609c67eee94a0e4708c'),(4,'catalog_product_category','valid','2020-04-18 02:52:27','77b6356629f3259568a68ea64c773238'),(5,'catalogrule_rule','valid','2020-04-18 20:47:15','c4f8344a2e6a7d8ebc065631454a4724'),(6,'catalog_product_attribute','valid','2020-04-18 20:47:15','f73cae77ec4dee3b587a60a2f38dd26a'),(7,'inventory','valid','2020-04-18 20:47:15','ff158179c0d7dcaeb1be1da0011eae73'),(8,'catalogrule_product','valid','2020-04-18 02:52:27','667205576ee3764b1ee81c4a076d10ae'),(9,'cataloginventory_stock','valid','2020-04-18 20:47:15','1bf66e64558a5171e523b32f25cb99ca'),(10,'catalog_product_price','valid','2020-04-18 20:47:16','0e6c8cd322db03524968ab671629718f'),(11,'catalogsearch_fulltext','valid','2020-04-18 20:47:16','fb6356539c73a2ee336bfb7c3d737d10');
+INSERT INTO `indexer_state` VALUES (1,'design_config_grid','valid','2020-04-19 19:24:18','34ec592bfa6c952bed4d0a1d58c98770'),(2,'customer_grid','valid','2020-04-19 19:24:19','b9632e06cf957d6e8103eb236ca38cc1'),(3,'catalog_category_product','valid','2020-04-19 18:32:53','2124d5bfcd83b609c67eee94a0e4708c'),(4,'catalog_product_category','valid','2020-04-18 02:52:27','77b6356629f3259568a68ea64c773238'),(5,'catalogrule_rule','valid','2020-04-19 18:32:54','c4f8344a2e6a7d8ebc065631454a4724'),(6,'catalog_product_attribute','valid','2020-04-19 18:32:54','f73cae77ec4dee3b587a60a2f38dd26a'),(7,'inventory','valid','2020-04-19 18:32:54','ff158179c0d7dcaeb1be1da0011eae73'),(8,'catalogrule_product','valid','2020-04-18 02:52:27','667205576ee3764b1ee81c4a076d10ae'),(9,'cataloginventory_stock','valid','2020-04-19 18:32:54','1bf66e64558a5171e523b32f25cb99ca'),(10,'catalog_product_price','valid','2020-04-19 18:32:54','0e6c8cd322db03524968ab671629718f'),(11,'catalogsearch_fulltext','valid','2020-04-19 18:32:55','fb6356539c73a2ee336bfb7c3d737d10');
 /*!40000 ALTER TABLE `indexer_state` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6603,7 +6603,7 @@ CREATE TABLE `layout_link` (
   CONSTRAINT `LAYOUT_LINK_LAYOUT_UPDATE_ID_LAYOUT_UPDATE_LAYOUT_UPDATE_ID` FOREIGN KEY (`layout_update_id`) REFERENCES `layout_update` (`layout_update_id`) ON DELETE CASCADE,
   CONSTRAINT `LAYOUT_LINK_STORE_ID_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE,
   CONSTRAINT `LAYOUT_LINK_THEME_ID_THEME_THEME_ID` FOREIGN KEY (`theme_id`) REFERENCES `theme` (`theme_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Layout Link';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Layout Link';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6612,7 +6612,7 @@ CREATE TABLE `layout_link` (
 
 LOCK TABLES `layout_link` WRITE;
 /*!40000 ALTER TABLE `layout_link` DISABLE KEYS */;
-INSERT INTO `layout_link` VALUES (1,1,4,1,0);
+INSERT INTO `layout_link` VALUES (1,1,4,1,0),(3,1,4,3,0);
 /*!40000 ALTER TABLE `layout_link` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6631,7 +6631,7 @@ CREATE TABLE `layout_update` (
   `updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT 'Last Update Timestamp',
   PRIMARY KEY (`layout_update_id`),
   KEY `LAYOUT_UPDATE_HANDLE` (`handle`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Layout Updates';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Layout Updates';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6640,7 +6640,7 @@ CREATE TABLE `layout_update` (
 
 LOCK TABLES `layout_update` WRITE;
 /*!40000 ALTER TABLE `layout_update` DISABLE KEYS */;
-INSERT INTO `layout_update` VALUES (1,'default','<body><referenceContainer name=\"footer\"><block class=\"Magento\\Cms\\Block\\Widget\\Block\" name=\"F3qN7dvzmonbaDKJrsW6lOEJhvF7uYWG\" template=\"widget/static_block/default.phtml\"><action method=\"setData\"><argument name=\"name\" xsi:type=\"string\">block_id</argument><argument name=\"value\" xsi:type=\"string\">1</argument></action></block></referenceContainer></body>',0,'0000-00-00 00:00:00');
+INSERT INTO `layout_update` VALUES (1,'default','<body><referenceContainer name=\"footer\"><block class=\"Magento\\Cms\\Block\\Widget\\Block\" name=\"F3qN7dvzmonbaDKJrsW6lOEJhvF7uYWG\" template=\"widget/static_block/default.phtml\"><action method=\"setData\"><argument name=\"name\" xsi:type=\"string\">block_id</argument><argument name=\"value\" xsi:type=\"string\">1</argument></action></block></referenceContainer></body>',0,'0000-00-00 00:00:00'),(3,'cms_index_index','<body><referenceContainer name=\"content\"><block class=\"WeltPixel\\OwlCarouselSlider\\Block\\Slider\\Custom\" name=\"19wKiLiNWf6bDVkQRof6P6jwqdYuLiq3\"><action method=\"setData\"><argument name=\"name\" xsi:type=\"string\">slider_id</argument><argument name=\"value\" xsi:type=\"string\">1</argument></action></block></referenceContainer></body>',0,'0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `layout_update` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6728,6 +6728,112 @@ CREATE TABLE `magento_operation` (
 LOCK TABLES `magento_operation` WRITE;
 /*!40000 ALTER TABLE `magento_operation` DISABLE KEYS */;
 /*!40000 ALTER TABLE `magento_operation` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mageplaza_bannerslider_banner`
+--
+
+DROP TABLE IF EXISTS `mageplaza_bannerslider_banner`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `mageplaza_bannerslider_banner` (
+  `banner_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Banner ID',
+  `name` varchar(255) DEFAULT NULL COMMENT 'Banner Name',
+  `status` smallint(6) NOT NULL DEFAULT '1' COMMENT 'Status',
+  `type` smallint(6) NOT NULL DEFAULT '0' COMMENT 'Banner Type',
+  `content` text COMMENT 'Custom html, css',
+  `image` varchar(255) DEFAULT NULL COMMENT 'Banner Image',
+  `url_banner` varchar(255) DEFAULT NULL COMMENT 'Banner Url',
+  `title` varchar(255) DEFAULT NULL COMMENT 'Title',
+  `newtab` smallint(6) NOT NULL DEFAULT '1' COMMENT 'Open tab',
+  `created_at` timestamp NULL DEFAULT NULL COMMENT 'Banner Created At',
+  `updated_at` timestamp NULL DEFAULT NULL COMMENT 'Banner Updated At',
+  PRIMARY KEY (`banner_id`),
+  FULLTEXT KEY `MAGEPLAZA_BANNERSLIDER_BANNER_NAME_IMAGE_URL_BANNER` (`name`,`image`,`url_banner`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Banner Table';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mageplaza_bannerslider_banner`
+--
+
+LOCK TABLES `mageplaza_bannerslider_banner` WRITE;
+/*!40000 ALTER TABLE `mageplaza_bannerslider_banner` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mageplaza_bannerslider_banner` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mageplaza_bannerslider_banner_slider`
+--
+
+DROP TABLE IF EXISTS `mageplaza_bannerslider_banner_slider`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `mageplaza_bannerslider_banner_slider` (
+  `slider_id` int(10) unsigned NOT NULL COMMENT 'Slider ID',
+  `banner_id` int(10) unsigned NOT NULL COMMENT 'Banner ID',
+  `position` int(11) NOT NULL DEFAULT '0' COMMENT 'Position',
+  PRIMARY KEY (`slider_id`,`banner_id`),
+  UNIQUE KEY `MAGEPLAZA_BANNERSLIDER_BANNER_SLIDER_SLIDER_ID_BANNER_ID` (`slider_id`,`banner_id`),
+  KEY `MAGEPLAZA_BANNERSLIDER_BANNER_SLIDER_SLIDER_ID` (`slider_id`),
+  KEY `MAGEPLAZA_BANNERSLIDER_BANNER_SLIDER_BANNER_ID` (`banner_id`),
+  CONSTRAINT `FK_824689F307EEDC9AF4DD5A7D11110615` FOREIGN KEY (`banner_id`) REFERENCES `mageplaza_bannerslider_banner` (`banner_id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_988AB80B5D2DF60CAD31BAFF020B3903` FOREIGN KEY (`slider_id`) REFERENCES `mageplaza_bannerslider_slider` (`slider_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Slider To Banner Link Table';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mageplaza_bannerslider_banner_slider`
+--
+
+LOCK TABLES `mageplaza_bannerslider_banner_slider` WRITE;
+/*!40000 ALTER TABLE `mageplaza_bannerslider_banner_slider` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mageplaza_bannerslider_banner_slider` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mageplaza_bannerslider_slider`
+--
+
+DROP TABLE IF EXISTS `mageplaza_bannerslider_slider`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `mageplaza_bannerslider_slider` (
+  `slider_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Slider ID',
+  `name` varchar(255) DEFAULT NULL COMMENT 'Slider Name',
+  `status` smallint(6) NOT NULL DEFAULT '1' COMMENT 'Status',
+  `location` text COMMENT 'Location',
+  `store_ids` varchar(255) DEFAULT NULL COMMENT 'Store_ids',
+  `customer_group_ids` varchar(255) DEFAULT NULL COMMENT 'Customer_group_ids',
+  `priority` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Priority',
+  `effect` varchar(255) DEFAULT NULL COMMENT 'Animation effect',
+  `autoWidth` smallint(6) DEFAULT NULL COMMENT 'Auto Width',
+  `autoHeight` smallint(6) DEFAULT NULL COMMENT 'Auto Height',
+  `design` smallint(6) NOT NULL DEFAULT '0' COMMENT 'Design',
+  `loop` smallint(6) DEFAULT NULL COMMENT 'Loop slider',
+  `lazyLoad` smallint(6) DEFAULT NULL COMMENT 'Lazyload image',
+  `autoplay` smallint(6) DEFAULT NULL COMMENT 'Autoplay',
+  `autoplayTimeout` varchar(255) DEFAULT '5000' COMMENT 'autoplay Timeout',
+  `nav` smallint(6) DEFAULT NULL COMMENT 'Navigation',
+  `dots` smallint(6) DEFAULT NULL COMMENT 'Dots',
+  `is_responsive` smallint(6) DEFAULT NULL COMMENT 'Responsive',
+  `responsive_items` varchar(255) DEFAULT NULL COMMENT 'Max Items Slider',
+  `from_date` date DEFAULT NULL COMMENT 'From',
+  `to_date` date DEFAULT NULL COMMENT 'To',
+  `created_at` timestamp NULL DEFAULT NULL COMMENT 'Slider Created At',
+  `updated_at` timestamp NULL DEFAULT NULL COMMENT 'Slider Updated At',
+  PRIMARY KEY (`slider_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Slider Table';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mageplaza_bannerslider_slider`
+--
+
+LOCK TABLES `mageplaza_bannerslider_slider` WRITE;
+/*!40000 ALTER TABLE `mageplaza_bannerslider_slider` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mageplaza_bannerslider_slider` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -11353,7 +11459,7 @@ CREATE TABLE `setup_module` (
 
 LOCK TABLES `setup_module` WRITE;
 /*!40000 ALTER TABLE `setup_module` DISABLE KEYS */;
-INSERT INTO `setup_module` VALUES ('Amazon_Core','3.1.4','3.1.4'),('Amazon_Login','3.1.4','3.1.4'),('Amazon_Payment','3.1.4','3.1.4'),('Dotdigitalgroup_Email','3.1.1','3.1.1'),('Klarna_Core','5.1.0','5.1.0'),('Klarna_Kp','6.1.0','6.1.0'),('Klarna_Ordermanagement','5.0.2','5.0.2'),('Magento_AuthorizenetAcceptjs','1.0.0','1.0.0'),('Magento_Inventory','1.0.0','1.0.0'),('Magento_InventoryAdminUi','1.0.0','1.0.0'),('Magento_InventoryApi','1.0.0','1.0.0'),('Magento_InventoryBundleProduct','1.0.0','1.0.0'),('Magento_InventoryBundleProductAdminUi','1.0.0','1.0.0'),('Magento_InventoryCache','1.0.0','1.0.0'),('Magento_InventoryCatalog','1.0.0','1.0.0'),('Magento_InventoryCatalogAdminUi','1.0.0','1.0.0'),('Magento_InventoryCatalogApi','1.0.0','1.0.0'),('Magento_InventoryCatalogSearch','1.0.0','1.0.0'),('Magento_InventoryConfigurableProduct','1.0.0','1.0.0'),('Magento_InventoryConfigurableProductAdminUi','1.0.0','1.0.0'),('Magento_InventoryConfigurableProductIndexer','1.0.0','1.0.0'),('Magento_InventoryConfiguration','1.0.0','1.0.0'),('Magento_InventoryConfigurationApi','1.0.0','1.0.0'),('Magento_InventoryElasticsearch','1.0.0','1.0.0'),('Magento_InventoryGroupedProduct','1.0.0','1.0.0'),('Magento_InventoryGroupedProductAdminUi','1.0.0','1.0.0'),('Magento_InventoryGroupedProductIndexer','1.0.0','1.0.0'),('Magento_InventoryImportExport','1.0.0','1.0.0'),('Magento_InventoryIndexer','1.0.0','1.0.0'),('Magento_InventoryLowQuantityNotification','1.0.0','1.0.0'),('Magento_InventoryLowQuantityNotificationAdminUi','1.0.0','1.0.0'),('Magento_InventoryLowQuantityNotificationApi','1.0.0','1.0.0'),('Magento_InventoryMultiDimensionalIndexerApi','1.0.0','1.0.0'),('Magento_InventoryProductAlert','1.0.0','1.0.0'),('Magento_InventoryReservations','1.0.0','1.0.0'),('Magento_InventoryReservationsApi','1.0.0','1.0.0'),('Magento_InventorySales','1.0.0','1.0.0'),('Magento_InventorySalesAdminUi','1.0.0','1.0.0'),('Magento_InventorySalesApi','1.0.0','1.0.0'),('Magento_InventoryShipping','1.0.0','1.0.0'),('Magento_InventoryShippingAdminUi','1.0.0','1.0.0'),('Magento_InventorySourceDeductionApi','1.0.0','1.0.0'),('Magento_InventorySourceSelection','1.0.0','1.0.0'),('Magento_InventorySourceSelectionApi','1.0.0','1.0.0'),('Mageplaza_Core','1.0.0','1.0.0'),('MSP_ReCaptcha','1.5.0','1.5.0'),('MSP_TwoFactorAuth','2.2.0','2.2.0'),('Temando_Shipping','1.5.0','1.5.0'),('Vertex_Tax','100.3.0','100.3.0');
+INSERT INTO `setup_module` VALUES ('Amazon_Core','3.1.4','3.1.4'),('Amazon_Login','3.1.4','3.1.4'),('Amazon_Payment','3.1.4','3.1.4'),('Dotdigitalgroup_Email','3.1.1','3.1.1'),('Klarna_Core','5.1.0','5.1.0'),('Klarna_Kp','6.1.0','6.1.0'),('Klarna_Ordermanagement','5.0.2','5.0.2'),('Magento_AuthorizenetAcceptjs','1.0.0','1.0.0'),('Magento_Inventory','1.0.0','1.0.0'),('Magento_InventoryAdminUi','1.0.0','1.0.0'),('Magento_InventoryApi','1.0.0','1.0.0'),('Magento_InventoryBundleProduct','1.0.0','1.0.0'),('Magento_InventoryBundleProductAdminUi','1.0.0','1.0.0'),('Magento_InventoryCache','1.0.0','1.0.0'),('Magento_InventoryCatalog','1.0.0','1.0.0'),('Magento_InventoryCatalogAdminUi','1.0.0','1.0.0'),('Magento_InventoryCatalogApi','1.0.0','1.0.0'),('Magento_InventoryCatalogSearch','1.0.0','1.0.0'),('Magento_InventoryConfigurableProduct','1.0.0','1.0.0'),('Magento_InventoryConfigurableProductAdminUi','1.0.0','1.0.0'),('Magento_InventoryConfigurableProductIndexer','1.0.0','1.0.0'),('Magento_InventoryConfiguration','1.0.0','1.0.0'),('Magento_InventoryConfigurationApi','1.0.0','1.0.0'),('Magento_InventoryElasticsearch','1.0.0','1.0.0'),('Magento_InventoryGroupedProduct','1.0.0','1.0.0'),('Magento_InventoryGroupedProductAdminUi','1.0.0','1.0.0'),('Magento_InventoryGroupedProductIndexer','1.0.0','1.0.0'),('Magento_InventoryImportExport','1.0.0','1.0.0'),('Magento_InventoryIndexer','1.0.0','1.0.0'),('Magento_InventoryLowQuantityNotification','1.0.0','1.0.0'),('Magento_InventoryLowQuantityNotificationAdminUi','1.0.0','1.0.0'),('Magento_InventoryLowQuantityNotificationApi','1.0.0','1.0.0'),('Magento_InventoryMultiDimensionalIndexerApi','1.0.0','1.0.0'),('Magento_InventoryProductAlert','1.0.0','1.0.0'),('Magento_InventoryReservations','1.0.0','1.0.0'),('Magento_InventoryReservationsApi','1.0.0','1.0.0'),('Magento_InventorySales','1.0.0','1.0.0'),('Magento_InventorySalesAdminUi','1.0.0','1.0.0'),('Magento_InventorySalesApi','1.0.0','1.0.0'),('Magento_InventoryShipping','1.0.0','1.0.0'),('Magento_InventoryShippingAdminUi','1.0.0','1.0.0'),('Magento_InventorySourceDeductionApi','1.0.0','1.0.0'),('Magento_InventorySourceSelection','1.0.0','1.0.0'),('Magento_InventorySourceSelectionApi','1.0.0','1.0.0'),('Mageplaza_BannerSlider','2.0.0','2.0.0'),('Mageplaza_Core','1.0.0','1.0.0'),('MSP_ReCaptcha','1.5.0','1.5.0'),('MSP_TwoFactorAuth','2.2.0','2.2.0'),('Temando_Shipping','1.5.0','1.5.0'),('Vertex_Tax','100.3.0','100.3.0'),('WeltPixel_Backend','1.1.1','1.1.1'),('WeltPixel_OwlCarouselSlider','1.0.5','1.0.5');
 /*!40000 ALTER TABLE `setup_module` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12140,7 +12246,7 @@ CREATE TABLE `ui_bookmark` (
   PRIMARY KEY (`bookmark_id`),
   KEY `UI_BOOKMARK_USER_ID_NAMESPACE_IDENTIFIER` (`user_id`,`namespace`,`identifier`),
   CONSTRAINT `UI_BOOKMARK_USER_ID_ADMIN_USER_USER_ID` FOREIGN KEY (`user_id`) REFERENCES `admin_user` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='Bookmark';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='Bookmark';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12149,7 +12255,7 @@ CREATE TABLE `ui_bookmark` (
 
 LOCK TABLES `ui_bookmark` WRITE;
 /*!40000 ALTER TABLE `ui_bookmark` DISABLE KEYS */;
-INSERT INTO `ui_bookmark` VALUES (1,1,'design_theme_listing','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"displayMode\":\"grid\",\"positions\":{\"theme_id\":0,\"theme_title\":1,\"parent_theme_title\":2,\"theme_path\":3,\"actions\":4},\"columns\":{\"theme_id\":{\"visible\":false,\"sorting\":\"asc\"},\"theme_title\":{\"visible\":true,\"sorting\":false},\"parent_theme_title\":{\"visible\":true,\"sorting\":false},\"theme_path\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"filters\":{\"applied\":{\"placeholder\":true}},\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,1,'design_theme_listing','current',0,NULL,'{\"current\":{\"displayMode\":\"grid\",\"positions\":{\"theme_id\":0,\"theme_title\":1,\"parent_theme_title\":2,\"theme_path\":3,\"actions\":4},\"columns\":{\"theme_id\":{\"visible\":false,\"sorting\":\"asc\"},\"theme_title\":{\"visible\":true,\"sorting\":false},\"parent_theme_title\":{\"visible\":true,\"sorting\":false},\"theme_path\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"filters\":{\"applied\":{\"placeholder\":true}},\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(3,1,'design_config_listing','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"displayMode\":\"grid\",\"columns\":{\"store_website_id\":{\"visible\":true,\"sorting\":false},\"store_group_id\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"theme_theme_id\":{\"visible\":true,\"sorting\":false},\"default\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"positions\":{\"default\":0,\"store_website_id\":1,\"store_group_id\":2,\"store_id\":3,\"actions\":4,\"theme_theme_id\":5},\"filters\":{\"applied\":{\"placeholder\":true}},\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(4,1,'design_config_listing','current',0,NULL,'{\"current\":{\"displayMode\":\"grid\",\"columns\":{\"store_website_id\":{\"visible\":true,\"sorting\":false},\"store_group_id\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"theme_theme_id\":{\"visible\":true,\"sorting\":false},\"default\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"positions\":{\"default\":0,\"store_website_id\":1,\"store_group_id\":2,\"store_id\":3,\"actions\":4,\"theme_theme_id\":5},\"filters\":{\"applied\":{\"placeholder\":true}},\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(5,1,'cms_block_listing','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"block_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false},\"creation_time\":{\"visible\":true,\"sorting\":false},\"update_time\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false}},\"search\":{\"value\":\"\"},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"block_id\":1,\"title\":2,\"identifier\":3,\"store_id\":4,\"is_active\":5,\"creation_time\":6,\"update_time\":7,\"actions\":8}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(6,1,'cms_block_listing','current',0,NULL,'{\"current\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"block_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false},\"creation_time\":{\"visible\":true,\"sorting\":false},\"update_time\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false}},\"search\":{\"value\":\"\"},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"block_id\":1,\"title\":2,\"identifier\":3,\"store_id\":4,\"is_active\":5,\"creation_time\":6,\"update_time\":7,\"actions\":8}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(7,1,'cms_page_listing','current',0,NULL,'{\"current\":{\"search\":{\"value\":\"\"},\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"page_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"meta_title\":{\"visible\":false,\"sorting\":false},\"meta_keywords\":{\"visible\":false,\"sorting\":false},\"meta_description\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"page_layout\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false},\"custom_theme\":{\"visible\":false,\"sorting\":false},\"custom_root_template\":{\"visible\":false,\"sorting\":false},\"creation_time\":{\"visible\":true,\"sorting\":false},\"update_time\":{\"visible\":true,\"sorting\":false},\"custom_theme_from\":{\"visible\":false,\"sorting\":false},\"custom_theme_to\":{\"visible\":false,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"page_id\":1,\"title\":2,\"identifier\":3,\"page_layout\":4,\"store_id\":5,\"is_active\":6,\"creation_time\":7,\"update_time\":8,\"custom_theme_from\":9,\"custom_theme_to\":10,\"custom_theme\":11,\"custom_root_template\":12,\"meta_title\":13,\"meta_keywords\":14,\"meta_description\":15,\"actions\":16}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(8,1,'cms_page_listing','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"search\":{\"value\":\"\"},\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"page_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"meta_title\":{\"visible\":false,\"sorting\":false},\"meta_keywords\":{\"visible\":false,\"sorting\":false},\"meta_description\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"page_layout\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false},\"custom_theme\":{\"visible\":false,\"sorting\":false},\"custom_root_template\":{\"visible\":false,\"sorting\":false},\"creation_time\":{\"visible\":true,\"sorting\":false},\"update_time\":{\"visible\":true,\"sorting\":false},\"custom_theme_from\":{\"visible\":false,\"sorting\":false},\"custom_theme_to\":{\"visible\":false,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"page_id\":1,\"title\":2,\"identifier\":3,\"page_layout\":4,\"store_id\":5,\"is_active\":6,\"creation_time\":7,\"update_time\":8,\"custom_theme_from\":9,\"custom_theme_to\":10,\"custom_theme\":11,\"custom_root_template\":12,\"meta_title\":13,\"meta_keywords\":14,\"meta_description\":15,\"actions\":16}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00');
+INSERT INTO `ui_bookmark` VALUES (1,1,'design_theme_listing','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"displayMode\":\"grid\",\"positions\":{\"theme_id\":0,\"theme_title\":1,\"parent_theme_title\":2,\"theme_path\":3,\"actions\":4},\"columns\":{\"theme_id\":{\"visible\":false,\"sorting\":\"asc\"},\"theme_title\":{\"visible\":true,\"sorting\":false},\"parent_theme_title\":{\"visible\":true,\"sorting\":false},\"theme_path\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"filters\":{\"applied\":{\"placeholder\":true}},\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,1,'design_theme_listing','current',0,NULL,'{\"current\":{\"displayMode\":\"grid\",\"positions\":{\"theme_id\":0,\"theme_title\":1,\"parent_theme_title\":2,\"theme_path\":3,\"actions\":4},\"columns\":{\"theme_id\":{\"visible\":false,\"sorting\":\"asc\"},\"theme_title\":{\"visible\":true,\"sorting\":false},\"parent_theme_title\":{\"visible\":true,\"sorting\":false},\"theme_path\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"filters\":{\"applied\":{\"placeholder\":true}},\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(3,1,'design_config_listing','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"displayMode\":\"grid\",\"columns\":{\"store_website_id\":{\"visible\":true,\"sorting\":false},\"store_group_id\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"theme_theme_id\":{\"visible\":true,\"sorting\":false},\"default\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"positions\":{\"default\":0,\"store_website_id\":1,\"store_group_id\":2,\"store_id\":3,\"actions\":4,\"theme_theme_id\":5},\"filters\":{\"applied\":{\"placeholder\":true}},\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(4,1,'design_config_listing','current',0,NULL,'{\"current\":{\"displayMode\":\"grid\",\"columns\":{\"store_website_id\":{\"visible\":true,\"sorting\":false},\"store_group_id\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"theme_theme_id\":{\"visible\":true,\"sorting\":false},\"default\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false}},\"positions\":{\"default\":0,\"store_website_id\":1,\"store_group_id\":2,\"store_id\":3,\"actions\":4,\"theme_theme_id\":5},\"filters\":{\"applied\":{\"placeholder\":true}},\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(5,1,'cms_block_listing','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"block_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false},\"creation_time\":{\"visible\":true,\"sorting\":false},\"update_time\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false}},\"search\":{\"value\":\"\"},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"block_id\":1,\"title\":2,\"identifier\":3,\"store_id\":4,\"is_active\":5,\"creation_time\":6,\"update_time\":7,\"actions\":8}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(6,1,'cms_block_listing','current',0,NULL,'{\"current\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"block_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false},\"creation_time\":{\"visible\":true,\"sorting\":false},\"update_time\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false}},\"search\":{\"value\":\"\"},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"block_id\":1,\"title\":2,\"identifier\":3,\"store_id\":4,\"is_active\":5,\"creation_time\":6,\"update_time\":7,\"actions\":8}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(7,1,'cms_page_listing','current',0,NULL,'{\"current\":{\"search\":{\"value\":\"\"},\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"page_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"meta_title\":{\"visible\":false,\"sorting\":false},\"meta_keywords\":{\"visible\":false,\"sorting\":false},\"meta_description\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"page_layout\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false},\"custom_theme\":{\"visible\":false,\"sorting\":false},\"custom_root_template\":{\"visible\":false,\"sorting\":false},\"creation_time\":{\"visible\":true,\"sorting\":false},\"update_time\":{\"visible\":true,\"sorting\":false},\"custom_theme_from\":{\"visible\":false,\"sorting\":false},\"custom_theme_to\":{\"visible\":false,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"page_id\":1,\"title\":2,\"identifier\":3,\"page_layout\":4,\"store_id\":5,\"is_active\":6,\"creation_time\":7,\"update_time\":8,\"custom_theme_from\":9,\"custom_theme_to\":10,\"custom_theme\":11,\"custom_root_template\":12,\"meta_title\":13,\"meta_keywords\":14,\"meta_description\":15,\"actions\":16}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(8,1,'cms_page_listing','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"search\":{\"value\":\"\"},\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"page_id\":{\"visible\":true,\"sorting\":\"asc\"},\"title\":{\"visible\":true,\"sorting\":false},\"identifier\":{\"visible\":true,\"sorting\":false},\"store_id\":{\"visible\":true,\"sorting\":false},\"meta_title\":{\"visible\":false,\"sorting\":false},\"meta_keywords\":{\"visible\":false,\"sorting\":false},\"meta_description\":{\"visible\":false,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"page_layout\":{\"visible\":true,\"sorting\":false},\"is_active\":{\"visible\":true,\"sorting\":false},\"custom_theme\":{\"visible\":false,\"sorting\":false},\"custom_root_template\":{\"visible\":false,\"sorting\":false},\"creation_time\":{\"visible\":true,\"sorting\":false},\"update_time\":{\"visible\":true,\"sorting\":false},\"custom_theme_from\":{\"visible\":false,\"sorting\":false},\"custom_theme_to\":{\"visible\":false,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"page_id\":1,\"title\":2,\"identifier\":3,\"page_layout\":4,\"store_id\":5,\"is_active\":6,\"creation_time\":7,\"update_time\":8,\"custom_theme_from\":9,\"custom_theme_to\":10,\"custom_theme\":11,\"custom_root_template\":12,\"meta_title\":13,\"meta_keywords\":14,\"meta_description\":15,\"actions\":16}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(9,1,'mpbannerslider_banner_listing','default',1,'Default View','{\"views\":{\"default\":{\"label\":\"Default View\",\"index\":\"default\",\"editable\":false,\"data\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"banner_id\":{\"visible\":true,\"sorting\":\"asc\"},\"name\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"created_at\":{\"visible\":true,\"sorting\":false},\"updated_at\":{\"visible\":true,\"sorting\":false},\"type\":{\"visible\":true,\"sorting\":false},\"status\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"image\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"banner_id\":1,\"image\":2,\"name\":3,\"type\":4,\"status\":5,\"created_at\":6,\"updated_at\":7,\"actions\":8}},\"value\":\"Default View\"}}}','0000-00-00 00:00:00','0000-00-00 00:00:00'),(10,1,'mpbannerslider_banner_listing','current',0,NULL,'{\"current\":{\"filters\":{\"applied\":{\"placeholder\":true}},\"columns\":{\"banner_id\":{\"visible\":true,\"sorting\":\"asc\"},\"name\":{\"visible\":true,\"sorting\":false},\"actions\":{\"visible\":true,\"sorting\":false},\"created_at\":{\"visible\":true,\"sorting\":false},\"updated_at\":{\"visible\":true,\"sorting\":false},\"type\":{\"visible\":true,\"sorting\":false},\"status\":{\"visible\":true,\"sorting\":false},\"ids\":{\"visible\":true,\"sorting\":false},\"image\":{\"visible\":true,\"sorting\":false}},\"displayMode\":\"grid\",\"paging\":{\"options\":{\"20\":{\"value\":20,\"label\":20},\"30\":{\"value\":30,\"label\":30},\"50\":{\"value\":50,\"label\":50},\"100\":{\"value\":100,\"label\":100},\"200\":{\"value\":200,\"label\":200}},\"value\":20},\"positions\":{\"ids\":0,\"banner_id\":1,\"image\":2,\"name\":3,\"type\":4,\"status\":5,\"created_at\":6,\"updated_at\":7,\"actions\":8}}}','0000-00-00 00:00:00','0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `ui_bookmark` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12175,7 +12281,7 @@ CREATE TABLE `url_rewrite` (
   UNIQUE KEY `URL_REWRITE_REQUEST_PATH_STORE_ID` (`request_path`,`store_id`),
   KEY `URL_REWRITE_TARGET_PATH` (`target_path`),
   KEY `URL_REWRITE_STORE_ID_ENTITY_ID` (`store_id`,`entity_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='Url Rewrites';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='Url Rewrites';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12184,7 +12290,7 @@ CREATE TABLE `url_rewrite` (
 
 LOCK TABLES `url_rewrite` WRITE;
 /*!40000 ALTER TABLE `url_rewrite` DISABLE KEYS */;
-INSERT INTO `url_rewrite` VALUES (1,'cms-page',1,'no-route','cms/page/view/page_id/1',0,1,NULL,1,NULL),(2,'cms-page',2,'home','cms/page/view/page_id/2',0,1,NULL,1,NULL),(3,'cms-page',3,'enable-cookies','cms/page/view/page_id/3',0,1,NULL,1,NULL),(4,'cms-page',4,'privacy-policy-cookie-restriction-mode','cms/page/view/page_id/4',0,1,NULL,1,NULL),(5,'category',3,'kategorien.html','catalog/category/view/id/3',0,2,NULL,1,NULL),(6,'category',3,'kategorien.html','catalog/category/view/id/3',0,1,NULL,1,NULL);
+INSERT INTO `url_rewrite` VALUES (1,'cms-page',1,'no-route','cms/page/view/page_id/1',0,1,NULL,1,NULL),(3,'cms-page',3,'enable-cookies','cms/page/view/page_id/3',0,1,NULL,1,NULL),(4,'cms-page',4,'privacy-policy-cookie-restriction-mode','cms/page/view/page_id/4',0,1,NULL,1,NULL),(5,'category',3,'kategorien.html','catalog/category/view/id/3',0,2,NULL,1,NULL),(6,'category',3,'kategorien.html','catalog/category/view/id/3',0,1,NULL,1,NULL),(7,'cms-page',2,'home','cms/page/view/page_id/2',0,1,NULL,1,NULL);
 /*!40000 ALTER TABLE `url_rewrite` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12586,6 +12692,131 @@ LOCK TABLES `weee_tax` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `weltpixel_license`
+--
+
+DROP TABLE IF EXISTS `weltpixel_license`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `weltpixel_license` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
+  `module_name` varchar(255) DEFAULT NULL COMMENT 'Module Name',
+  `license_key` text COMMENT 'License Key',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='WeltPixel License';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `weltpixel_license`
+--
+
+LOCK TABLES `weltpixel_license` WRITE;
+/*!40000 ALTER TABLE `weltpixel_license` DISABLE KEYS */;
+/*!40000 ALTER TABLE `weltpixel_license` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `weltpixel_owlcarouselslider_banners`
+--
+
+DROP TABLE IF EXISTS `weltpixel_owlcarouselslider_banners`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `weltpixel_owlcarouselslider_banners` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Banner Id',
+  `status` smallint(6) NOT NULL DEFAULT '0' COMMENT 'Banner Status',
+  `title` varchar(255) NOT NULL DEFAULT '' COMMENT 'Banner Title',
+  `show_title` smallint(6) DEFAULT '0' COMMENT 'Show Banner Title',
+  `description` text COMMENT 'Banner Description',
+  `show_description` smallint(6) DEFAULT '0' COMMENT 'Show Banner Description',
+  `banner_type` smallint(6) DEFAULT '0' COMMENT 'Banner Type',
+  `slider_id` int(11) DEFAULT NULL COMMENT 'Slider Id',
+  `url` varchar(255) DEFAULT '' COMMENT 'Banner Url',
+  `target` varchar(50) DEFAULT '_blank' COMMENT 'Banner Url Target',
+  `video` text COMMENT 'Banner Video',
+  `image` varchar(255) DEFAULT NULL COMMENT 'Banner Image',
+  `custom` text COMMENT 'Banner Custom HTML',
+  `alt_text` varchar(255) DEFAULT NULL COMMENT 'Banner Image Alt Text',
+  `button_text` varchar(255) DEFAULT NULL COMMENT 'Button Text',
+  `custom_content` text COMMENT 'Custom Content',
+  `custom_css` text COMMENT 'Custom CSS',
+  `valid_from` datetime DEFAULT NULL COMMENT 'Banner Valid From',
+  `valid_to` datetime DEFAULT NULL COMMENT 'Banner Valid To',
+  `sort_order` int(11) DEFAULT NULL COMMENT 'Banner Sort Ordert',
+  `ga_promo_id` text NOT NULL COMMENT 'GA Promo ID',
+  `ga_promo_name` text NOT NULL COMMENT 'GA Promo Name',
+  `ga_promo_creative` text NOT NULL COMMENT 'GA Promo Creative',
+  `ga_promo_position` text NOT NULL COMMENT 'GA Promo Position',
+  PRIMARY KEY (`id`),
+  KEY `WELTPIXEL_OWLCAROUSELSLIDER_BANNERS_ID` (`id`),
+  KEY `WELTPIXEL_OWLCAROUSELSLIDER_BANNERS_STATUS` (`status`),
+  KEY `WELTPIXEL_OWLCAROUSELSLIDER_BANNERS_SLIDER_ID` (`slider_id`),
+  KEY `WELTPIXEL_OWLCAROUSELSLIDER_BANNERS_VALID_FROM` (`valid_from`),
+  KEY `WELTPIXEL_OWLCAROUSELSLIDER_BANNERS_VALID_TO` (`valid_to`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='weltpixel_owlcarouselslider_banners';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `weltpixel_owlcarouselslider_banners`
+--
+
+LOCK TABLES `weltpixel_owlcarouselslider_banners` WRITE;
+/*!40000 ALTER TABLE `weltpixel_owlcarouselslider_banners` DISABLE KEYS */;
+INSERT INTO `weltpixel_owlcarouselslider_banners` VALUES (2,1,'Gartenhäuser Online kaufen',1,'Traumhäuser aus Holz verlängem den Sommer.',1,1,1,NULL,'_self',NULL,'weltpixel/owlcarouselslider/images/s/l/slider1.jpg',NULL,NULL,NULL,NULL,'.banner-2 {\r\ndisplay: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.banner-2 .content_slider {\r\n    background-color: #017f4e;\r\n    width: 150px !important;\r\n    display: flex;\r\n    align-items: center;\r\n    flex-direction: column;\r\n    padding: 50px 30px;\r\n    border: 10px solid #ffcc33;\r\n    border-radius: 2500px;\r\n    margin: auto;\r\n    justify-content: center;\r\n    left: auto !important;\r\n    top: auto !important;\r\n}\r\n.banner-2 .content_slider .banner-title{\r\nfont-size: 18px !important;\r\n    line-height: 20px;\r\n    display: block !important;\r\n    text-transform: none !important;\r\n    font-weight: 500;\r\n}\r\n.banner-2 .content_slider .banner-description {\r\ndisplay: block !important;\r\n    padding: 0 !important;\r\n    font-size: 14px;\r\n    margin-top: 5px;\r\n}\r\n\r\n','2020-04-01 18:47:00','2031-04-19 18:47:00',NULL,'','','','');
+/*!40000 ALTER TABLE `weltpixel_owlcarouselslider_banners` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `weltpixel_owlcarouselslider_sliders`
+--
+
+DROP TABLE IF EXISTS `weltpixel_owlcarouselslider_sliders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `weltpixel_owlcarouselslider_sliders` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `status` smallint(6) DEFAULT '0' COMMENT 'Slider Status',
+  `title` varchar(255) NOT NULL DEFAULT 'Custom Slider' COMMENT 'Slider Title',
+  `show_title` smallint(6) DEFAULT '0' COMMENT 'Show Title',
+  `slider_content` text COMMENT 'Slider Content',
+  `nav` smallint(6) DEFAULT '1' COMMENT 'Navigation',
+  `dots` smallint(6) DEFAULT '1' COMMENT 'Dots',
+  `center` smallint(6) DEFAULT '1' COMMENT 'Center',
+  `items` int(11) DEFAULT '1' COMMENT 'Items',
+  `loop` smallint(6) DEFAULT '1' COMMENT 'Loop',
+  `margin` int(11) DEFAULT '0' COMMENT 'Margin',
+  `stagePadding` int(11) DEFAULT '0' COMMENT 'StagePadding',
+  `lazyLoad` smallint(6) DEFAULT '1' COMMENT 'LazyLoad',
+  `transition` varchar(255) DEFAULT 'fadeOut' COMMENT 'Transition',
+  `autoplay` smallint(6) DEFAULT '1' COMMENT 'Autoplay',
+  `autoplayTimeout` int(11) DEFAULT '3000' COMMENT 'AutoplayTimeout',
+  `autoplayHoverPause` smallint(6) DEFAULT '1' COMMENT 'AutoplayHoverPause',
+  `autoHeight` smallint(6) DEFAULT '1' COMMENT 'AutoHeight',
+  `nav_brk1` smallint(6) DEFAULT '1' COMMENT 'Breakpoint 1 Nav',
+  `items_brk1` int(11) DEFAULT '1' COMMENT 'Breakpoint 1 Items',
+  `nav_brk2` smallint(6) DEFAULT '1' COMMENT 'Breakpoint 2 Nav',
+  `items_brk2` int(11) DEFAULT '1' COMMENT 'Breakpoint 2 Items',
+  `nav_brk3` smallint(6) DEFAULT '1' COMMENT 'Breakpoint 3 Nav',
+  `items_brk3` int(11) DEFAULT '1' COMMENT 'Breakpoint 3 Items',
+  `nav_brk4` smallint(6) DEFAULT '1' COMMENT 'Breakpoint 4 Nav',
+  `items_brk4` int(11) DEFAULT '1' COMMENT 'Breakpoint 4 Items',
+  PRIMARY KEY (`id`),
+  KEY `WELTPIXEL_OWLCAROUSELSLIDER_SLIDERS_ID` (`status`),
+  KEY `WELTPIXEL_OWLCAROUSELSLIDER_SLIDERS_STATUS` (`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='weltpixel_owlcarouselslider_sliders';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `weltpixel_owlcarouselslider_sliders`
+--
+
+LOCK TABLES `weltpixel_owlcarouselslider_sliders` WRITE;
+/*!40000 ALTER TABLE `weltpixel_owlcarouselslider_sliders` DISABLE KEYS */;
+INSERT INTO `weltpixel_owlcarouselslider_sliders` VALUES (1,1,'gartenhaus_home',0,NULL,1,1,1,1,0,0,0,0,'slide',0,0,1,1,1,1,1,1,1,1,1,1);
+/*!40000 ALTER TABLE `weltpixel_owlcarouselslider_sliders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `widget`
 --
 
@@ -12629,7 +12860,7 @@ CREATE TABLE `widget_instance` (
   PRIMARY KEY (`instance_id`),
   KEY `WIDGET_INSTANCE_THEME_ID_THEME_THEME_ID` (`theme_id`),
   CONSTRAINT `WIDGET_INSTANCE_THEME_ID_THEME_THEME_ID` FOREIGN KEY (`theme_id`) REFERENCES `theme` (`theme_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Instances of Widget for Package Theme';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Instances of Widget for Package Theme';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12638,7 +12869,7 @@ CREATE TABLE `widget_instance` (
 
 LOCK TABLES `widget_instance` WRITE;
 /*!40000 ALTER TABLE `widget_instance` DISABLE KEYS */;
-INSERT INTO `widget_instance` VALUES (1,'Magento\\Cms\\Block\\Widget\\Block',4,'widget-footer','1','{\"block_id\":\"1\"}',0);
+INSERT INTO `widget_instance` VALUES (1,'Magento\\Cms\\Block\\Widget\\Block',4,'widget-footer','1','{\"block_id\":\"1\"}',0),(2,'WeltPixel\\OwlCarouselSlider\\Block\\Slider\\Custom',4,'gartenhaus_slider_home','1','{\"slider_id\":\"1\"}',0);
 /*!40000 ALTER TABLE `widget_instance` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12661,7 +12892,7 @@ CREATE TABLE `widget_instance_page` (
   PRIMARY KEY (`page_id`),
   KEY `WIDGET_INSTANCE_PAGE_INSTANCE_ID` (`instance_id`),
   CONSTRAINT `WIDGET_INSTANCE_PAGE_INSTANCE_ID_WIDGET_INSTANCE_INSTANCE_ID` FOREIGN KEY (`instance_id`) REFERENCES `widget_instance` (`instance_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Instance of Widget on Page';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Instance of Widget on Page';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12670,7 +12901,7 @@ CREATE TABLE `widget_instance_page` (
 
 LOCK TABLES `widget_instance_page` WRITE;
 /*!40000 ALTER TABLE `widget_instance_page` DISABLE KEYS */;
-INSERT INTO `widget_instance_page` VALUES (1,1,'all_pages','default','footer','all','','widget/static_block/default.phtml');
+INSERT INTO `widget_instance_page` VALUES (1,1,'all_pages','default','footer','all','','widget/static_block/default.phtml'),(2,2,'pages','cms_index_index','content','all','','');
 /*!40000 ALTER TABLE `widget_instance_page` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12697,7 +12928,7 @@ CREATE TABLE `widget_instance_page_layout` (
 
 LOCK TABLES `widget_instance_page_layout` WRITE;
 /*!40000 ALTER TABLE `widget_instance_page_layout` DISABLE KEYS */;
-INSERT INTO `widget_instance_page_layout` VALUES (1,1);
+INSERT INTO `widget_instance_page_layout` VALUES (1,1),(2,3);
 /*!40000 ALTER TABLE `widget_instance_page_layout` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12820,4 +13051,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-18 19:12:15
+-- Dump completed on 2020-04-19 18:50:04

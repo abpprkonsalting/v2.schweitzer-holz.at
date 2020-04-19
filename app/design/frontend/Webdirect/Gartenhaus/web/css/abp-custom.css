@@ -4,6 +4,20 @@
 body {
     color: #5e5e5e;
 }
+
+.action.primary {
+    background: #007255;
+    border: 1px solid #007255;
+    color: #fff;
+    border-radius: 0  !important;
+}
+
+.action.primary:hover {
+    background: #50a58f;
+    border: 1px solid #50a58f;
+    color: #fff;
+}
+
 /*************************************************************************/
 /******************* Header **********************************************/
 .page-wrapper .page-header .header.content {
@@ -55,11 +69,6 @@ body {
 
 .page-header .newsletter-wrapper .field.newsletter {
     width: 300px;
-}
-
-.page-header .newsletter-wrapper .block.newsletter .action.subscribe {
-    background: #007255 !important;
-    border-radius: 0;
 }
 
 .page-header .header.links {
@@ -170,9 +179,13 @@ height: auto;width: auto;position: relative;margin-right: 15px;
 
 .page-wrapper .sections.nav-sections {
     margin-bottom: 0;
+    background: transparent;
 }
 
 .page-wrapper .sections.nav-sections .navigation {
+    padding-left: 20px;
+    padding-right: 20px;
+    background: transparent;
 }
 
 .page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) {
@@ -242,6 +255,13 @@ height: auto;width: auto;position: relative;margin-right: 15px;
 /*************************************************************************/
 /******************* Home ************************************************/
 
+body.cms-home .custom-slider .owl-carousel .owl-stage-outer {
+    padding: 0;
+}
+
+body.cms-home .custom-slider .owl-controls .owl-nav [class*=owl-] {
+    color: transparent;
+}
 
 /*************************************************************************/
 /******************* Uber-uns & kontakt **********************************/
