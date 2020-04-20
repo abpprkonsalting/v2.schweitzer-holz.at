@@ -139,7 +139,7 @@ CREATE TABLE `admin_user_session` (
 
 LOCK TABLES `admin_user_session` WRITE;
 /*!40000 ALTER TABLE `admin_user_session` DISABLE KEYS */;
-INSERT INTO `admin_user_session` VALUES (1,'cchjj2e8psbgf29gvt7k2faro7',1,2,'2020-04-18 02:41:03','2020-04-18 04:12:29','127.0.0.1'),(2,'hm50jh4k88qie9jteb3reg633e',1,2,'2020-04-18 04:12:29','2020-04-18 04:19:29','127.0.0.1'),(3,'8he5ib1asdofi45mlraudkifcs',1,2,'2020-04-18 04:19:29','2020-04-19 16:20:51','127.0.0.1'),(4,'4u171gcjcqh7p70udhthf49kvc',1,2,'2020-04-18 05:11:01','2020-04-19 16:20:51','127.0.0.1'),(5,'arvdq1d1hule8mguc3ua2rf153',1,2,'2020-04-19 16:20:51','2020-04-19 16:21:48','127.0.0.1'),(6,'ckkg34jlcmbge8pglcua3hig80',1,1,'2020-04-19 16:21:48','2020-04-19 22:47:12','127.0.0.1');
+INSERT INTO `admin_user_session` VALUES (1,'cchjj2e8psbgf29gvt7k2faro7',1,2,'2020-04-18 02:41:03','2020-04-18 04:12:29','127.0.0.1'),(2,'hm50jh4k88qie9jteb3reg633e',1,2,'2020-04-18 04:12:29','2020-04-18 04:19:29','127.0.0.1'),(3,'8he5ib1asdofi45mlraudkifcs',1,2,'2020-04-18 04:19:29','2020-04-19 16:20:51','127.0.0.1'),(4,'4u171gcjcqh7p70udhthf49kvc',1,2,'2020-04-18 05:11:01','2020-04-19 16:20:51','127.0.0.1'),(5,'arvdq1d1hule8mguc3ua2rf153',1,2,'2020-04-19 16:20:51','2020-04-19 16:21:48','127.0.0.1'),(6,'ckkg34jlcmbge8pglcua3hig80',1,1,'2020-04-19 16:21:48','2020-04-20 03:23:25','127.0.0.1');
 /*!40000 ALTER TABLE `admin_user_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3660,7 +3660,7 @@ CREATE TABLE `cms_block` (
   `is_active` smallint(6) NOT NULL DEFAULT '1' COMMENT 'Is Block Active',
   PRIMARY KEY (`block_id`),
   FULLTEXT KEY `CMS_BLOCK_TITLE_IDENTIFIER_CONTENT` (`title`,`identifier`,`content`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='CMS Block Table';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='CMS Block Table';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3669,7 +3669,7 @@ CREATE TABLE `cms_block` (
 
 LOCK TABLES `cms_block` WRITE;
 /*!40000 ALTER TABLE `cms_block` DISABLE KEYS */;
-INSERT INTO `cms_block` VALUES (1,'footer-block','footer-block','<div style=\"width: 50%; display: flex;\">\r\n<div style=\"width: 30%; display: flex; flex-direction: column; align-items: flex-end; padding-right: 40px;\"><img style=\"padding-right: 3px; width: 100px; float: right;\" src=\"{{media url=&quot;Logo-O-sterreichischer-Onlineshop.png&quot;}}\" alt=\"\"> <img style=\"float: right; padding-right: 3px; width: 80px; margin-top: 20px;\" src=\"{{media url=&quot;ssl.png&quot;}}\" alt=\"\"></div>\r\n<div style=\"width: 70%; display: flex; flex-direction: column; padding-left: 40px; color: white;\"><span style=\"margin-bottom: 5px; font-weight: 600;\">ROHRBACH</span> <span style=\"margin-bottom: 35px;\">Verkauf und Gartenausstellung</span> <span style=\"color: white; margin-bottom: 5px;\">A. Schweitzer GesmbH </span> <span style=\"color: white; margin-bottom: 5px;\">Gewerbeallee 22 </span> <span style=\"margin-bottom: 35px;\">A - 4150 Rohrbach-Berg</span> <span style=\"color: white; margin-bottom: 5px;\">Tel.: +43 7289 8977</span> <span style=\"color: white; margin-bottom: 5px;\">Fax: +43 7289 8977 17 </span> <span style=\"color: white;\">officeschweitzer-holz.at</span></div>\r\n</div>\r\n<div style=\"width: 50%; display: flex;\">\r\n<div style=\"width: 50%; display: flex; flex-direction: column; color: white;\"><span style=\"font-weight: 600;\">ALTENFELDEN</span> <span style=\"margin-bottom: 15px;\">Produktion</span> <span style=\"color: white;\">A. Schweitzer GesmbH</span> <span style=\"color: white;\"> Weigert 3</span> <span style=\"margin-bottom: 15px;\">A - 4121 Altenfelden</span> <span style=\"color: white;\">Tel.: +43 7286 8212</span> <span style=\"color: white;\"> Fax: +43 7286 8212 1</span> <span style=\"color: white;\"> produktionschweitzer-holz.at</span>\r\n<div style=\"margin-top: 20px;\"><img style=\"height: 35px; margin-right: 10px;\" src=\"{{media url=&quot;imagen_19.png&quot;}}\" alt=\"\"> <img style=\"height: 35px;\" src=\"{{media url=&quot;imagen_20.png&quot;}}\" alt=\"\"></div>\r\n</div>\r\n<div style=\"width: 50%; display: flex; flex-direction: column; color: white;\"><a style=\"color: white;margin-bottom: 15px;\" href=\"#\">Datenschutz</a> <a style=\"color: white;margin-bottom: 15px;\" href=\"#\">Impressum</a> <a style=\"color: white; margin-bottom: 15px;\" href=\"#\">AGB</a> <img style=\"width: 150px;\" src=\"{{media url=&quot;imagen_18.png&quot;}}\" alt=\"\"></div>\r\n</div>','2020-04-18 21:12:57','2020-04-18 23:09:01',1);
+INSERT INTO `cms_block` VALUES (1,'footer-block','footer-block','<div>\r\n<div style=\"width: 30%; display: flex; flex-direction: column; align-items: flex-end; padding-right: 40px;\"><img style=\"padding-right: 3px; width: 100px; float: right;\" src=\"{{media url=&quot;Logo-O-sterreichischer-Onlineshop.png&quot;}}\" alt=\"\"> <img style=\"float: right; padding-right: 3px; width: 80px; margin-top: 20px;\" src=\"{{media url=&quot;ssl.png&quot;}}\" alt=\"\"></div>\r\n<div style=\"width: 70%; display: flex; flex-direction: column; padding-left: 40px; color: white;\"><span style=\"margin-bottom: 5px; font-weight: 600;\">ROHRBACH</span> <span style=\"margin-bottom: 35px;\">Verkauf und Gartenausstellung</span> <span style=\"color: white; margin-bottom: 5px;\">A. Schweitzer GesmbH </span> <span style=\"color: white; margin-bottom: 5px;\">Gewerbeallee 22 </span> <span style=\"margin-bottom: 35px;\">A - 4150 Rohrbach-Berg</span> <span style=\"color: white; margin-bottom: 5px;\">Tel.: +43 7289 8977</span> <span style=\"color: white; margin-bottom: 5px;\">Fax: +43 7289 8977 17 </span> <span style=\"color: white;\">officeschweitzer-holz.at</span></div>\r\n</div>\r\n<div>\r\n<div style=\"width: 50%; display: flex; flex-direction: column; color: white;\"><span style=\"font-weight: 600;\">ALTENFELDEN</span> <span style=\"margin-bottom: 15px;\">Produktion</span> <span style=\"color: white;\">A. Schweitzer GesmbH</span> <span style=\"color: white;\"> Weigert 3</span> <span style=\"margin-bottom: 15px;\">A - 4121 Altenfelden</span> <span style=\"color: white;\">Tel.: +43 7286 8212</span> <span style=\"color: white;\"> Fax: +43 7286 8212 1</span> <span style=\"color: white;\"> produktionschweitzer-holz.at</span>\r\n<div style=\"margin-top: 20px;\"><img style=\"height: 35px; margin-right: 10px;\" src=\"{{media url=&quot;imagen_19.png&quot;}}\" alt=\"\"> <img style=\"height: 35px;\" src=\"{{media url=&quot;imagen_20.png&quot;}}\" alt=\"\"></div>\r\n</div>\r\n<div style=\"width: 50%; display: flex; flex-direction: column; color: white;\"><a style=\"color: white; margin-bottom: 15px;\" href=\"#\">Datenschutz</a> <a style=\"color: white; margin-bottom: 15px;\" href=\"#\">Impressum</a> <a style=\"color: white; margin-bottom: 15px;\" href=\"#\">AGB</a> <img style=\"width: 150px;\" src=\"{{media url=&quot;imagen_18.png&quot;}}\" alt=\"\"></div>\r\n</div>','2020-04-18 21:12:57','2020-04-20 03:24:12',1),(2,'gartenhaus-divider-home','gartenhaus-divider-home','<div style=\"width: 100%; display: flex; justify-content: center; border-bottom: 2px solid #a99f8e; margin-bottom: 20px;margin-top: 20px;\"><span style=\"padding: 0 20px; background: white; margin: 0 15px -10px;\"><span style=\"padding: 10px 15px; background-color: #a99f8e; color: white;\">Gartenhäuser, Carports und Gewächshäuser</span></span></div>','2020-04-19 23:04:41','2020-04-19 23:11:48',1),(3,'gartenhaus-home-second-block','gartenhaus-home-second-block','<div class=\"gartenhaus-second-row-wrapper\">\r\n<div class=\"gartenhaus-second-row-wrapper-elem\"><img src=\"{{media url=&quot;imagen_23.png&quot;}}\" alt=\"\">\r\n<div class=\"gartenhaus-second-row-wrapper-texts\">\r\n<div class=\"gartenhaus-second-row-wrapper-header\">Gartenhaus</div>\r\n<div class=\"gartenhaus-second-row-wrapper-button action primary\">Jetzt entdecken</div>\r\n</div>\r\n</div>\r\n<div class=\"gartenhaus-second-row-wrapper-elem\" style=\"background: transparent;\"><img src=\"{{media url=&quot;imagen_24.png&quot;}}\" alt=\"\">\r\n<div class=\"gartenhaus-second-row-wrapper-texts\">\r\n<div class=\"gartenhaus-second-row-wrapper-header\">Gewächshäuser</div>\r\n<div class=\"gartenhaus-second-row-wrapper-button action primary\">Jetzt entdecken</div>\r\n</div>\r\n</div>\r\n<div class=\"gartenhaus-second-row-wrapper-elem\" style=\"background: transparent;\"><img src=\"{{media url=&quot;imagen_25.png&quot;}}\" alt=\"\">\r\n<div class=\"gartenhaus-second-row-wrapper-texts\">\r\n<div class=\"gartenhaus-second-row-wrapper-header\">Carpots</div>\r\n<div class=\"gartenhaus-second-row-wrapper-button action primary\">Jetzt entdecken</div>\r\n</div>\r\n</div>\r\n</div>','2020-04-19 23:23:38','2020-04-20 02:15:38',1),(4,'gartenhauser-home-text','gartenhauser-home-text','<div class=\"gartenhauser-home-text\">\r\n<div class=\"gartenhauser-home-text-header\">Gartenhäuser, Gerätehäuser und Gewächshäuser Shop</div>\r\n<div class=\"gartenhauser-home-text-subheader\">Häuser und Carports für den Garten kaufen – aus bestem Holz.</div>\r\n<p>Mit einem hochqualitativen Gartenhaus aus unserem Shop lässt sich – vor allem im Sommer – der eigene Garten als erweitertes Wohnzimmer nutzen. Unabhängig davon, ob das Gartenhaus zusätzlich zum Einfamilienhaus, oder als kleines Wohnhaus/kleiner Wohnraum genutzt wird, ein solches Gartenhaus erweitert die Möglichkeiten, den eigene Garten und die freie Natur zu genießen. Selbstverständlich sind bei der Planung und Errichtung eines solchen Gartenhauses der Phantasie fast keine Grenzen gesetzt – unser Sortiment umfasst klassische Gartenhäuser, Blockbohlenhäuser, 5-Eck-Gartenhäuser bis hin zu kleinen Spiel-Gartenhäuser speziell für Kinder.</p>\r\n<p>Solide Qualität ist auch bei Gewächshäusern gefragt. Solche „Gartenhäuser für Ihre Pflanzen“ werten Ihren Garten zusätzlich auf und ermöglichen es, speziell sensible Pflanzen zu züchten und sicher durch den Winter zu bringen. Ideal ergänzt werden solche Gewächshäuser oder Glashäuser durch Geräteschuppen für die Unterbringung Ihrer wertvollen und vielseitigen Gartengeräte. Auch bei den Gerätehäusern setzen wir auf hochwertigstes Holz!</p>\r\n<p>Um Ihr Auto gegen direkten Wettereinfluss – Sonne, Regen, Sturm, Hagel – zu schützen, empfehlen wir solide und praktische Carports aus Holz. Ein Carport ist sowohl in Planung als auch Installation flexibel und bedarf keiner großen Anstrengung beim Aufstellen. Ihr Auto, Ihr Motorrad und andere Gartengeräte werden es durch längere Lebensdauer und gepflegteren Zustand danken!</p>\r\n<p>Wir beraten Sie vor dem Kauf gerne per E-Mail, Telefon oder persönlich in unserer Ausstellung!</p>\r\n<span class=\"gartenhauser-home-text-header\">Gartenhäuser Online kaufen</span>\r\n<p>Traumhäuser aus Holz verlängern den Sommer. Alles rund um Gartenhäuser finden Sie bei Schweitzer Holz Rohrbach in Oberösterreich und in unserem Online Shop.</p>\r\n<p>Drei Schritte zu Ihrem idealen Gartenhaus in unserem Online Shop: Bauplatz bestimmen, Modell aussuchen, bestellen und aufbauen. Besuchen Sie uns auch im Gartencenter im Bezirk Rohrbach in Oberösterreich!</p>\r\n<p>Ob Sie sich für ein Gartenhaus in Elementbauweise oder Blockbohlenbauweise entscheiden, als Material verwenden wir nur bestes nordisches Holz, die Dacheindeckungen sind aus Bitumenschindeln und die Fenster sind mit Drehkippbeschlägen ausgestattet. Ein gemütliches Häuschen im Grünen, ein Gerätehaus neben dem Gemüsegarten oder ein Kinderspielhaus für die Enkelkinder, wir bieten Ihnen noch viele Möglichkeiten mehr...</p>\r\n<span class=\"action primary\" style=\"margin: 20px 0 100px;\">Gartenhäuser selbst konfigurieren</span></div>','2020-04-20 02:49:21','2020-04-20 03:06:42',1);
 /*!40000 ALTER TABLE `cms_block` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3696,7 +3696,7 @@ CREATE TABLE `cms_block_store` (
 
 LOCK TABLES `cms_block_store` WRITE;
 /*!40000 ALTER TABLE `cms_block_store` DISABLE KEYS */;
-INSERT INTO `cms_block_store` VALUES (1,1);
+INSERT INTO `cms_block_store` VALUES (1,1),(2,1),(3,1),(4,1);
 /*!40000 ALTER TABLE `cms_block_store` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4443,7 +4443,7 @@ CREATE TABLE `customer_visitor` (
   PRIMARY KEY (`visitor_id`),
   KEY `CUSTOMER_VISITOR_CUSTOMER_ID` (`customer_id`),
   KEY `CUSTOMER_VISITOR_LAST_VISIT_AT` (`last_visit_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='Visitor Table';
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='Visitor Table';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4452,7 +4452,7 @@ CREATE TABLE `customer_visitor` (
 
 LOCK TABLES `customer_visitor` WRITE;
 /*!40000 ALTER TABLE `customer_visitor` DISABLE KEYS */;
-INSERT INTO `customer_visitor` VALUES (1,NULL,'jnma9nmnmbhpe4887shhd36rfv','2020-04-18 03:33:58'),(2,NULL,'0jicepgc2pql0gq5pgabbn52bg','2020-04-18 04:13:16'),(3,NULL,'foslbei5ksej3p23p965csa6h4','2020-04-18 04:13:18'),(4,NULL,'e9tf3hiu88fpmgi5r667mohdpr','2020-04-18 05:45:48'),(5,NULL,'uk8ilcb764911qnqerqlujsru2','2020-04-18 05:46:01'),(6,NULL,'6f3ng9u089ej10hvelbuorkpum','2020-04-18 05:46:02'),(7,NULL,'es8umuh05oregcodvgrvpjpqk2','2020-04-18 05:47:55'),(8,NULL,'i4i1llt2ftbcjbuehib5gdso6m','2020-04-18 05:48:08'),(9,NULL,'t3o6jmu6v4mm51ojfb45278kfd','2020-04-18 05:48:08'),(10,NULL,'49ljrdvape6ha97dnr4gv2ko9r','2020-04-18 16:05:12'),(11,NULL,'g8802nif9c0rsv1a3kpledfe6d','2020-04-19 14:59:02'),(12,NULL,'ihd82u93u5rpv1u8l145ethaun','2020-04-19 14:59:05'),(13,NULL,'quijnia63up0q0ouedmea31e8c','2020-04-19 14:59:06'),(14,NULL,'2p9euu5p6tjtaou4c4oevupmmu','2020-04-19 18:28:31'),(15,NULL,'4ddocmeun6016goh1k861u2nn0','2020-04-19 18:28:55'),(16,NULL,'buk54lqqj92otd9gihtcbvue9a','2020-04-19 18:28:55'),(17,NULL,'9qr44ic34deo4cf90ead4gevn0','2020-04-19 21:43:10');
+INSERT INTO `customer_visitor` VALUES (1,NULL,'jnma9nmnmbhpe4887shhd36rfv','2020-04-18 03:33:58'),(2,NULL,'0jicepgc2pql0gq5pgabbn52bg','2020-04-18 04:13:16'),(3,NULL,'foslbei5ksej3p23p965csa6h4','2020-04-18 04:13:18'),(4,NULL,'e9tf3hiu88fpmgi5r667mohdpr','2020-04-18 05:45:48'),(5,NULL,'uk8ilcb764911qnqerqlujsru2','2020-04-18 05:46:01'),(6,NULL,'6f3ng9u089ej10hvelbuorkpum','2020-04-18 05:46:02'),(7,NULL,'es8umuh05oregcodvgrvpjpqk2','2020-04-18 05:47:55'),(8,NULL,'i4i1llt2ftbcjbuehib5gdso6m','2020-04-18 05:48:08'),(9,NULL,'t3o6jmu6v4mm51ojfb45278kfd','2020-04-18 05:48:08'),(10,NULL,'49ljrdvape6ha97dnr4gv2ko9r','2020-04-18 16:05:12'),(11,NULL,'g8802nif9c0rsv1a3kpledfe6d','2020-04-19 14:59:02'),(12,NULL,'ihd82u93u5rpv1u8l145ethaun','2020-04-19 14:59:05'),(13,NULL,'quijnia63up0q0ouedmea31e8c','2020-04-19 14:59:06'),(14,NULL,'2p9euu5p6tjtaou4c4oevupmmu','2020-04-19 18:28:31'),(15,NULL,'4ddocmeun6016goh1k861u2nn0','2020-04-19 18:28:55'),(16,NULL,'buk54lqqj92otd9gihtcbvue9a','2020-04-19 18:28:55'),(17,NULL,'9qr44ic34deo4cf90ead4gevn0','2020-04-19 21:43:10'),(18,NULL,'mtggbsoins9fhv1k3a6il3jkdm','2020-04-20 02:09:48'),(19,NULL,'p5suro7n7mil08g09ibm6nmpnl','2020-04-20 02:09:54'),(20,NULL,'aj2dkuadpjc8chuh0jg3uag684','2020-04-20 02:09:54');
 /*!40000 ALTER TABLE `customer_visitor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6603,7 +6603,7 @@ CREATE TABLE `layout_link` (
   CONSTRAINT `LAYOUT_LINK_LAYOUT_UPDATE_ID_LAYOUT_UPDATE_LAYOUT_UPDATE_ID` FOREIGN KEY (`layout_update_id`) REFERENCES `layout_update` (`layout_update_id`) ON DELETE CASCADE,
   CONSTRAINT `LAYOUT_LINK_STORE_ID_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE,
   CONSTRAINT `LAYOUT_LINK_THEME_ID_THEME_THEME_ID` FOREIGN KEY (`theme_id`) REFERENCES `theme` (`theme_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Layout Link';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='Layout Link';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6612,7 +6612,7 @@ CREATE TABLE `layout_link` (
 
 LOCK TABLES `layout_link` WRITE;
 /*!40000 ALTER TABLE `layout_link` DISABLE KEYS */;
-INSERT INTO `layout_link` VALUES (1,1,4,1,0),(3,1,4,3,0);
+INSERT INTO `layout_link` VALUES (1,1,4,1,0),(3,1,4,3,0),(4,1,4,4,0),(5,1,4,5,0),(6,1,4,6,0);
 /*!40000 ALTER TABLE `layout_link` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -6631,7 +6631,7 @@ CREATE TABLE `layout_update` (
   `updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT 'Last Update Timestamp',
   PRIMARY KEY (`layout_update_id`),
   KEY `LAYOUT_UPDATE_HANDLE` (`handle`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Layout Updates';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='Layout Updates';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6640,7 +6640,7 @@ CREATE TABLE `layout_update` (
 
 LOCK TABLES `layout_update` WRITE;
 /*!40000 ALTER TABLE `layout_update` DISABLE KEYS */;
-INSERT INTO `layout_update` VALUES (1,'default','<body><referenceContainer name=\"footer\"><block class=\"Magento\\Cms\\Block\\Widget\\Block\" name=\"F3qN7dvzmonbaDKJrsW6lOEJhvF7uYWG\" template=\"widget/static_block/default.phtml\"><action method=\"setData\"><argument name=\"name\" xsi:type=\"string\">block_id</argument><argument name=\"value\" xsi:type=\"string\">1</argument></action></block></referenceContainer></body>',0,'0000-00-00 00:00:00'),(3,'cms_index_index','<body><referenceContainer name=\"content\"><block class=\"WeltPixel\\OwlCarouselSlider\\Block\\Slider\\Custom\" name=\"19wKiLiNWf6bDVkQRof6P6jwqdYuLiq3\"><action method=\"setData\"><argument name=\"name\" xsi:type=\"string\">slider_id</argument><argument name=\"value\" xsi:type=\"string\">1</argument></action></block></referenceContainer></body>',0,'0000-00-00 00:00:00');
+INSERT INTO `layout_update` VALUES (1,'default','<body><referenceContainer name=\"footer\"><block class=\"Magento\\Cms\\Block\\Widget\\Block\" name=\"F3qN7dvzmonbaDKJrsW6lOEJhvF7uYWG\" template=\"widget/static_block/default.phtml\"><action method=\"setData\"><argument name=\"name\" xsi:type=\"string\">block_id</argument><argument name=\"value\" xsi:type=\"string\">1</argument></action></block></referenceContainer></body>',0,'0000-00-00 00:00:00'),(3,'cms_index_index','<body><referenceContainer name=\"content\"><block class=\"WeltPixel\\OwlCarouselSlider\\Block\\Slider\\Custom\" name=\"19wKiLiNWf6bDVkQRof6P6jwqdYuLiq3\"><action method=\"setData\"><argument name=\"name\" xsi:type=\"string\">slider_id</argument><argument name=\"value\" xsi:type=\"string\">1</argument></action></block></referenceContainer></body>',0,'0000-00-00 00:00:00'),(4,'cms_index_index','<body><referenceContainer name=\"content\"><block class=\"Magento\\Cms\\Block\\Widget\\Block\" name=\"FQXr7jLFvb5LoEUPVvvdrxuF8rNf6EuL\" template=\"widget/static_block/default.phtml\"><action method=\"setData\"><argument name=\"name\" xsi:type=\"string\">block_id</argument><argument name=\"value\" xsi:type=\"string\">2</argument></action></block></referenceContainer></body>',1,'0000-00-00 00:00:00'),(5,'cms_index_index','<body><referenceContainer name=\"content\"><block class=\"Magento\\Cms\\Block\\Widget\\Block\" name=\"NvZ1daQMsN4eEgMUOJuBq03ZHTmF5j6U\" template=\"widget/static_block/default.phtml\"><action method=\"setData\"><argument name=\"name\" xsi:type=\"string\">block_id</argument><argument name=\"value\" xsi:type=\"string\">3</argument></action></block></referenceContainer></body>',2,'0000-00-00 00:00:00'),(6,'cms_index_index','<body><referenceContainer name=\"content\"><block class=\"Magento\\Cms\\Block\\Widget\\Block\" name=\"Zb7Ehnf2JD1oGjCVqZLk1cC7nZw8rSZW\" template=\"widget/static_block/default.phtml\"><action method=\"setData\"><argument name=\"name\" xsi:type=\"string\">block_id</argument><argument name=\"value\" xsi:type=\"string\">4</argument></action></block></referenceContainer></body>',3,'0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `layout_update` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12860,7 +12860,7 @@ CREATE TABLE `widget_instance` (
   PRIMARY KEY (`instance_id`),
   KEY `WIDGET_INSTANCE_THEME_ID_THEME_THEME_ID` (`theme_id`),
   CONSTRAINT `WIDGET_INSTANCE_THEME_ID_THEME_THEME_ID` FOREIGN KEY (`theme_id`) REFERENCES `theme` (`theme_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Instances of Widget for Package Theme';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Instances of Widget for Package Theme';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12869,7 +12869,7 @@ CREATE TABLE `widget_instance` (
 
 LOCK TABLES `widget_instance` WRITE;
 /*!40000 ALTER TABLE `widget_instance` DISABLE KEYS */;
-INSERT INTO `widget_instance` VALUES (1,'Magento\\Cms\\Block\\Widget\\Block',4,'widget-footer','1','{\"block_id\":\"1\"}',0),(2,'WeltPixel\\OwlCarouselSlider\\Block\\Slider\\Custom',4,'gartenhaus_slider_home','1','{\"slider_id\":\"1\"}',0);
+INSERT INTO `widget_instance` VALUES (1,'Magento\\Cms\\Block\\Widget\\Block',4,'widget-footer','1','{\"block_id\":\"1\"}',0),(2,'WeltPixel\\OwlCarouselSlider\\Block\\Slider\\Custom',4,'gartenhaus_slider_home','1','{\"slider_id\":\"1\"}',0),(3,'Magento\\Cms\\Block\\Widget\\Block',4,'gartenhauser-home-divider','1','{\"block_id\":\"2\"}',1),(4,'Magento\\Cms\\Block\\Widget\\Block',4,'gartenhaus-home-second-block','1','{\"block_id\":\"3\"}',2),(5,'Magento\\Cms\\Block\\Widget\\Block',4,'gartenhauser-home-text','1','{\"block_id\":\"4\"}',3);
 /*!40000 ALTER TABLE `widget_instance` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12892,7 +12892,7 @@ CREATE TABLE `widget_instance_page` (
   PRIMARY KEY (`page_id`),
   KEY `WIDGET_INSTANCE_PAGE_INSTANCE_ID` (`instance_id`),
   CONSTRAINT `WIDGET_INSTANCE_PAGE_INSTANCE_ID_WIDGET_INSTANCE_INSTANCE_ID` FOREIGN KEY (`instance_id`) REFERENCES `widget_instance` (`instance_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Instance of Widget on Page';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Instance of Widget on Page';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -12901,7 +12901,7 @@ CREATE TABLE `widget_instance_page` (
 
 LOCK TABLES `widget_instance_page` WRITE;
 /*!40000 ALTER TABLE `widget_instance_page` DISABLE KEYS */;
-INSERT INTO `widget_instance_page` VALUES (1,1,'all_pages','default','footer','all','','widget/static_block/default.phtml'),(2,2,'pages','cms_index_index','content','all','','');
+INSERT INTO `widget_instance_page` VALUES (1,1,'all_pages','default','footer','all','','widget/static_block/default.phtml'),(2,2,'pages','cms_index_index','content','all','',''),(3,3,'pages','cms_index_index','content','all','','widget/static_block/default.phtml'),(4,4,'pages','cms_index_index','content','all','','widget/static_block/default.phtml'),(5,5,'pages','cms_index_index','content','all','','widget/static_block/default.phtml');
 /*!40000 ALTER TABLE `widget_instance_page` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -12928,7 +12928,7 @@ CREATE TABLE `widget_instance_page_layout` (
 
 LOCK TABLES `widget_instance_page_layout` WRITE;
 /*!40000 ALTER TABLE `widget_instance_page_layout` DISABLE KEYS */;
-INSERT INTO `widget_instance_page_layout` VALUES (1,1),(2,3);
+INSERT INTO `widget_instance_page_layout` VALUES (1,1),(2,3),(3,4),(4,5),(5,6);
 /*!40000 ALTER TABLE `widget_instance_page_layout` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -13051,4 +13051,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-19 18:50:04
+-- Dump completed on 2020-04-19 23:34:25

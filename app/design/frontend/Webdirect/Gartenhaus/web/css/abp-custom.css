@@ -10,6 +10,7 @@ body {
     border: 1px solid #007255;
     color: #fff;
     border-radius: 0  !important;
+    font-weight: 100;
 }
 
 .action.primary:hover {
@@ -252,6 +253,45 @@ height: auto;width: auto;position: relative;margin-right: 15px;
     padding: 0 20px 50px;
 }
 
+.footer.content .block-static-block > div {
+    width: 50%;
+    display: flex;
+}
+
+.footer.content .block-static-block > div > div {
+}
+
+@media (max-width: 900px) {
+    .footer.content .block-static-block {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer.content .block-static-block > div {
+        width: 80%;
+        justify-content: space-around;
+        margin-bottom: 50px;
+    }
+
+    .footer.content .block-static-block > div > div {
+        width: 40% !important;
+        padding: 0 !important;
+    }
+
+    .footer.content .block-static-block > div > div:first-child {
+        margin-right: 10%;
+    }
+
+    .footer.content .block-static-block > div > div:last-child {
+        margin-left: 10%;
+    }
+
+    .footer.content .block-static-block > div:first-child > div:first-child {
+        align-items: center !important;
+    }
+}
+
+
 /*************************************************************************/
 /******************* Home ************************************************/
 
@@ -262,6 +302,80 @@ body.cms-home .custom-slider .owl-carousel .owl-stage-outer {
 body.cms-home .custom-slider .owl-controls .owl-nav [class*=owl-] {
     color: transparent;
 }
+
+body.cms-home .gartenhaus-second-row-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem {
+    width: 32%;
+    position: relative;
+    min-width: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-top: 20px;
+}
+
+body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem:nth-child(2) {
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts{
+    z-index: 20;
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(253.1,199.1,51.7,.9);
+    padding: 15px 50px;
+    color: #017f4e;
+}
+
+@media (max-width: 900px) {
+    body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts {
+        padding: 5px 20px;
+    }
+}
+
+body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts .gartenhaus-second-row-wrapper-header{
+    font-size: 120%;
+    font-weight: 700;
+}
+
+body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts .gartenhaus-second-row-wrapper-button{
+    margin-top: 10px;
+}
+
+body.cms-home .gartenhauser-home-text {
+    padding: 20px 40px;
+    color: #333;
+}
+
+body.cms-home .gartenhauser-home-text .gartenhauser-home-text-header {
+    display: block;
+    font-size: 140%;
+    font-weight: 600;
+}
+
+body.cms-home .gartenhauser-home-text .gartenhauser-home-text-subheader {
+    font-size: 110%;
+    display: block;
+}
+
+body.cms-home .gartenhauser-home-text p {
+    max-width: 95%;
+    margin: 20px 0;
+}
+
+
+
 
 /*************************************************************************/
 /******************* Uber-uns & kontakt **********************************/
