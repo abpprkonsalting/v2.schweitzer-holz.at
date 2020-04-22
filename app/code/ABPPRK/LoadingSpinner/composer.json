@@ -1,0 +1,23 @@
+{
+    "name": "abpprk/loading-spinner",
+    "description": "ABPPR Loading Spinner",
+    "require": {
+    },
+    "type": "magento2-module",
+    "version": "0.1.0",
+    "license": [],
+    "authors": [
+        {
+            "name": "ABP PR Konsalting",
+            "email": "abpprkonsalting@gmail.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "ABPPRK\\LoadingSpinner\\": ""
+        }
+    }
+}

@@ -1,0 +1,39 @@
+
+
+<div class="abp-spinner-wrapper" data-mage-init='{"abpspinner": {"message": "HELLO WORLD!"}}'>
+    <div class="abp-spinner"></div>
+</div>
+<style>
+	@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+	}
+	.abp-spinner-wrapper {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 30000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: rgba(255,255,255,0.95);
+		opacity: 1;
+		transition: opacity .3s ease;
+	}
+	.abp-spinner {
+		top: 50vh;
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		border: 5px solid green;
+		animation: rotation 1s infinite linear;
+		border-top-color: transparent;border-radius: 200px;
+	}
+		
+}</style>
