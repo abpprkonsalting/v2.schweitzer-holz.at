@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 FireGento e.V.
+ * See LICENSE.md bundled with this module for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="FireGento\MageSetup\Service\GetVisibleCheckoutAttributesServiceInterface" type="FireGento\MageSetup\Service\GetVisibleCheckoutAttributesService"/>
+
+    <type name="FireGento\MageSetup\Model\Config\Reader">
+        <arguments>
+            <argument name="fileName" xsi:type="string">magesetup.xml</argument>
+            <argument name="converter" xsi:type="object">FireGento\MageSetup\Model\Config\Converter</argument>
+            <argument name="schemaLocator" xsi:type="object">FireGento\MageSetup\Model\Config\SchemaLocator</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="MageSetupSetupRunCommand" xsi:type="object">FireGento\MageSetup\Command\SetupRunCommand</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="FireGento\MageSetup\Model\Setup\SubProcessor\SubProcessorPool">
+        <arguments>
+            <argument name="subProcessors" xsi:type="array">
+                <item name="agreements" xsi:type="string">FireGento\MageSetup\Model\Setup\SubProcessor\AgreementsSubProcessor</item>
+                <item name="cms" xsi:type="string">FireGento\MageSetup\Model\Setup\SubProcessor\CmsSubProcessor</item>
+                <item name="email" xsi:type="string">FireGento\MageSetup\Model\Setup\SubProcessor\EmailSubProcessor</item>
+                <item name="systemConfig" xsi:type="string">FireGento\MageSetup\Model\Setup\SubProcessor\SystemConfigSubProcessor</item>
+                <item name="tax" xsi:type="string">FireGento\MageSetup\Model\Setup\SubProcessor\TaxSubProcessor</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\Pricing\Render">
+        <plugin name="mageSetupAddPriceHints" type="FireGento\MageSetup\Plugin\Pricing\AroundRenderPlugin" sortOrder="1"/>
+    </type>
+
+    <type name="Magento\CheckoutAgreements\Model\Agreement">
+        <plugin name="mageSetupFilterAgreementContent" type="FireGento\MageSetup\Plugin\Agreements\AfterGetContent" sortOrder="1"/>
+    </type>
+
+    <type name="Magento\Catalog\Block\Product\ListProduct">
+        <plugin name="mageSetupProductDetailsHtml" type="FireGento\MageSetup\Plugin\Catalog\ListProductPlugin" sortOrder="1" />
+    </type>
+
+    <type name="Magento\Email\Block\Adminhtml\Template\Edit\Form">
+        <plugin name="mageSetupEmailAdminhtmlTemplateEditForm" type="FireGento\MageSetup\Plugin\Email\Block\Adminhtml\Template\Edit\Form"/>
+    </type>
+
+    <!-- Can be removed after M2.2 EOL-->
+    <type name="Magento\Email\Model\Source\Variables">
+        <plugin name="mageSetupEmailSourceVariables" type="FireGento\MageSetup\Plugin\Email\Model\Source\Variables"/>
+    </type>
+
+    <!-- Email variables for versions >= M2.3.0-->
+    <type name="Magento\Variable\Model\Source\Variables">
+        <arguments>
+            <argument name="configPaths" xsi:type="array">
+                <item name="general/imprint" xsi:type="array">
+                    <item name="general/imprint/shop_name" xsi:type="string">1</item>
+                    <item name="general/imprint/company_first" xsi:type="string">1</item>
+                    <item name="general/imprint/company_second" xsi:type="string">1</item>
+                    <item name="general/imprint/street" xsi:type="string">1</item>
+                    <item name="general/imprint/zip" xsi:type="string">1</item>
+                    <item name="general/imprint/city" xsi:type="string">1</item>
+                    <item name="general/imprint/country" xsi:type="string">1</item>
+                    <item name="general/imprint/telephone" xsi:type="string">1</item>
+                    <item name="general/imprint/telephone_additional" xsi:type="string">1</item>
+                    <item name="general/imprint/fax" xsi:type="string">1</item>
+                    <item name="general/imprint/email" xsi:type="string">1</item>
+                    <item name="general/imprint/web" xsi:type="string">1</item>
+                    <item name="general/imprint/tax_number" xsi:type="string">1</item>
+                    <item name="general/imprint/vat_id" xsi:type="string">1</item>
+                    <item name="general/imprint/court" xsi:type="string">1</item>
+                    <item name="general/imprint/financial_office" xsi:type="string">1</item>
+                    <item name="general/imprint/ceo" xsi:type="string">1</item>
+                    <item name="general/imprint/owner" xsi:type="string">1</item>
+                    <item name="general/imprint/content_responsable_name" xsi:type="string">1</item>
+                    <item name="general/imprint/content_responsable_address" xsi:type="string">1</item>
+                    <item name="general/imprint/content_responsable_press_law" xsi:type="string">1</item>
+                    <item name="general/imprint/register_number" xsi:type="string">1</item>
+                    <item name="general/imprint/business_rules" xsi:type="string">1</item>
+                    <item name="general/imprint/authority" xsi:type="string">1</item>
+                    <item name="general/imprint/shareholdings" xsi:type="string">1</item>
+                    <item name="general/imprint/editorial_concept" xsi:type="string">1</item>
+                    <item name="general/imprint/bank_account_owner" xsi:type="string">1</item>
+                    <item name="general/imprint/bank_account" xsi:type="string">1</item>
+                    <item name="general/imprint/bank_code_number" xsi:type="string">1</item>
+                    <item name="general/imprint/bank_name" xsi:type="string">1</item>
+                    <item name="general/imprint/swift" xsi:type="string">1</item>
+                    <item name="general/imprint/iban" xsi:type="string">1</item>
+                    <item name="general/imprint/clearing" xsi:type="string">1</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>
