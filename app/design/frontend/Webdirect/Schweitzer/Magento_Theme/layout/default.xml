@@ -7,9 +7,12 @@
 -->
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+        <referenceContainer name="page.top">
+            <block class="ABPPRK\LoadingSpinner\Block\Spinner\Spinner" name="spinner" before="-"></block>
+        </referenceContainer>
         <referenceContainer name="header.container">
             <referenceBlock name="catalog.compare.link" remove="true"/>
-            <referenceContainer name="header.panel.wrapper" remove="true"></referenceContainer>
+            
             <referenceContainer name="header-wrapper" htmlClass="header content">
                 <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
                     <arguments>
@@ -23,6 +26,13 @@
                         <argument name="css_class" xsi:type="string">header links</argument>
                     </arguments>
                 </block>
+            </referenceContainer>
+            <referenceContainer name="header.panel.wrapper">
+                <referenceContainer name="header.panel">
+                    <referenceBlock name="store_language" as="store_language" remove="true"/>
+                    <block class="Magento\Framework\View\Element\Template" name="top.search.bottom" as="topSearchBottom" template="Magento_Theme::form.mini.phtml" before="-"/>
+                    <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe.bottom" as="subscribeBottom" after="topSearchBottom" template="Magento_Theme::subscribe_bottom.phtml" ifconfig="newsletter/general/active"/>
+                </referenceContainer>
             </referenceContainer>
         </referenceContainer>
         <referenceContainer name="page.top">
