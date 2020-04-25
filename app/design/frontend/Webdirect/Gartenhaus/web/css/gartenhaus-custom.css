@@ -32,7 +32,6 @@ body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem
 }
 
 body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts{
-    z-index: 20;
     position: absolute;
     bottom: 5%;
     display: flex;
