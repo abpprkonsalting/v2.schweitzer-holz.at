@@ -282,20 +282,14 @@ height: auto;width: auto;position: relative;margin-right: 15px;
 
 .page-wrapper .sections.nav-sections {
     margin-bottom: 0;
-    background: transparent;
-}
-
-.page-wrapper .sections.nav-sections .navigation {
-    padding-left: 20px;
-    padding-right: 20px;
-    background: transparent;
 }
 
 .page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) {
     background-color: #007255 !important;
-    padding-left: 40%;
-    display: flex;
-    align-items: center;
+}
+
+.page-wrapper .sections.nav-sections .navigation .ui-menu .level0.ui-menu-item > a > span {
+    color: white;
 }
 
 .page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) .level0.ui-menu-item {
@@ -314,12 +308,7 @@ height: auto;width: auto;position: relative;margin-right: 15px;
     border-bottom: none;
 }
 
-.page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) .level0.ui-menu-item:not(:last-child) > a{
-    border-right: 2px solid white;
-}
-
 .page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) .level0.ui-menu-item > a > span {
-    color: white;
     line-height: 16px;
 }
 
@@ -338,6 +327,53 @@ height: auto;width: auto;position: relative;margin-right: 15px;
 
 .page-wrapper .sections.nav-sections .navigation .submenu a:hover {
     background-color: rgba(0, 114, 85, 0.5);
+}
+
+@media only screen and (max-width: 767px) {
+
+    .page-wrapper .sections.nav-sections .section-item-title.nav-sections-item-title {
+        display:none;
+    }
+
+    .page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) .level0.ui-menu-item > a{
+        padding: 10px 20px;
+    }
+
+    .page-wrapper .navigation a, .page-wrapper .navigation a > span {
+        color: white;
+    }
+
+    .page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) .level0.ui-menu-item > ul{
+        padding-left: 20px;
+    }
+
+    .navigation .level0.active>a:not(.ui-state-active), .navigation .level0.has-active>a:not(.ui-state-active), .navigation .submenu:not(:first-child) .active>a {
+        border-color: #ffcc33;
+    }
+    
+}
+
+@media only screen and (min-width: 767px) {
+
+    .page-wrapper .sections.nav-sections {
+        background: transparent;
+    }
+
+    .page-wrapper .sections.nav-sections .navigation {
+        padding-left: 20px;
+        padding-right: 20px;
+        background: transparent;
+    }
+    
+    .page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) {
+        padding-left: 40%;
+        display: flex;
+        align-items: center;
+    }
+
+    .page-wrapper .sections.nav-sections .navigation .ui-menu:not(.submenu) .level0.ui-menu-item:not(:last-child) > a{
+        border-right: 2px solid white;
+    }
 }
 
 /*************************************************************************/
