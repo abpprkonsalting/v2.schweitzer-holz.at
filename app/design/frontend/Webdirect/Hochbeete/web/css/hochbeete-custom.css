@@ -1,0 +1,95 @@
+/*************************************************************************/
+/******************* Home ************************************************/
+
+body.cms-home .custom-slider .owl-carousel .owl-stage-outer {
+    padding: 0;
+}
+
+body.cms-home .custom-slider .owl-controls .owl-nav [class*=owl-] {
+    color: transparent;
+}
+
+body.cms-home .gartenhaus-second-row-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem {
+    width: 32%;
+    position: relative;
+    min-width: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-top: 20px;
+}
+
+body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem:nth-child(2) {
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts{
+    z-index: 20;
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(253.1,199.1,51.7,.9);
+    padding: 15px 50px;
+    color: #017f4e;
+}
+
+@media (max-width: 900px) {
+    body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts {
+        padding: 5px 20px;
+    }
+}
+
+body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts .gartenhaus-second-row-wrapper-header{
+    font-size: 120%;
+    font-weight: 700;
+}
+
+body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts .gartenhaus-second-row-wrapper-button{
+    margin-top: 10px;
+}
+
+body.cms-home .gartenhauser-home-text {
+    padding: 20px 40px;
+    color: #333;
+}
+
+body.cms-home .gartenhauser-home-text .gartenhauser-home-text-header {
+    display: block;
+    font-size: 140%;
+    font-weight: 600;
+}
+
+body.cms-home .gartenhauser-home-text .gartenhauser-home-text-subheader {
+    font-size: 110%;
+    display: block;
+}
+
+body.cms-home .gartenhauser-home-text p {
+    max-width: 95%;
+    margin: 20px 0;
+}
+
+
+
+
+/*************************************************************************/
+/******************* Uber-uns & kontakt **********************************/
+
+
+/*************************************************************************/
+/******************* Catalog Category ************************************/
+
+
+/*************************************************************************/
+/******************* Checkout Page ***************************************/

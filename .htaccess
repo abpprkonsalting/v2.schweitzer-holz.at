@@ -147,6 +147,8 @@
     SetEnvIf Host v2.xn--gartenhaus-carport-gewchshaus-mqc.at MAGE_RUN_TYPE=website
     SetEnvIf Host v2.jungle-gym-kinderspielplatz.at MAGE_RUN_CODE=jungle_gym
     SetEnvIf Host v2.jungle-gym-kinderspielplatz.at MAGE_RUN_TYPE=website
+    SetEnvIf Host v2.hochbeete-bauen.at MAGE_RUN_CODE=hochbeete
+    SetEnvIf Host v2.hochbeete-bauen.at MAGE_RUN_TYPE=website
 
 ############################################
 ## you can put here your magento root folder
