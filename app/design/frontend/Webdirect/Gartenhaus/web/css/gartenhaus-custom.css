@@ -43,6 +43,23 @@ body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem
     color: #017f4e;
 }
 
+body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts .widget.block-category-link > a{
+    background-image: none;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    padding: 7px 15px;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    vertical-align: middle;
+    background: #007255;
+    border: 1px solid #007255;
+    color: #fff;
+    border-radius: 0 !important;
+    font-weight: 100;
+    margin-top: 10px;
+}
+
 @media (max-width: 900px) {
     body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts {
         padding: 5px 20px;
