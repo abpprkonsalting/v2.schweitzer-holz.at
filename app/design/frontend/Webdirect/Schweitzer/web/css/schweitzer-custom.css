@@ -394,6 +394,13 @@ height: auto;width: auto;position: relative;margin-right: 15px;
     display: flex;
 }
 
+.page-footer .block-cms-link {
+    margin: 15px 0 !important;
+}
+.page-footer .block-cms-link > a{
+    color: white;
+}
+
 @media (max-width: 900px) {
     .footer.content .block-static-block {
         flex-direction: column;
