@@ -19,6 +19,45 @@ body {
     color: #fff;
 }
 
+#maincontent {
+    padding-top: 60px;
+}
+
+select {
+    background-color: transparent !important;
+    border: 1px solid #007255;
+    border-radius: 0 !important;
+    font-weight: 100;
+}
+
+.action.next, .action.previous {
+    background-color: transparent !important;
+    border: 1px solid #007255;
+    border-radius: 0 !important;
+    font-weight: 100;
+}
+
+.items.pages-items li.current .page {
+    background: #007255 !important;
+    color: white !important;
+}
+
+.toolbar-products .modes > * {
+
+    border: 1px solid #007255;
+    border-radius: 0 !important;
+    background: transparent;
+    box-shadow: none;
+}
+
+.toolbar-products .modes > *.active {
+    background-color: #007255;
+}
+.toolbar-products .modes > *.active:before {
+    color:white;
+}
+
+
 /*************************************************************************/
 /******************* Header **********************************************/
 
@@ -327,6 +366,10 @@ height: auto;width: auto;position: relative;margin-right: 15px;
     background-color: rgba(0, 114, 85, 0.5);
 }
 
+.ui-menu-icon.ui-icon {
+    margin: 0 5px;
+}
+
 @media only screen and (max-width: 767px) {
 
     .page-wrapper .sections.nav-sections .section-item-title.nav-sections-item-title {
@@ -395,7 +438,7 @@ height: auto;width: auto;position: relative;margin-right: 15px;
 }
 
 .page-footer .block-cms-link {
-    margin: 15px 0 !important;
+    margin: 0 0 15px !important;
 }
 .page-footer .block-cms-link > a{
     color: white;
@@ -437,12 +480,173 @@ height: auto;width: auto;position: relative;margin-right: 15px;
 
 
 /*************************************************************************/
-/******************* Uber-uns & kontakt **********************************/
+/******************* Uber-uns ********************************************/
 
+/*************************************************************************/
+/******************* kontakt *********************************************/
+
+body.cms-kontakt .contacto {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+body.cms-kontakt .field {
+    width: 80%;
+}
+    
+ @media (max-width: 767px) {
+
+    body.cms-kontakt .contacto {
+        flex-direction: column;
+    }
+
+    body.cms-kontakt .contacto > div, body.cms-kontakt .contacto .field {
+        width: 100% !important;
+    }
+
+    body.cms-kontakt .contacto > div:last-child {
+        margin-top: 20px;
+    }
+    body.cms-kontakt .legend {
+        font-weight: 700;
+    }
+ }
 
 /*************************************************************************/
 /******************* Catalog Category ************************************/
 
+/*************************************************************************/
+/******************* Catalog Product *************************************/
 
+/************** Main Product ****************/
+
+.column.main .product-info-main .product-info-price{ 
+    display: flex;
+    justify-content: flex-start;
+}
+
+.column.main .product-info-main .price-final_price {
+    display: flex;
+    width: auto;
+}
+
+.column.main .product-info-main .price-final_price .price-container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.column.main .product-info-main .price-final_price .price-container .price-wrapper {
+    margin-bottom: 0;
+}
+
+.column.main .product-info-main .price-details {
+    display: flex;
+    margin-left: 10px;
+    align-items: flex-end;
+    padding-bottom: 10px;
+}
+
+.column.main .product-info-main .product-info-stock-sku {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.column.main .product-info-main .product-info-stock-sku .stock.available {
+    min-width: 90px;
+}
+
+.column.main .product-info-main .product-info-stock-sku .stock.available > div {
+width: 100%;
+    display: block;
+}
+
+/************** Related Products ****************/
+
+.product-item-details .product-item-name {
+    font-size: 130%;
+    font-weight: 600;
+    margin-bottom: auto;
+    margin-top: 15px;
+}
+
+.product-item-details .price-final_price {
+    margin: 5px 0 5px;
+}
+
+.product-item-details .price-final_price .price {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.products-related .product-item-details {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.products-related .product-item-details .field.choice {
+    margin-left: 0 !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+    margin: 20px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    margin-top: auto !important;
+    margin-bottom: 5px !important;
+}
+
+.products-related .product-item-details .field.choice .checkbox.related {
+    margin-top: 0;
+    top: 0;
+}
+
+.products-related .owl-next, .products-related .owl-prev {
+    color: transparent !important;
+}
+
+.block-actions button {
+    background: #007255;
+    border: 1px solid #007255;
+    color: #fff;
+    border-radius: 0 !important;
+    font-weight: 100;
+    box-shadow: none;
+}
 /*************************************************************************/
 /******************* Checkout Page ***************************************/
+
+body.checkout-index-index .action.action-apply,body.checkout-index-index .action.action-update, 
+body.checkout-index-index .action.action-edit-address {
+    background: #007255;
+    border: 1px solid #007255;
+    color: #fff;
+    border-radius: 0 !important;
+    font-weight: 100;
+    box-shadow: none;
+}
+
+/*************************************************************************/
+/******************* Impressum *******************************************/
+
+body.cms-impressum .impressum {
+    display:flex;
+}
+
+body.cms-impressum .impressum div:nth-child(2){
+    width: 75%; 
+    margin-left: 5%;
+}
+
+@media only screen and (max-width: 875px) {
+
+    body.cms-impressum .impressum {
+        flex-direction: column;
+    }
+
+    body.cms-impressum .impressum div:nth-child(2){
+        margin: 25px 0;
+        width: 100%;
+    }
+}

@@ -39,9 +39,10 @@ body.cms-jungle-gym  .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapp
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: rgba(253.1,199.1,51.7,.9);
+    background-color: rgba(169,159,142,.9);
     padding: 15px 50px;
     color: #017f4e;
+    border: 3px solid rgba(253.1,199.1,51.7,.9);
 }
 
 @media (max-width: 900px) {
@@ -53,6 +54,7 @@ body.cms-jungle-gym  .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapp
 body.cms-jungle-gym .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts .gartenhaus-second-row-wrapper-header{
     font-size: 120%;
     font-weight: 700;
+    text-shadow: -1px 0 #43bf8f;
 }
 
 body.cms-jungle-gym .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts .widget.block-category-link > a{
