@@ -217,7 +217,7 @@ return [
             'admin' => [
                 'security' => [
                     'use_form_key' => '1',
-                    'admin_account_sharing' => '0',
+                    'admin_account_sharing' => '1',
                     'password_reset_protection_type' => '1',
                     'max_number_password_reset_requests' => '5',
                     'min_time_between_password_reset_requests' => '10',

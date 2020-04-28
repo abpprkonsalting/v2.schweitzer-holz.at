@@ -1,0 +1,5 @@
+AuthUserFile /www/htdocs/w012e775/v2.schweitzer-holz.at/usage/.htpasswd
+AuthGroupFile /dev/null
+AuthName 'ByPassword'
+AuthType Basic
+require valid-user

@@ -99,10 +99,11 @@ body.cms-jungle-gym .block-products-list {
     margin-bottom: 80px !important;
 }
 body.cms-jungle-gym .product-item-name .product-item-link, body.cms-jungle-gym .price{
-    font-size: 150%;
     font-weight: 600;
     color: #333;
 }
+
+
 
 
 /*************************************************************************/

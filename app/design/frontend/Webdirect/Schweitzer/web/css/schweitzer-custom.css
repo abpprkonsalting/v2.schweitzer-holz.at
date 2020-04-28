@@ -567,11 +567,12 @@ width: 100%;
     font-size: 130%;
     font-weight: 600;
     margin-bottom: auto;
-    margin-top: 15px;
 }
 
 .product-item-details .price-final_price {
-    margin: 5px 0 5px;
+    margin: 5px 0 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-item-details .price-final_price .price {
@@ -579,22 +580,27 @@ width: 100%;
     font-weight: 600;
 }
 
-.products-related .product-item-details {
-    min-height: 200px;
+.product-item-details .price-final_price .old-price {
+    margin: 0;
+}
+
+.product-item-details .price-final_price .old-price .price-wrapper {
+    display: block;
+}
+
+.products-related .product-item-details, #recently_viewed .product-item-details{
+    min-height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.products-related .product-item-details .field.choice {
-    margin-left: 0 !important;
+.products-related .product-item-details .field.choice,#recently_viewed .product-item-details .product-item-inner {
     width: 100% !important;
-    margin-top: 15px !important;
-    margin: 20px 0 !important;
     display: flex !important;
     align-items: center !important;
-    margin-top: auto !important;
-    margin-bottom: 5px !important;
+    margin: auto 0 5px!important;
+    justify-content: center;
 }
 
 .products-related .product-item-details .field.choice .checkbox.related {
