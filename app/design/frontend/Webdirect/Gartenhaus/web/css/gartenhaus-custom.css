@@ -1,6 +1,10 @@
 /*************************************************************************/
 /******************* Home ************************************************/
 
+body.cms-home #maincontent {
+    padding-top:0;
+}
+
 body.cms-home .custom-slider .owl-carousel .owl-stage-outer {
     padding: 0;
 }

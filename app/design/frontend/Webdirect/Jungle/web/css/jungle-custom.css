@@ -1,6 +1,10 @@
 /*************************************************************************/
 /******************* Home ************************************************/
 
+body.cms-jungle-gym #maincontent {
+    padding-top:0;
+}
+
 body.cms-jungle-gym  .custom-slider .owl-carousel .owl-stage-outer {
     padding: 0;
 }

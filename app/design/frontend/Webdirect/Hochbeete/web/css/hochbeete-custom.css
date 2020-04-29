@@ -1,7 +1,10 @@
 /*************************************************************************/
 /******************* Home ************************************************/
 
-body.cms-home .custom-slider .owl-carousel .owl-stage-outer {
+body.cms-hochbeete-bauen #maincontent {
+    padding-top:0;
+}
+
     padding: 0;
 }
 
