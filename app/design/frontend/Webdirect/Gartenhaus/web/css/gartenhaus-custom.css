@@ -5,6 +5,7 @@ body.cms-home #maincontent {
     padding-top:0;
 }
 
+/*********** Slider *************/
 body.cms-home .custom-slider .owl-carousel .owl-stage-outer {
     padding: 0;
 }
@@ -19,6 +20,89 @@ body.cms-home .gartenhaus-second-row-wrapper {
     flex-wrap: wrap;
 }
 
+@media (max-width: 640px) {
+
+    .banner-2 .content_slider {
+        width: 160px !important;
+        padding: 20px 15px !important;
+    }
+    .banner-2 .content_slider .banner-title > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .banner-2 .content_slider .banner-title {
+        font-size: 16px !important;
+    }
+    .banner-2 .content_slider .banner-description {
+        font-size: 12px !important;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 860px) {
+
+    .banner-2 .content_slider {
+        width: 170px !important;
+        padding: 25px 15px !important;
+    }
+    .banner-2 .content_slider .banner-title {
+        font-size:16px !important;
+    }
+
+    .banner-2 .content_slider .banner-description {
+        font-size: 80% !important;
+        margin-top: 10px !important;
+    }
+}
+
+@media (min-width: 861px) {
+
+    .banner-2 .content_slider {
+        width: 240px !important;
+    }
+        
+    .banner-2 .content_slider .banner-description {
+        font-size: 14px;
+    }
+
+    .banner-2 .content_slider .banner-title{
+        font-size:18px !important;
+    }
+}
+
+.banner-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-2 .content_slider {
+    background-color: #017f4e;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 30px;
+    border: 10px solid #ffcc33;
+    border-radius: 2500px;
+    margin: auto;
+    justify-content: center;
+    left: auto !important;
+    top: auto !important;
+}
+.banner-2 .content_slider .banner-title{
+    display: block !important;
+    text-transform: none !important;
+    font-weight: 500;
+}
+.banner-2 .content_slider .banner-description {
+display: block !important;
+    padding: 0 !important;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+/********************************************/
 body.cms-home .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem {
     width: 32%;
     position: relative;

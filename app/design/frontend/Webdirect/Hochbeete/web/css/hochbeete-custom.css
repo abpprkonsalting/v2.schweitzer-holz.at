@@ -1,6 +1,8 @@
 /*************************************************************************/
 /******************* Home ************************************************/
 
+/*********** Slider *************/
+
 body.cms-hochbeete-bauen #maincontent {
     padding-top:0;
 }
@@ -13,32 +15,10 @@ body.cms-hochbeete-bauen .custom-slider .owl-controls .owl-nav [class*=owl-] {
     color: transparent;
 }
 
-body.cms-hochbeete-bauen .gartenhauser-home-text {
-    padding: 20px 40px;
-    color: #333;
-}
-
-body.cms-hochbeete-bauen .gartenhauser-home-text .gartenhauser-home-text-header {
-    display: block;
-    font-size: 140%;
-    font-weight: 600;
-}
-
-body.cms-hochbeete-bauen .gartenhauser-home-text .gartenhauser-home-text-subheader {
-    font-size: 110%;
-    display: block;
-}
-
-body.cms-hochbeete-bauen .gartenhauser-home-text p {
-    max-width: 95%;
-    margin: 20px 0;
-}
-
-
 @media (max-width: 640px) {
 
     .banner-4 .content_slider {
-        width: 106px !important;
+        width: 160px !important;
         padding: 20px 15px !important;
      }
     .banner-4 .content_slider .banner-title > div {
@@ -58,9 +38,8 @@ body.cms-hochbeete-bauen .gartenhauser-home-text p {
 @media (min-width: 641px) and (max-width: 860px) {
 
     .banner-4 .content_slider {
-            /*width: 120px !important;
-            padding: 25px 15px !important;*/
-        width: 119px !important;
+
+            width: 199px !important
     }
     .banner-4 .content_slider .banner-title {
       font-size:16px !important;
@@ -75,7 +54,7 @@ body.cms-hochbeete-bauen .gartenhauser-home-text p {
 @media (min-width: 861px) {
 
     .banner-4 .content_slider {
-        width: 135px !important;
+        width: 220px !important;
     }
         
     .banner-4 .content_slider .banner-description {
@@ -121,6 +100,27 @@ body.cms-hochbeete-bauen .gartenhauser-home-text p {
 
 
 
+/*********** Home Text **********/
+body.cms-hochbeete-bauen .gartenhauser-home-text {
+    padding: 20px 40px;
+    color: #333;
+}
+
+body.cms-hochbeete-bauen .gartenhauser-home-text .gartenhauser-home-text-header {
+    display: block;
+    font-size: 140%;
+    font-weight: 600;
+}
+
+body.cms-hochbeete-bauen .gartenhauser-home-text .gartenhauser-home-text-subheader {
+    font-size: 110%;
+    display: block;
+}
+
+body.cms-hochbeete-bauen .gartenhauser-home-text p {
+    max-width: 95%;
+    margin: 20px 0;
+}
 
 
 /*************************************************************************/
