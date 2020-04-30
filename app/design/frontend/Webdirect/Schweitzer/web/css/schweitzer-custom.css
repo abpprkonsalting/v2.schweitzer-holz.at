@@ -482,6 +482,24 @@ height: auto;width: auto;position: relative;margin-right: 15px;
 /*************************************************************************/
 /******************* Uber-uns ********************************************/
 
+body.cms-uber-uns .places-gallery .owl-item .grid, body.cms-uber-uns .mitarbeiter .fancybox-button, 
+body.cms-uber-uns .mitarbeiter .fancybox-button > img {
+    width:100%;
+}
+
+body.cms-uber-uns .places-gallery .gallery_title span,
+body.cms-uber-uns .mitarbeiter .gallery_title span {
+    font-weight: inherit;
+    font-family: inherit;
+    text-transform: inherit;
+    font-size: 130%;
+    color: inherit;
+}
+
+body.cms-uber-uns .mitarbeiter > div > div {
+    margin-bottom: 30px;
+}
+
 /*************************************************************************/
 /******************* kontakt *********************************************/
 
@@ -520,9 +538,14 @@ body.cms-kontakt .field {
 
 /************** Main Product ****************/
 
+.column.main .product-info-main .reviews-actions > a{
+    white-space: normal;
+}
+
 .column.main .product-info-main .product-info-price{ 
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .column.main .product-info-main .price-final_price {
@@ -559,6 +582,13 @@ body.cms-kontakt .field {
 .column.main .product-info-main .product-info-stock-sku .stock.available > div {
 width: 100%;
     display: block;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .column.main .product-info-main {
+        width: auto;
+    }
 }
 
 /************** Related Products ****************/
