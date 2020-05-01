@@ -210,6 +210,11 @@ body.cms-jungle-gym .product-item-name .product-item-link, body.cms-jungle-gym .
 }
 
 
+body.cms-jungle-gym #recently_viewed {
+    display:none;
+}
+
+
 
 
 /*************************************************************************/
