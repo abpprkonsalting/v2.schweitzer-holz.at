@@ -164,7 +164,7 @@ height: auto;width: auto;position: relative;margin-right: 15px;
     display: block;
     min-width: 0;
     margin: 0;
-    padding: 2px;
+    /*padding: 2px;*/
 }
 
 .page-header .minicart-wrapper .action.showcart .counter.qty .counter-number {
@@ -536,6 +536,16 @@ body.cms-kontakt .field {
 /*************************************************************************/
 /******************* Catalog Product *************************************/
 
+body.catalog-product-view .block-margin {
+    margin-right: 0;
+    margin-left: 0;
+}
+@media only screen and (min-width: 768px) {
+    .second-add-to-cart-button {
+        max-width: 450px;
+    }
+}
+
 /************** Main Product ****************/
 
 .column.main .product-info-main .reviews-actions > a{
@@ -630,7 +640,7 @@ width: 100%;
     display: flex !important;
     align-items: center !important;
     margin: auto 0 5px!important;
-    justify-content: center;
+    /*justify-content: center;*/
 }
 
 .products-related .product-item-details .field.choice .checkbox.related {
