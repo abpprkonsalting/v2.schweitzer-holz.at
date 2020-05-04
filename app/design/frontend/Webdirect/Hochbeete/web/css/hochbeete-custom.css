@@ -15,11 +15,11 @@ body.cms-hochbeete-bauen .custom-slider .owl-controls .owl-nav [class*=owl-] {
     color: transparent;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
 
     .banner-4 .content_slider {
-        width: 160px !important;
-        padding: 20px 15px !important;
+        width: 200px !important;
+        padding: 20px !important;
      }
     .banner-4 .content_slider .banner-title > div {
         display: flex;
@@ -27,7 +27,7 @@ body.cms-hochbeete-bauen .custom-slider .owl-controls .owl-nav [class*=owl-] {
         align-items: center;
      }
      .banner-4 .content_slider .banner-title {
-        font-size: 16px !important;
+        font-size: 14px !important;
         line-height: 18px;
      }
      .banner-4 .content_slider .banner-description {
@@ -35,11 +35,11 @@ body.cms-hochbeete-bauen .custom-slider .owl-controls .owl-nav [class*=owl-] {
      }
 }
 
-@media (min-width: 641px) and (max-width: 860px) {
+@media (min-width: 768px) and (max-width: 860px) {
 
     .banner-4 .content_slider {
 
-            width: 199px !important
+            width: 240px !important
     }
     .banner-4 .content_slider .banner-title {
       font-size:16px !important;
@@ -54,7 +54,7 @@ body.cms-hochbeete-bauen .custom-slider .owl-controls .owl-nav [class*=owl-] {
 @media (min-width: 861px) {
 
     .banner-4 .content_slider {
-        width: 220px !important;
+        width: 270px !important;
     }
         
     .banner-4 .content_slider .banner-description {
@@ -70,6 +70,10 @@ body.cms-hochbeete-bauen .custom-slider .owl-controls .owl-nav [class*=owl-] {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.banner-4 .banner-image {
+    width:100%;
 }
 
 .banner-4 .content_slider {
@@ -104,6 +108,7 @@ body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    position: relative;
 }
 
 body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem {
@@ -115,6 +120,11 @@ body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-w
     align-items: center;
     margin-bottom: 10px;
     padding-top: 20px;
+    cursor: pointer;
+}
+
+body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem * {
+    cursor: pointer;
 }
 
 body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts{
@@ -125,7 +135,7 @@ body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-w
     align-items: center;
     justify-content: space-around;
     background-color: rgba(169,159,142,.9);
-    padding: 15px 50px;
+    padding: 15px;
     color: #017f4e;
     border: 3px solid rgba(253.1,199.1,51.7,.9);
 }
@@ -147,19 +157,194 @@ body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-w
     margin-top: 10px;
 }
 
-@media (max-width: 900px) {
-    body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts {
-        padding: 5px 20px;
-    }
-}
-
 body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts .gartenhaus-second-row-wrapper-header{
     font-size: 120%;
     font-weight: 700;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts {
+        padding: 5px;
+    }
+    body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts .gartenhaus-second-row-wrapper-header {
+        font-weight: 500;
+    }
 }
 
 body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts .gartenhaus-second-row-wrapper-button{
     margin-top: 10px;
+}
+
+
+
+.home-table2 {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 80%;
+    box-shadow: 3px 4px 4px 0 rgba(0,0,0,0.6);
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    transition: all .3s ease;
+    top: 30px;
+}
+
+.home-table2 .fila {
+    display: flex;
+}
+
+.home-table2 .fila:not(:last-child) {
+    border-bottom: 1px solid lightgray
+}
+
+.home-table2 div[class^="column-"] {
+    display: flex;
+    opacity:0.3;
+    font-size: 1.2rem;
+}
+
+/*.home-table2 div[class^="column-"]:not(:last-child) {
+    border-right: 1px solid lightgray;
+}*/
+
+.home-table2 div.column-1 {
+    width: 25%;
+    padding: 5px 0 5px 15px;
+    align-items: center;
+}
+
+.home-table2 div.column-2,
+.home-table2 div.column-3,
+.home-table2 div.column-4,
+.home-table2 div.column-5,
+.home-table2 div.column-6 {
+    width: 15%;
+    justify-content: center;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+}
+
+.home-table2 .fila.tip {
+    padding: 10px 15px;
+    align-items: center;
+    position: relative;
+    border: none;
+}
+
+.home-table2 .fila.tip > div.close {
+    position:absolute;
+    top:3px;
+    right:3px;
+}
+.home-table2 .fila.tip > div.close:before {
+    -webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+font-size: 14px;
+line-height: 14px;
+content: '\e616';
+font-family: 'luma-icons';
+margin: 0;
+vertical-align: top;
+display: inline-block;
+font-weight: normal;
+overflow: hidden;
+text-align: center;
+}
+
+.home-table2 .plus:before {
+    content: url(http://v2.hochbeete-bauen.at/pub/media/add-24px.svg);
+    margin-right: 5px;
+}
+
+.home-table2 .plus {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.home-table2 div[class^="column-"].header {
+    font-weight: 600;
+    opacity:1;
+}
+
+.home-table2 div[class^="column-"].header:hover {
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.check:before {
+    content: url(http://v2.hochbeete-bauen.at/pub/media/done-24px.svg);
+}
+
+.home-table2 div.active {
+    background: rgba(0, 114, 85, 0.5);
+    color: black;
+    text-shadow: 1px 1px #929292;
+    opacity:1;
+    border: none;
+}
+
+/*.home-table2 div.active .check:before {
+    content: url(http://v2.hochbeete-bauen.at/pub/media/done-24px-white.svg);
+}
+
+.home-table2 div.active .plus:before {
+    content: url(http://v2.hochbeete-bauen.at/pub/media/add-24px-white.svg);
+}*/
+
+/*.gartenhaus-second-row-wrapper-elem:first-child:hover ~ .home-table2 {
+    display:none;
+}*/
+
+.home-table2 .fila.last .button {
+    border: 1px solid white;
+    background: white;
+    text-shadow: none;
+    box-shadow: 1px 1px 1px rgba(0, 114, 85, 0.5);
+}
+
+.home-table2 .fila.last div:not(.column-2) .button {
+    padding: 5px 10px;
+}
+
+.home-table2 .fila.last .button:hover {
+    border: 1px solid #efefef;
+    background: #efefef;
+    text-shadow: none;
+}
+
+.home-table2 .fila.last div[class^="column-"] {
+    position: relative;
+}
+
+.home-table2 .fila.last div[class^="column-"] .click-mask{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.home-table2 .fila.last div[class^="column-"].active .click-mask{
+    display:none;
+}
+
+@media (max-width: 879px) {
+    .home-table2 {
+        width:100%
+    }
+
+    .home-table2 div[class^="column-"]:not(.header) {
+        font-size: 75%
+    }
+}
+
+@media (min-width: 880px) and (max-width: 1059px) {
+    .home-table2 {
+        width:90%
+    }
 }
 
 /*********** Home Text **********/
@@ -184,6 +369,23 @@ body.cms-hochbeete-bauen .gartenhauser-home-text p {
     margin: 20px 0;
 }
 
+body.cms-hochbeete-bauen .gartenhauser-home-text .block-cms-link {
+    background: #007255;
+    border: 1px solid #007255;
+    color: #fff;
+    border-radius: 0 !important;
+    font-weight: 100;
+    margin: 20px 0 100px;
+    padding: 7px 15px;
+    cursor: pointer;
+    display: inline-block;
+    box-shadow: 1px 1px 1px rgba(0, 114, 85, 0.5);
+}
+
+body.cms-hochbeete-bauen .gartenhauser-home-text .block-cms-link a {
+    color: white;
+}
+
 
 /*************************************************************************/
 /******************* Uber-uns & kontakt **********************************/
@@ -192,6 +394,19 @@ body.cms-hochbeete-bauen .gartenhauser-home-text p {
 /*************************************************************************/
 /******************* Catalog Category ************************************/
 
+/*************************************************************************/
+/******************* Catalog Product *************************************/
 
+body[class*="product-hochbeet-premium-"] .products-related .products.list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+body[class*="product-hochbeet-premium-"] .products-related .products.list .product-item-info {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 /*************************************************************************/
 /******************* Checkout Page ***************************************/
