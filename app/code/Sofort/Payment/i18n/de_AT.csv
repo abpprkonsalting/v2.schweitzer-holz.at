@@ -1,0 +1,69 @@
+Status settings, Statuseinstellungen
+Extended settings, Erweiterte Einstellungen 
+"Please set up a project in the merchant menu of SOFORT AG (please make sure to create a 'SOFORT Gateway Project'). In the next step, you just need your configuration key", "Bitte richten Sie im Anbietermenü der Sofort GmbH ein Projekt ein (Bitte achten Sie darauf ein 'Gateway-Projekt' anzulegen). Sie benötigen im nächsten Schritt lediglich Ihren Konfigurationsschlüssel"
+Project set-up, Einrichtung eines Projekts
+"In order to offer SOFORT Banking, you need a customer account with SOFORT AG. You are not a customer yet? <a href='https://www.sofort.com/payment/users/register/'>Register now!</a>", "Um Sofort anbieten zu können, benötigen Sie einen Kundenaccount bei Sofort GmbH. Sie sind noch kein Kunde? <a href='https://www.sofort.com/payment/users/register/'>Registrieren Sie sich jetzt!</a>"
+Registration, Registrierung
+"Just a few steps are required to use SOFORT Banking:", "Um Sofort nutzen zu können sind einige Schritte notwendig"
+"SOFORT Banking is the direct payment system provided by SOFORT AG. SOFORT Banking allows buyers to make a wire transfer of the respective amount during the order process using their online banking account. You as a merchant will receive a real-time confirmation after the SOFORT Banking transaction has been completed. This enables you to immediately ship goods on stock and digital goods - and the buyer will receive the purchased items faster. Learn more about SOFORT Banking and SOFORT AG at <a href='http://www.sofort.com' target='_blank'>sofort.com</a>",Mit dem TÜV Saarland zertifizierten Bezahlsystem "Sofort" zahlst du sicher und bequem per Direkt-Überweisungsverfahren mit deinen gewohnten Online Banking Daten (PIN/TAN) und ohne Registrierung. Der Händler erhält nach Abschluss der Überweisung eine Echtzeitbestätigung. So kann er Lagerware und digitale Güter sofort versenden - Du erhältst so Deine Einkäufe schneller. <a href='http://www.klarna.com/sofort/' target='_blank'>Mehr hier.</a>
+"Payment system with data protection certified by TÜV Saarland", "Einfach und direkt bezahlen per Online Banking."
+Send receipt emails, Beleg E-Mails senden
+SOFORT Banking, "Sofort"
+Sofort., "Sofort"
+About SOFORT Banking,Über Sofort
+Module configuration,Modulkonfiguration
+Settings,Basiseinstellungen
+Activate the module and enter the configuration key. SOFORT Banking will be immediately available in your checkout. Additional settings are not required.,Einfach das Modul aktivieren und Konfigurationsschlüssel eintragen. Sofort ist damit sofort in Ihrem Checkout verfügbar. Weitere Einstellungen sind nicht notwendig.
+Activate SOFORT Banking in your shop,Aktivieren Sie Sofort in Ihrem Shop
+Use the main website setting,Main Website-Einstellung verwenden
+Configuration key:,Konfigurationsschlüssel
+Sort sequence:,Anzeigereihenfolge
+Show only for specific countries:,Nur für bestimmte Ländern anzeigen
+Reference settings,Verwendungszweckeinstellungen
+Reference:,Verwendungszweck
+Reference 2:,Verwendungszweck 2
+"reference1","Folgende Platzhalter sind erlaubt:<br/><ul><li>Bestellnummer:  {{order_id}}</li><li>Kundenname: {{name}}</li><li>Datum: {{date}}</li><li>Shopname: {{shopname}}</li><li>Transaction: {{transaction}}</li><li>Customer ID: {{customer_id}}</li><li>Customer Email: {{customer_email}}</li></ul>"
+"Please adjust these settings only if you are familiar with status handling of Magento, as this may have unpredictable effects on your shop and other modules might no longer work properly. Additional information can be found in our manual.","Bitte nehmen Sie nur Anpassungen an diesen Einstellungen vor, wenn Sie mit der Statusbehandlung von Magento vertraut sind, da dies unvorhersehbare Auswirkungen auf Ihren Shop haben kann und andere Module möglicherweiße nicht mehr ordnungsgemäß funktionieren. Weitere Informationen finden Sie in unserem Handbuch."
+Temporary order status:,Temporärer Bestellstatus
+Define the status for orders which have not been paid yet.,"(Definieren Sie den Status für Bestellungen, die noch nicht bezahlt wurden.)"
+Aborted order status:,Abgebrochener Bestellstatus
+Confirmed order status:,Bestätigter Bestellstatus
+Define the status for orders which have been successfully completed by SOFORT Banking.,"(Definieren Sie den Status für Bestellungen, die mit Sofort erfolgreich abgeschlossen wurden.)"
+Not create invoice,Keine Rechnung erstellen
+(not recommended),(nicht empfohlen)
+Not update status,Keine Statusaktualisierung durchführen
+Order status for full refunds:,Bestellstatus für vollständige Erstattungen
+Define the status for orders which have been prepared for full refunds in the SOFORT AG merchant menu. Bear in mind that refunds usually have to be carried out manually.,"Definieren Sie den Status für Bestellungen, die vollständig im Anbietermenü der Sofort GmbH zur Rückbuchung vorgemerkt wurden. Beachten Sie, dass Rückbuchungen i.d.R. dort manuell zur Ausführung gebracht werden müssen.)"
+Order status for payment receipt:,Bestellstatus für Geldeingang
+(Define the status of orders for which payment has been received on your SOFORT Bank account. A SOFORT Bank account is required.),"(Definieren Sie den Status für Bestellungen, für die ein Geldeingang auf Ihrem Bank-Konto festgestellt wurde. Benötigt ein Deutsche Handelsbank Konto.)"
+Order status for losses:,Bestellstatus für Zahlungsausfälle
+(Define the status of orders for which no payment or a different amount has been received on your SOFORT Bank account. A SOFORT Bank account is required.),"(Definieren Sie den Status für Bestellungen, für die kein Geldeingang festgestellt wurde oder ein abweichender Betrag auf Ihrem Bank-Konto eingegangen ist. Benötigt ein Deutsche Handelsbank Konto.)"
+"Redirection to SOFORT Banking. Transaction not finished. Transaction ID: [[transaction_id]]. Time: [[date]]","Weiterleitung zu Sofort Zahlung noch nicht abgeschlossen. Transaktions-ID: [[transaction_id]]. Zeit: [[date]] Uhr"
+"Payment aborted. Time: %s","Bezahlung abgebrochen. Zeit: %s Uhr"
+"SOFORT Banking has been completed successfully - Transaction ID: [[transaction_id]]. Time: [[date]]",Sofort erfolgreich abgeschlossen - Transaktions-ID: [[transaction_id]]. Zeit: [[date]] Uhr
+"The payment has not been received on your SOFORT Bank account. Please verify the payment. Time: [[date]]",Es konnte kein Geldeingang auf dem Bank-Konto festgestellt werden. Bitte überprüfen Sie die Bezahlung. Zeit: [[date]] Uhr
+"The payment has been received on your SOFORT Bank account. Time: [[date]]",Betrag ist auf dem Bank-Konto eingegangen Zeit: [[date]] Uhr
+"An amount differing from the order has been received on your SOFORT Bank account. Please verify the payment. Time: [[date]]","Es wurde ein von der Bestellung abweichender Betrag auf dem Bank-Konto festgestellt. Bitte überprüfen Sie die Bezahlung. Zeit: [[date]] Uhr"
+"Partial amount will be refunded - [[refunded_amount]]. Time: [[date]]","Teilbetrag wird erstattet - [[refunded_amount]]. Zeit: [[date]] Uhr"
+"Amount will be refunded. Time: [[date]]","Betrag wird erstattet. Zeit: [[date]] Uhr"
+Select the time of invoicing,Wählen Sie den Zeitpunkt der Rechnungserstellung
+It is not recommended to change this setting,(Es wird nicht empfohlen diese Einstellung zu verändern)
+After finishing the payment,Nach Abschluss der Zahlung
+The receipt of the money ( can be only detected with an account with SOFORT Bank),Bei Erhalt des Geldes (kann nur mit Deutsche Handelsbank-Konto festgestellt werden)
+"If the status shouldn't be updated for this event, please choose as status %s","Wenn keine Statusaktualisierung für dieses Event durchgeführt werden soll, wählen Sie als Status %s"
+Create credit memo automatically,Gutschrift automatisch erstellen
+A credit memo will be created automatically if a transaction was refunded by using the SOFORT panel.,"Es wird automatisch eine Gutschrift  erstellt, wenn einer Transaktion im Sofort System komplett zurückgebucht wurde."
+en,de_de
+"Send order confirmation","Bestellbestätigung senden"
+"Redirection to SOFORT Banking. Transaction not finished. Transaction ID: [[transaction_id]]. Time: [[date]]", "Weiterleitung zu Sofort Zahlung noch nicht abgeschlossen. Transaktions-ID: [[transaction_id]]. Zeit: [[date]] Uhr"
+"Payment is unfortunately not possible or has been cancelled by the customer. Please select another payment method.", "Die gewählte Zahlart ist leider nicht möglich, oder wurde auf Kundenwunsch abgebrochen. Bitte wählen Sie eine andere Zahlart."
+"Module Configuration","Modulkonfiguration"
+Payment Applicable From,Zahlung anwendbar von
+Countries Payment Applicable From,Länderzahlung anwendbar von
+Accepted Currency,Akzeptierte Währung
+"(recommended payment methode)", "(empfohlene Zahlart)"
+"Recommended payment method","Empfohlene Zahlart"
+"Enable Logging","Aktiviere Logging"
+"Position in Checkout","Position im Checkout"
+"Order Status configuration","Bestell Status Einstellungen"
+CUSTOMER_LANDINGPAGE,"https://documents.sofort.com/sue/kundeninformationen-at/"

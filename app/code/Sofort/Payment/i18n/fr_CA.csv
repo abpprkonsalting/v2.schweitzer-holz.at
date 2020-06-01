@@ -1,0 +1,70 @@
+Status settings, Configuration du statut
+Extended settings, Configuration avancée
+"Please set up a project in the merchant menu of SOFORT AG (please make sure to create a 'SOFORT Gateway Project'). In the next step, you just need your configuration key", "Veuillez créer un projet dans le menu commerçant de Sofort GmbH (veillez bien à créer un  'Projet Gateway' ). À l'étape suivant, il ne vous reste plus qu'à utiliser votre clé de configuration."
+Project set-up, Création d'un projet
+"In order to offer SOFORT Banking, you need a customer account with SOFORT AG. You are not a customer yet? <a href='https://www.sofort.com/payment/users/register/'>Register now!</a>", "Vous avez besoin d'un compte client auprès de Sofort GmbH pour pouvoir proposer Virement Bancaire. Vous ne proposez pas encore Virement Bancaire. à vos clients ? <a href='https://www.sofort.com/payment/users/register/'>Enregistrez-vous dès maintenant !</a>"
+Registration, Enregistrement
+"Just a few steps are required to use SOFORT Banking:", "Avant de pouvoir utiliser Virement Bancaire, quelques étapes sont nécessaires"
+"SOFORT Banking is the direct payment system provided by SOFORT AG. SOFORT Banking allows buyers to make a wire transfer of the respective amount during the order process using their online banking account. You as a merchant will receive a real-time confirmation after the SOFORT Banking transaction has been completed. This enables you to immediately ship goods on stock and digital goods - and the buyer will receive the purchased items faster. Learn more about SOFORT Banking and SOFORT AG at <a href='http://www.sofort.com' target='_blank'>sofort.com</a>", "Le paiement via ""Virement bancaire"" te permet de faire un transfert en ligne du montant défini au cours du processus de commande, à travers ton compte bancaire en ligne, de façon simple, rapide et sécurisé et sans enregistrement. La boutique en ligne peut traiter et livrer ta commande plus rapidement grâce à notre confirmation de la transaction en temps réel. <a href='http://www.klarna.com/sofort/' target='_blank'>En savoir plus ici.</a>"
+"Payment system with data protection certified by TÜV Saarland", Simple et securisé.
+Send receipt emails, Envoyer les e-mails de confirmation
+SOFORT Banking, Virement Bancaire
+Sofort., Virement Bancaire
+About SOFORT Banking,À propos de Virement Bancaire
+Module configuration,Configuration du module
+Settings,Configurations de base
+Activate the module and enter the configuration key. SOFORT will be immediately available in your checkout. Additional settings are not required.,Activez tout simplement le module et saisissez votre clé de configuration. Virement Bancaire est alors immédiatement disponible dans votre sortie de caisse. Vous n'avez plus besoin d'effectuer d'autres réglages.
+Activate SOFORT Banking in your shop,Activez Virement Bancaire dans votre système de vente
+Use the main website setting,Utiliser le réglage principal du site
+Configuration key:,Clé de configuration
+Sort sequence:,Séquence d'affichage
+Show only for specific countries:,Afficher uniquement pour certains pays :
+Reference settings,Configurations de la référence de paiement
+Reference:,Référence de paiement
+Reference 2:,Référence de paiement 2
+"reference1","Caractères de remplacement autorisés :<br/><ul><li>Numéro de commande: {{order_id}}</li><li>Le client: {{name}}</li><li>Date de la facture: {{date}}</li><li>Shopname: {{shopname}}</li><li>Transaction: {{transaction}}</li><li>Customer ID: {{customer_id}}</li><li>Customer Email: {{customer_email}}</li></ul>"
+"Please adjust these settings only if you are familiar with status handling of Magento, as this may have unpredictable effects on your shop and other modules might no longer work properly. Additional information can be found in our manual.","Veuillez ne modifier les configurations que si vous avez l'habitude de traiter les statuts avec Magento. Dans le cas contraire, ces modifications risquent d'avoir un effet imprévu sur votre système de vente et les autres modules, et le cas échéant, de ne plus fonctionner correctement. Vous trouverez de plus amples informations dans notre manuel."
+Temporary order status:,État de commande temporaire
+Define the status for orders which have not been paid yet.,(Définissez l'état pour commandes qui n'ont pas encore été payées.)
+Aborted order status:,État de commande annulé
+Confirmed order status:,État de commande confirmé
+Define the status for orders which have been successfully completed by SOFORT Banking.,(Définissez l'état pour commandes qui ont été complétées avec succès par Virement Bancaire.)
+Not create invoice,Ne pas émettre de facture
+(not recommended),(non recommandé)
+Not update status,Ne pas effectuer de mise à jour de l'état
+Order status for full refunds:,État de commande pour les remboursements complets
+Define the status for orders which have been prepared for full refunds in the SOFORT AG merchant menu. Bear in mind that refunds usually have to be carried out manually.,Définissez l'état des commandes retenues pour un remboursement complet au menu commerçant de Sofort GmbH. Veuillez noter qu'il s'agit généralement de remboursements à effectuer manuellement.
+Order status for payment receipt:,État de commande pour les entrées d'argent
+(Define the status of orders for which payment has been received on your SOFORT Bank account. A SOFORT Bank account is required.),(Définissez l'état des commandes pour lesquelles une entrée d'argent a été constatée sur votre compte bancaire. Nécessite un compte Deutsche Handelsbank.)
+Order status for losses:,État de commande pour les défauts de paiement :
+(Define the status of orders for which no payment or a different amount has been received on your SOFORT Bank account. A SOFORT Bank account is required.),(Définissez l'état des commandes pour lesquelles aucune entrée d'argent n'a été constatée ou pour lesquelles un montant divergent a été constaté sur votre compte bancarie. Nécessite un compte Deutsche Handelsbank.)
+Internal transaction ID of SOFORT AG: %s (please specify for support requests).,N° de transaction Sofort GmbH: %s (prier d'indiquer en cas de questions au support).
+"Redirection to SOFORT Banking. Transaction not finished. Transaction ID: [[transaction_id]]. Time: [[date]]","Redirection vers Virement Bancaire. Paiement pas encore terminé. N° de transaction : [[transaction_id]]. Heure : [[date]] heures"
+"Payment aborted. Time: %s","Paiement interrompu. Heure : %s heures"
+"SOFORT Banking has been completed successfully - Transaction ID: [[transaction_id]]. Time: [[date]]","Virement avec Virement Bancaire effectué avec succès. N° de transaction : [[transaction_id]]. Heure : [[date]] heures"
+"The payment has not been received on your SOFORT Bank account. Please verify the payment. Time: [[date]]","Aucune entrée d'argent sur le compte Bancaire. n'a pu être constatée. Veuillez vérifier le paiement. Heure : [[date]] heures"
+"The payment has been received on your SOFORT Bank account. Time: [[date]]","Le montant a été viré sur le compte Bancaire. Heure : [[date]] heures"
+"An amount differing from the order has been received on your SOFORT Bank account. Please verify the payment. Time: [[date]]","Le montant viré sur le compte Bancaire. ne correspond pas au montant de la commande. Veuillez vérifier le paiement. Heure : [[date]] heures"
+"Partial amount will be refunded - [[refunded_amount]]. Time: [[date]]","Remboursement partiel du montant - [[refunded_amount]]. Heure : [[date]] heures"
+"Amount will be refunded. Time: [[date]]","Remboursement du montant. Heure : [[date]] heures"
+Select the time of invoicing,Sélectionnez le moment de l'émission de la facture
+It is not recommended to change this setting,(il n'est pas recommandé de ne modifier cette configuration)
+After finishing the payment,Une fois le paiement effectué
+The receipt of the money ( can be only detected with an account with SOFORT Bank),La réception du paiement (ne peut être constaté qu'avec un compte Deutsche Handelsbank)
+"If the status shouldn't be updated for this event, please choose as status %s","Si aucune mise à jour de statut ne doit être effectuée pour cet événement, choisissez le statut %s."
+Create credit memo automatically,Générer un avoir automatiquement
+A credit memo will be created automatically if a transaction was refunded by using the SOFORT panel.,Un avoir est généré automatiquement lorsqu'une transaction a été totalement remboursée dans le système Sofort.
+en,fr_fr
+"Send order confirmation","Envoyer la confirmation de commande"
+"Redirection to SOFORT Banking. Transaction not finished. Transaction ID: [[transaction_id]]. Time: [[date]]", "Redirection vers Virement Bancaire. Paiement pas encore terminé. N° de transaction : [[transaction_id]]. Heure : [[date]] heures"
+"Payment is unfortunately not possible or has been cancelled by the customer. Please select another payment method.", "Le paiement n'est malheureusement pas possible ou a été annulé par le client. Veuillez sélectionner un autre mode de paiement"
+"Module Configuration","Configuration du module"
+Payment Applicable From,Paiement applicable à partir de
+Countries Payment Applicable From,Pays Paiement applicable à partir de
+Accepted Currency,Devise acceptée
+"(recommended payment methode)", "(méthode de paiement recommandée)"
+"Recommended payment method","Méthode de paiement recommandée"
+"Enable Logging","Activer la journalisation"
+"Position in Checkout","Position dans la caisse"
+"Order Status configuration","Configuration du statut de la commande"
+CUSTOMER_LANDINGPAGE,"https://documents.sofort.com/sb/information-client-be/"

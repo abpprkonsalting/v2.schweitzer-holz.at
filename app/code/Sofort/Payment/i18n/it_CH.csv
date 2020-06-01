@@ -1,0 +1,69 @@
+Status settings, Impostazioni dello stato
+Extended settings, Impostazioni avanzate
+"Please set up a project in the merchant menu of SOFORT AG (please make sure to create a 'SOFORT Gateway Project'). In the next step, you just need your configuration key", "Imposta un progetto nell'area utenti di Sofort GmbH (fate attenzione a creare un 'progetto Gateway'). Nel passo successivo occorre solo la chiave di configurazione"
+Project set-up, Creazione di un progetto
+"In order to offer SOFORT Banking, you need a customer account with SOFORT AG. You are not a customer yet? <a href='https://www.sofort.com/payment/users/register/'>Register now!</a>", "Per poter offrire Bonifico Diretto le occorre un conto cliente con Sofort GmbH. Non sei ancora cliente? <a href='https://www.sofort.com/payment/users/register/'>Registrati ora!</a>"
+Registration, Registrazione
+"Just a few steps are required to use SOFORT Banking:", "Per poter utilizzare Bonifico Diretto sono necessari alcuni passi"
+"SOFORT Banking is the direct payment system provided by SOFORT AG. SOFORT Banking allows buyers to make a wire transfer of the respective amount during the order process using their online banking account. You as a merchant will receive a real-time confirmation after the SOFORT Banking transaction has been completed. This enables you to immediately ship goods on stock and digital goods - and the buyer will receive the purchased items faster. Learn more about SOFORT Banking and SOFORT AG at <a href='http://www.sofort.com' target='_blank'>sofort.com</a>", "Il pagamento diretto attraverso ""Bonifico Diretto"" ti permette di effettuare, in maniera facile, rapida e sicura, un trasferimento dell'importo da pagare durante l'acquisto, utilizzando il tuo conto bancario online senza richiedere una registrazione. Il negozio online può elaborare e consegnare l'ordine più velocemente, grazie al ricevimento in tempo reale della notifica relativa alla transazione. <a href='http://www.klarna.com/sofort/' target='_blank'>Maggiori informazioni.</a>"
+"Payment system with data protection certified by TÜV Saarland", Semplice e sicuro.
+Send receipt emails, Invia e-mail di ricevuta
+SOFORT Banking, Bonifico Diretto
+Sofort., Bonifico Diretto
+About SOFORT Banking,A Bonifico Diretto
+Module configuration,Configurazione del modulo
+Settings,Impostazioni
+Activate the module and enter the configuration key. SOFORT will be immediately available in your checkout. Additional settings are not required.,Attiva il modulo e inserisci la chiave di configurazione. Il Bonifico Diretto sarà immediatamente disponibile nel checkout. Non sono richieste ulteriori impostazioni.
+Activate SOFORT Banking in your shop,Attiva Bonificio Diretto nel tuo negozio
+Use the main website setting,Usa le impostazioni del sito web principale
+Configuration key:,Chiave di configurazione:
+Sort sequence:,Sequenza di ordinamento:
+Show only for specific countries:,Mostra solo per paesi specifici:
+Reference settings,Impostazioni di riferimento
+Reference:,Riferimento:
+Reference 2:,Riferimento 2:
+"reference1","<ul><li>Numero dell'ordine: {{order_id}}</li><li>Cliente: {{name}}</li><li>Data della fattura: {{date}}</li><li>Tienda: {{shopname}}</li><li>Transazione: {{transaction}}</li><li>Customer ID: {{customer_id}}</li><li>Customer Email: {{customer_email}}</li></ul>"
+"Please adjust these settings only if you are familiar with status handling of Magento, as this may have unpredictable effects on your shop and other modules might no longer work properly. Additional information can be found in our manual.","Si prega di regolare queste impostazioni solo se si ha familiarità con la gestione dello stato di Magento, in quanto ciò potrebbe avere effetti imprevedibili sul proprio negozio e altri moduli potrebbero non funzionare più correttamente. Ulteriori informazioni sono disponibili nel nostro manuale."
+Temporary order status:,Stato dell'ordine temporaneo:
+Define the status for orders which have not been paid yet.,"Definire lo stato per gli ordini che non sono stati ancora pagati"
+Aborted order status:,Stato dell'ordine interrotto:
+Confirmed order status:,Stato dell'ordine confermato:
+Define the status for orders which have been successfully completed by SOFORT Banking.,"Definire lo stato degli ordini che sono stati completati con successo da Bonificio Diretto"
+Not create invoice,Non creare la fattura
+(not recommended),(non consigliato)
+Not update status,Non aggiornare lo stato
+Order status for full refunds:,Stato dell'ordine per rimborsi completi:
+Define the status for orders which have been prepared for full refunds in the SOFORT AG merchant menu. Bear in mind that refunds usually have to be carried out manually.,"Definire lo stato per gli ordini che sono stati preparati per i rimborsi completi nel menu del commerciante Sofort GmbH. Ricordare che i rimborsi devono essere effettuati manualmente."
+Order status for payment receipt:,Stato dell'ordine per ricevuta di pagamento:
+(Define the status of orders for which payment has been received on your SOFORT Bank account. A SOFORT Bank account is required.),"(Definire lo stato degli ordini per i quali è stato ricevuto il pagamento sul conto bancario. È richiesto un conto bancario Deutsche Handelsbank.)"
+Order status for losses:,Stato dell'ordine per perdite:
+(Define the status of orders for which no payment or a different amount has been received on your SOFORT Bank account. A SOFORT Bank account is required.),"(Definire lo stato degli ordini per i quali non è stato ricevuto alcun pagamento o importo diverso sul proprio conto bancario. È richiesto un conto Deutsche Handelsbank)"
+"Redirection to SOFORT Banking. Transaction not finished. Transaction ID: [[transaction_id]]. Time: [[date]]","Reindirizzamento al Bonifico Diretto. Transazione non completata. ID transazione: [[transaction_id]]. Tempo: [[date]]"
+"Payment aborted. Time: %s","Pagamento abortito. Tempo %s"
+"SOFORT Banking has been completed successfully - Transaction ID: [[transaction_id]]. Time: [[date]]","Il Bonifico Diretto è stato completato con successo - ID transazione: [[transaction_id]]. Tempo: [[date]]"
+"The payment has not been received on your SOFORT Bank account. Please verify the payment. Time: [[date]]","Il pagamento non è stato ricevuto sul tuo conto bancario. Si prega di verificare il pagamento. Tempo: [[date]]"
+"The payment has been received on your SOFORT Bank account. Time: [[date]]","Il pagamento è stato ricevuto sul tuo conto bancario. Tempo: [[date]]"
+"An amount differing from the order has been received on your SOFORT Bank account. Please verify the payment. Time: [[date]]","È stato ricevuto un importo diverso dall'ordine sul tuo conto bancario. Si prega di verificare il pagamento. Tempo: [[date]]"
+"Partial amount will be refunded - [[refunded_amount]]. Time: [[date]]","L'importo parziale sarà rimborsato [[refunded_amount]]. Tempo: [[date]]"
+"Amount will be refunded. Time: [[date]]","L'importo sarà rimborsato. Tempo: [[date]]"
+Select the time of invoicing,Selezioni il momento della fatturazione:
+It is not recommended to change this setting,(Non è raccomandato cambiare questa impostazione)
+After finishing the payment,A pagamento terminato
+The receipt of the money ( can be only detected with an account with SOFORT Bank),La ricevuta del denaro (può essere rilevata solo con un conto con Deutsche Handelsbank)
+"If the status shouldn't be updated for this event, please choose as status %s","Se lo stato di questo evento non deve essere attualizzato, selezioni lo stato %s"
+Create credit memo automatically,Crei l'accredito automaticamente
+A credit memo will be created automatically if a transaction was refunded by using the SOFORT panel.,Una nota di credito verrà creata automaticamente se una transazione è stata rimborsata utilizzando il
+en,it_it
+"Send order confirmation","Invia conferma d'ordine"
+"Redirection to SOFORT Banking. Transaction not finished. Transaction ID: [[transaction_id]]. Time: [[date]]","Inoltro a Bonifico Diretto Pagamento non ancora terminato. ID transazione: [[transaction_id]]. Data e ora: [[date]]"
+"Payment is unfortunately not possible or has been cancelled by the customer. Please select another payment method.", "Il pagamento non è purtroppo possibile o è stato annullato dal cliente. Si prega di selezionare un altro metodo di pagamento."
+"Module Configuration","Configurazione del modulo"
+Payment Applicable From,Pagamento applicabile da
+Countries Payment Applicable From,Paesi Pagamento applicabile da
+Accepted Currency,Valuta accettata
+"(recommended payment methode)", "(metodo di pagamento consigliato)"
+"Recommended payment method","Metodo di pagamento consigliato"
+"Enable Logging","Abilita registrazione"
+"Position in Checkout","Posizione in cassa"
+"Order Status configuration","Configurazione dello stato dell'ordine"
+CUSTOMER_LANDINGPAGE,"https://documents.sofort.com/sb/informazioni-cliente/"

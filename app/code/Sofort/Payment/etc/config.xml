@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2008-2017 dotSource GmbH.
+ * All rights reserved.
+ * http://www.dotsource.de
+ *
+ * Contributors:
+ * Stefan Jauck - initial contents
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <sofortueberweisung translate="title" module="Sofort_Payment">
+                <title>Sofort.</title>
+                <debug>1</debug>
+                <active>1</active>
+                <model>SofortFacade</model>
+                <merchant_gateway_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <payment_action>initialize</payment_action>
+                <currency>EUR</currency>
+                <can_authorize>0</can_authorize>
+                <can_initialize>1</can_initialize>
+                <can_capture>0</can_capture>
+                <can_void>0</can_void>
+                <can_use_checkout>1</can_use_checkout>
+                <can_use_internal>0</can_use_internal>
+                <is_gateway>1</is_gateway>
+                <sort_order>0</sort_order>
+                <apiUri>https://api.sofort.com/api/xml</apiUri>
+                <reason1>{{order_id}}</reason1>
+                <reason2>{{transaction}}</reason2>
+
+                <order_status>pending</order_status>
+                <status_pending_not_credited_yet>processing</status_pending_not_credited_yet>
+                <status_loss_not_credited>payment_review</status_loss_not_credited>
+                <status_received_credited>processing</status_received_credited>
+
+                <create_creditmemo>0</create_creditmemo>
+                <create_invoice>after_order</create_invoice>
+                <send_order_confirmation>1</send_order_confirmation>
+                <send_mail>1</send_mail>
+            </sofortueberweisung>
+        </payment>
+    </default>
+</config>

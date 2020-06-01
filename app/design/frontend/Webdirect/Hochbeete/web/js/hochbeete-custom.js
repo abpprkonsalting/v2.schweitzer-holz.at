@@ -5,7 +5,7 @@ require(['jquery'], function($){
 
         if ($('body').hasClass('cms-hochbeete-bauen')) {
 
-            var cat = $('.gartenhaus-second-row-wrapper-elem');
+            /*var cat = $('.gartenhaus-second-row-wrapper-elem');
             if (cat.length > 0) {
                 cat.each(function(){
                     var button = $(this).find('img , .gartenhaus-second-row-wrapper-texts, .gartenhaus-second-row-wrapper-header');
@@ -50,7 +50,7 @@ require(['jquery'], function($){
                 tableColumns.removeClass('active');
                 var selectedColumns = table.find("."+columnSelector);
                 selectedColumns.addClass('active');
-            });
+            });*/
             
         }
         else if ($('body').hasClass('product-hochbeet-classic-neu')) {

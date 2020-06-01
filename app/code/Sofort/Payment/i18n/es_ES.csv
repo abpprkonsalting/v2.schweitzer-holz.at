@@ -1,0 +1,69 @@
+Status settings, Configuración de estado
+Extended settings, Configuración avanzada
+"Please set up a project in the merchant menu of SOFORT AG (please make sure to create a 'SOFORT Gateway Project'). In the next step, you just need your configuration key", "Por favor, cree un proyecto en el Área de Cliente de Sofort GmbH (recuerde crear un 'Proyecto de Gateway'). En el siguiente paso solo necesita su clave de configuración"
+Project set-up, Creación de un proyecto
+"In order to offer SOFORT Banking, you need a customer account with SOFORT AG. You are not a customer yet? <a href='https://www.sofort.com/payment/users/register/'>Register now!</a>", "Para poder ofrecer Transferencia Bancaria Online necesita una cuenta de cliente de Sofort GmbH. ¿Si aún no es cliente? <a href='https://www.sofort.com/payment/users/register/'>¡Regístrese ahora!</a>"
+Registration, Registration
+"Just a few steps are required to use SOFORT Banking:", "Para poder utilizar Transferencia Bancaria Online es necesario efectuar algunos pasos"
+"SOFORT Banking is the direct payment system provided by SOFORT AG. SOFORT Banking allows buyers to make a wire transfer of the respective amount during the order process using their online banking account. You as a merchant will receive a real-time confirmation after the SOFORT Banking transaction has been completed. This enables you to immediately ship goods on stock and digital goods - and the buyer will receive the purchased items faster. Learn more about SOFORT Banking and SOFORT AG at <a href='http://www.sofort.com' target='_blank'>sofort.com</a>","Con ""Transferencia Bancaria Online"" puedes pagar de manera cómoda y segura mediante un procedimiento de transferencia directa online con tus datos bancarios habituales (PIN / TAN) y sin registrarte. El comerciante online recibe una confirmación en tiempo real después de la finalización de la transferencia. Así puede enviar procesar tu orden de inmediato, y tú recibir tus compras rápidamente. <a href='http://www.klarna.com/sofort/' target='_blank'>¿Cómo funciona?</a>"
+"Payment system with data protection certified by TÜV Saarland", "Rápido y seguro."
+Send receipt emails, Enviar correos electrónicos justificantes de pago
+SOFORT Banking, Transferencia Bancaria Online
+Sofort., Transferencia Bancaria Online
+About SOFORT Banking,Acerca de Transferencia Bancaria Online
+Module configuration,Configuración del módulo
+Settings,Ajustes básicos
+Activate the module and enter the configuration key. SOFORT will be immediately available in your checkout. Additional settings are not required.,Active el módulo e introduzca la llave de configuración. Inmediatamente Transferencia Bancaria Online se podrá seleccionar como método de pago en el Checkout de su tienda online. No se requieren más ajustes.
+Activate SOFORT Banking in your shop,Active Transferencia Bancaria Online en su tienda
+Use the main website setting,Utilizar la configuración de la página web principal
+Configuration key:,Clave de configuración
+Sort sequence:,Orden de visualización
+Show only for specific countries:,Mostrar solo con determinados países:
+Reference settings,Ajustes del concepto
+Reference:,Concepto
+Reference 2:,Concepto 2
+"reference1","<ul><li>Número de pedido: {{order_id}}</li><li>Cliente: {{name}}</li><li>Fecha de facturación: {{date}}</li><li>Tienda: {{shopname}}</li><li>Transacción: {{transaction}}</li><li>Customer ID: {{customer_id}}</li><li>Customer Email: {{customer_email}}</li></ul>"
+"Please adjust these settings only if you are familiar with status handling of Magento, as this may have unpredictable effects on your shop and other modules might no longer work properly. Additional information can be found in our manual.",Le rogamos que tan solo modifique estos ajustes si está familiarizado con el tratamiento de estados de Magento. Esta modificación puede tener efectos imprevisibles en su tienda y otros módulos podrían dejar de funcionar correctamente. Puede consultar más información en nuestro manual.
+Temporary order status:,Estado de pedido temporal
+Define the status for orders which have not been paid yet.,Determine el estado en los pedidos que todavía no se han pagado.
+Aborted order status:,Estado de pedido cancelado
+Confirmed order status:,Estado del pedido confirmado
+Define the status for orders which have been successfully completed by SOFORT Banking.,Determine el estado de los pedidos llevados a cabo con éxito a través de Transferencia Bancaria Online.
+Not create invoice,No crear ninguna factura
+(not recommended),(no recomendado)
+Not update status,No actualizar ningún estado
+Order status for full refunds:,Estado de pedido para reembolsos íntegros
+Define the status for orders which have been prepared for full refunds in the SOFORT AG merchant menu. Bear in mind that refunds usually have to be carried out manually.,"(Determine este estado en los pedidos que se hayan marcado para su devolución íntegra en el Área de Cliente de Sofort GmbH. Tenga en cuenta que, aquí, por lo general, las devoluciones de pagos se tienen que efectuar manualmente.)"
+Order status for payment receipt:,Estado de pedido para abono
+(Define the status of orders for which payment has been received on your SOFORT Bank account. A SOFORT Bank account is required.),(Determine este estado en los pedidos en los que que se haya recibido un abono en su cuenta de cuenta. Se requiere una cuenta de Deutsche Handelsbank.)
+Order status for losses:,Estado de pedido para impagos
+(Define the status of orders for which no payment or a different amount has been received on your SOFORT Bank account. A SOFORT Bank account is required.),(Determine este estado en los pedidos en los que no se haya recibido ningún abono en cuenta o se haya recibido un importe diferente en su cuenta. Se requiere una cuenta de Deutsche Handelsbank.)
+"Redirection to SOFORT Banking. Transaction not finished. Transaction ID: [[transaction_id]]. Time: [[date]]","Redireccionando a Transferencia Bancaria Online. Pago todavía no completado. ID de la transacción: [[transaction_id]]. Fecha y hora: [[date]] h"
+"Payment aborted. Time: %s","Pago cancelado. Fecha y hora: %s h"
+"SOFORT Banking has been completed successfully - Transaction ID: [[transaction_id]]. Time: [[date]]",Transacción de Transferencia Bancaria Online efectuada correctamente - ID de la transacción: [[transaction_id]]. Fecha y hora: [[date]] h
+"The payment has not been received on your SOFORT Bank account. Please verify the payment. Time: [[date]]","No se ha podido confirmar el abono en la cuenta bancaria. Por favor, revise el pago. Fecha y hora: [[date]] h"
+"The payment has been received on your SOFORT Bank account. Time: [[date]]",Se ha abonado el importe en la cuenta bancaria. Fecha y hora: [[date]] h
+"An amount differing from the order has been received on your SOFORT Bank account. Please verify the payment. Time: [[date]]","Se ha detectado un importe diferente al del pedido en la cuenta bancaria. Por favor, revise el pago. Fecha y hora: [[date]] h"
+"Partial amount will be refunded - [[refunded_amount]]. Time: [[date]]","Se va a reembolsar una parte del importe - [[refunded_amount]]. Fecha y hora: [[date]] h"
+"Amount will be refunded. Time: [[date]]","Se va a reembolsar el importe. Fecha y hora: [[date]] h"
+Select the time of invoicing,Seleccione la hora de facturación:
+It is not recommended to change this setting,(no se recomienda modificar este ajuste)
+After finishing the payment,Tras completar el pago
+The receipt of the money ( can be only detected with an account with SOFORT Bank),Al recibir el dinero (solo se puede confirmar si se dispone de una cuenta bancaria de Deutsche Handelsbank)
+"If the status shouldn't be updated for this event, please choose as status %s","Si el estado de esta operación no se actualiza con el evento realizado , seleccione el estado %s"
+Create credit memo automatically,Crear el abono en cuenta automáticamente
+A credit memo will be created automatically if a transaction was refunded by using the SOFORT panel.,Se creará automáticamente un abono en cuenta si se ha devuelto el importe de una transacción en el sistema de Sofort.
+en,es_es
+"Send order confirmation","Enviar confirmación de la orden"
+"Redirection to SOFORT Banking. Transaction not finished. Transaction ID: [[transaction_id]]. Time: [[date]]", "Redireccionando a Transferencia Bancaria Online. Pago todavía no completado. ID de la transacción: [[transaction_id]]. Fecha y hora: [[date]] h"
+"Payment is unfortunately not possible or has been cancelled by the customer. Please select another payment method.","El pago no es posible o ha sido cancelado por el cliente. Por favor seleccione otro método de pago."
+"Module Configuration","Configuración del módulo"
+Payment Applicable From,Pago aplicable de
+Countries Payment Applicable From,Pagos Países Aplicables de
+Accepted Currency,Moneda aceptada
+"(recommended payment methode)", "(método de pago recomendado)"
+"Recommended payment method","Método de pago recomendado"
+"Enable Logging","Habilitar el registro"
+"Position in Checkout","Posición en Checkout"
+"Order Status configuration","Configuración del estado del pedido"
+CUSTOMER_LANDINGPAGE,"https://documents.sofort.com/sb/informacion-clientes/"

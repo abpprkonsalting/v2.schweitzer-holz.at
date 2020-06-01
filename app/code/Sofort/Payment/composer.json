@@ -1,0 +1,24 @@
+{
+    "name": "sofort/sofort-payment-module",
+    "description": "Magento 2 Payment module for Sofortueberweisung",
+    "type": "magento2-module",
+    "license": "LGPL-3.0",
+    "version": "3.2.0",
+    "authors": [
+        {
+            "name": "Stefan Jauck",
+            "email": "s.jauck@dotsource.de"
+        }
+    ],
+    "require": {
+        "magento/module-payment": "100.0.* || 100.1.*",
+        "magento/module-checkout": "100.0.* || 100.1.*",
+        "magento/module-sales": "100.0.* || 100.1.*"
+    },
+    "autoload": {
+        "files": ["registration.php"],
+        "psr-4": {
+            "Sofort\\Payment\\": ""
+        }
+    }
+}

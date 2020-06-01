@@ -1,0 +1,69 @@
+Status settings, Ustawienia dotyczące statusu 
+Extended settings, Ustawienia rozszerzone
+"Please set up a project in the merchant menu of Sofort AG (please make sure to create a 'SOFORT Gateway Project'). In the next step, you just need your configuration key", "W panelu sprzedawcy Sofort GmbH załóż swój projekt (pamiętaj, żeby koniecznie założyć tzw. projekt 'Gateway'). W następnym kroku potrzebny Ci będzie jedynie Twój klucz konfiguracyjny"
+Project set-up, Założenie projektu
+"In order to offer SOFORT Banking, you need a customer account with SOFORT AG. You are not a customer yet? <a href='https://www.sofort.com/payment/users/register/'>Register now!</a>", "Aby móc oferować Przelew elektroniczny, musisz posiadać konto klienta w Sofort GmbH. Nie jesteś jeszcze naszym klientem? <a href='https://www.sofort.com/payment/users/register/'>Zarejestruj się teraz! </a>"
+Registration, Rejestracja
+"Just a few steps are required to use SOFORT Banking:", "Jeżeli chcesz korzystać z Przelew elektroniczny, wykonaj kilka kroków opisanych poniżej:"
+"SOFORT Banking is the direct payment system provided by SOFORT AG. SOFORT Banking allows buyers to make a wire transfer of the respective amount during the order process using their online banking account. You as a merchant will receive a real-time confirmation after the SOFORT Banking transaction has been completed. This enables you to immediately ship goods on stock and digital goods - and the buyer will receive the purchased items faster. Learn more about SOFORT Banking and SOFORT AG at <a href='http://www.sofort.com' target='_blank'>sofort.com</a>", """Zapłać z „Przelew elektroniczny"" szybko, łatwo i bezpiecznie ze swojego konta bankowości internetowej. Bez dodatkowej rejestracji. Atestowany przez TÜV Saarland (Niemieckie Stowarzyszenie Nadzoru Technicznego) system płatności. Dzięki potwierdzeniu inicjacji transakcji w czasie rzeczywistym, sprzedawca może szybciej zrealizować i wysłać Twoje zamówienie. <a href='http://www.klarna.com/sofort/' target='_blank'>Więcej informacji.</a>"
+"Payment system with data protection certified by TÜV Saarland", "Szybko i bezpiecznie."
+Send receipt emails, Wyślij e-maile potwierdzające
+SOFORT Banking, Przelew elektroniczny
+Sofort., Przelew elektroniczny
+About SOFORT Banking,O Przelew elektroniczny
+Module configuration,Konfiguracja modułu
+Settings,Ustawienia podstawowe
+Activate the module and enter the configuration key. SOFORT will be immediately available in your checkout. Additional settings are not required.,"Aktywuj moduł i wpisz klucz konfiguracyjny, a Przelew elektroniczny od razu pojawi się jako opcja płatności w Twoim koszyku. Dalej idąca konfiguracja nie jest konieczna."
+Activate SOFORT Banking in your shop,Aktywuj Przelew elektroniczny w swoim sklepie internetowym.
+Use the main website setting,Użyj ustawień ze strony głównej
+Configuration key:,Klucz konfiguracyjny
+Sort sequence:,Kolejność wyświetlania 
+Show only for specific countries:,Wyświetlić tylko dla niektórych krajów
+Reference settings,Ustawienia dotyczące tytułu Przelew elektronicznyu
+Reference:,Tytuł Przelew elektronicznyu
+Reference 2:,Tytuł Przelew elektronicznyu 2
+"reference1","Można użyć następujących wypełniaczy:<br/><ul><li>Numer zamówienia:  {{order_id}}</li><li>Klient:  {{name}}</li><li>Data:  {{date}}</li><li>Nazwa sklepu: {{shopname}}</li><li>Transakcja {{transaction}}</li><li>Customer ID: {{customer_id}}</li><li>Customer Email: {{customer_email}}</li></ul>"
+"Please adjust these settings only if you are familiar with status handling of Magento, as this may have unpredictable effects on your shop and other modules might no longer work properly. Additional information can be found in our manual.","Prosimy o ostrożne dokonywanie zmian w tych ustawieniach i jedynie w przypadku, gdy dobrze wiesz, jak się zmienia status Magento. Wprowadzone zmiany mogą być nieprzewidywalne w skutkach dla Twojego sklepu, a pozostałe moduły mogą przestać działać poprawnie. Więcej informacji na ten temat znajdziesz w naszym podręczniku"
+Temporary order status:,Tymczasowy status zamówienia:
+Define the status for orders which have not been paid yet.,"(Zdefiniuj status zamówień, za które jeszcze nie zapłacono.)"
+Aborted order status:,Status dla zamówienia przerwanego
+Confirmed order status:,Status dla zamówienia potwierdzonego
+Define the status for orders which have been successfully completed by SOFORT Banking.,(Zdefiniuj status zamówień zakończonych pomyślnie z Przelew elektroniczny.)
+Not create invoice,Bez wystawiania rachunku
+(not recommended),(nie zaleca się)
+Not update status,Bez aktualizacji statusu
+Order status for full refunds:,Status zamówienia w przypadku całkowitego zwrotu zapłaconej kwoty
+Define the status for orders which have been prepared for full refunds in the SOFORT AG merchant menu. Bear in mind that refunds usually have to be carried out manually.,"Zdefiniuj status dla zamówień, które w menu sprzedawcy w Sofort GmbH zostały zaznaczone w celu dokonania Przelew elektronicznyu zwrotnego całości zapłaconej sumy. Pamiętaj, że Przelew elektronicznyy zwrotne z reguły muszą być tam przeprowadzone ręcznie.)"
+Order status for payment receipt:,Status zamówienia w przypadku wpływu pieniędzy
+(Define the status of orders for which payment has been received on your SOFORT Bank account. A SOFORT Bank account is required.),"(zdefiniuj status dla zamówień, dla których odnotowano wpływ pieniędzy na Twoim koncie w Deutsche Handelsbank. Wymagane konto w Deutche Handelsbank.)"
+Order status for losses:,Status zamówienia w przypadku braku płatności
+(Define the status of orders for which no payment or a different amount has been received on your SOFORT Bank account. A SOFORT Bank account is required.),"(Zdefiniuj status dla zamówień, dla których nie odnotowano wpływu pieniędzy lub też gdy na konto a inna kwota. Wymagane konto w Deutsche Handelsbank.)"
+"Redirection to SOFORT Banking. Transaction not finished. Transaction ID: [[transaction_id]]. Time: [[date]]","Przekierowanie do Przelew elektroniczny. Płatność nie została jeszcze zakończona. Numer transakcji: [[transaction_id]]. Godzina: [[date]]"
+"Payment aborted. Time: %s","Płatność przerwana. Godzina: %s"
+"SOFORT Banking has been completed successfully - Transaction ID: [[transaction_id]]. Time: [[date]]","Pomyślnie dokonany Przelew elektroniczny z Przelew elektroniczny. - numer transakcji: [[transaction_id]]. Godzina: [[date]]"
+"The payment has not been received on your SOFORT Bank account. Please verify the payment. Time: [[date]]","Nie odnotowano wpływu pieniędzy na koncie. Sprawdź proszę szczegóły płatności. Godzina: [[date]]"
+"The payment has been received on your SOFORT Bank account. Time: [[date]]","Kwota wpłynęła na konto. Godzina: [[date]]"
+"An amount differing from the order has been received on your SOFORT Bank account. Please verify the payment. Time: [[date]]","Na konto w wpłynęła inna kwota, niż kwota zamówienia. Sprawdź proszę szczegóły płatności. Godzina: [[date]]"
+"Partial amount will be refunded - [[refunded_amount]]. Time: [[date]]","Część kwoty zostanie zwrócona - [[refunded_amount]]. Godzina: [[date]]"
+"Amount will be refunded. Time: [[date]]","Kwota zostanie zwrócona. Godzina: [[date]]"
+Select the time of invoicing,Wybierz datę wystawienia rachunku
+It is not recommended to change this setting,(nie zaleca się dokonywania zmian w tym ustawieniu)
+After finishing the payment,Po zakończeniu płatności
+The receipt of the money ( can be only detected with an account with SOFORT Bank),W momencie otrzymania pieniędzy (moment ten można stwierdzić tylko z kontem Deutche Handelsbank)
+"If the status shouldn't be updated for this event, please choose as status %s","Jeżeli status tego wydarzenia nie ma być aktualizowany, jako status wybierz  %s"
+Create credit memo automatically,Wygeneruj automatycznie notę uznaniową
+A credit memo will be created automatically if a transaction was refunded by using the SOFORT panel.,Jeżeli transakcja została zaznaczona do Przelew elektronicznyu zwrotnego w systemie Sofort, nota uznaniowa zostanie wygenerowana automatycznie.
+en,pl_pl
+"Send order confirmation","Wysłać potwierdzenie zamówienia"
+"Redirection to SOFORT Banking. Transaction not finished. Transaction ID: [[transaction_id]]. Time: [[date]]", "Przekierowanie do Przelew elektroniczny. Płatność nie została jeszcze zakończona. Numer transakcji: [[transaction_id]]. Godzina: [[date]]"
+"Payment is unfortunately not possible or has been cancelled by the customer. Please select another payment method.", "Płatność nie jest możliwa lub została anulowana przez klienta. Wybierz inną metodę płatności."
+"Module Configuration","Konfiguracja modułu"
+Payment Applicable From,Płatność obowiązująca od
+Countries Payment Applicable From,Kraje Płatność obowiązuje od
+Accepted Currency,Akceptowana waluta
+"(recommended payment methode)", "(zalecana metoda płatności)"
+"Recommended payment method","Zalecana metoda płatności"
+"Enable Logging","Włącz rejestrowanie"
+"Position in Checkout","Pozycja w kasie"
+"Order Status configuration","Zamów konfigurację statusu"
+CUSTOMER_LANDINGPAGE,"https://documents.sofort.com/sb/informacje-klienta/"

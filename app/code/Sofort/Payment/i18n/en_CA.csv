@@ -1,0 +1,69 @@
+Status settings, Status settings
+Extended settings, Extended settings
+"Please set up a project in the merchant menu of SOFORT AG (please make sure to create a 'SOFORT Gateway Project'). In the next step, you just need your configuration key", "Please set up a project in the merchant menu of Sofort GmbH (please make sure to create a 'Gateway Project'). In the next step, you just need your configuration key"
+Project set-up, Project Setup
+"In order to offer SOFORT Banking, you need a customer account with SOFORT AG. You are not a customer yet? <a href='https://www.sofort.com/payment/users/register/'>Register now!</a>", "In order to offer the payment method Online Bank Transfer, you need a customer account with Sofort GmbH. You are not a customer yet? <a href='https://www.sofort.com/payment/users/register/'>Register now!</a>"
+Registration, Registration
+"Just a few steps are required to use SOFORT Banking:", "Just a few steps are required to use Online Bank Transfer:"
+"SOFORT Banking is the direct payment system provided by SOFORT AG. SOFORT Banking allows buyers to make a wire transfer of the respective amount during the order process using their online banking account. You as a merchant will receive a real-time confirmation after the SOFORT Banking transaction has been completed. This enables you to immediately ship goods on stock and digital goods - and the buyer will receive the purchased items faster. Learn more about SOFORT Banking and SOFORT AG at <a href='http://www.sofort.com' target='_blank'>sofort.com</a>","Direct payment via ""Online Bank Transfer"" allows you to make a wire transfer of the respective amount during the order process using your online banking account - easy, quick and secure - without registration. The online shop can process and deliver your order faster thanks to our real-time transaction notification. <a href='http://www.klarna.com/sofort/' target='_blank'>Read more.</a>"
+"Payment system with data protection certified by TÜV Saarland", "Simple and secure."
+Send receipt emails, Send receipt emails
+SOFORT Banking, Online Bank Transfer
+Sofort., Online Bank Transfer
+"About SOFORT Banking","About Online Bank Transfer"
+"Module configuration","Module configuration"
+"Settings","Settings"
+"Activate the module and enter the configuration key. SOFORT Banking will be immediately available in your checkout. Additional settings are not required.",Activate the module and enter the configuration key. Online Bank Transfer will be immediately available in your checkout. Additional settings are not required.
+"Activate SOFORT Banking in your shop",Activate Online Bank Transfer in your shop
+"Use the main website setting","Use the main website setting"
+"Configuration key:","Configuration key"
+"Sort sequence:","Sort sequence"
+"Show only for specific countries:","Show only for specific countries"
+"Reference settings","Reference settings"
+"Reference:","Reference"
+"Reference 2:","Reference 2"
+"reference1","The following placeholders are allowed:<br/><ul><li>Order number:  {{order_id}}</li><li>Customer name: {{name}}</li><li>Date: {{date}}</li><li>Shop name: {{shopname}}</li><li>Transaction: {{transaction}}</li><li>Customer ID: {{customer_id}}</li><li>Customer Email: {{customer_email}}</li></ul>"
+"Please adjust these settings only if you are familiar with status handling of Magento, as this may have unpredictable effects on your shop and other modules might no longer work properly. Additional information can be found in our manual.","Please adjust these settings only if you are familiar with status handling of Magento, as this may have unpredictable effects on your shop and other modules might no longer work properly. Additional information can be found in our manual."
+"Temporary order status:","Temporary order status"
+"Define the status for orders which have not been paid yet.","Define the status for orders which have not been paid yet."
+"Aborted order status:","Aborted order status"
+"Confirmed order status:","Confirmed order status"
+"Define the status for orders which have been successfully completed by SOFORT Banking.","Define the status for orders which have been successfully completed using Online Bank Transfer."
+"Not create invoice","Do not create invoice"
+"(not recommended)","(not recommended)"
+"Not update status","Do not update status"
+"Order status for full refunds:","Order status for full refunds"
+"Define the status for orders which have been prepared for full refunds in the SOFORT AG merchant menu. Bear in mind that refunds usually have to be carried out manually.","Define the status for orders which have been prepared for full refunds in the Sofort GmbH merchant menu. Bear in mind that refunds usually have to be carried out manually."
+"Order status for payment receipt:","Order status for payment received"
+"(Define the status of orders for which payment has been received on your SOFORT Bank account. A SOFORT Bank account is required.)",(Define the status of orders for which payment has been received on your Bank account. A Deutsche Handelsbank account is required.)
+"Order status for losses:","Order status for losses"
+"(Define the status of orders for which no payment or a different amount has been received on your SOFORT Bank account. A SOFORT Bank account is required.)",(Define the status of orders for which no payment or a different amount has been received on your Bank account. A Deutsche Handelsbank account is required.)
+"Redirection to SOFORT Banking. Transaction not finished. Transaction ID: [[transaction_id]]. Time: [[date]]","Redirection to Online Bank Transfer Transaction not finished. Transaction ID: [[transaction_id]]. Time: [[date]]"
+"Payment aborted. Time: %s","Payment aborted. Time: %s"
+"SOFORT Banking has been completed successfully - Transaction ID: [[transaction_id]]. Time: [[date]]",The Online Bank Transfer has been completed successfully - Transaction ID: [[transaction_id]]. Time: [[date]]
+"The payment has not been received on your SOFORT Bank account. Please verify the payment. Time: [[date]]",The payment has not been received on your Bank account. Please verify the payment. Time: [[date]]
+"The payment has been received on your SOFORT Bank account. Time: [[date]]","The payment has been received on your Bank account. Time: [[date]]"
+"An amount differing from the order has been received on your SOFORT Bank account. Please verify the payment. Time: [[date]]",An amount differing from the order has been received on your Bank account. Please verify the payment. Time: [[date]]
+"Partial amount will be refunded - [[refunded_amount]]. Time: [[date]]","Partial amount will be refunded - [[refunded_amount]]. Time: [[date]]"
+"Amount will be refunded. Time: [[date]]","Amount will be refunded. Time: [[date]]"
+"Select the time of invoicing","Select the time of invoicing"
+"It is not recommended to change this setting","It is not recommended to change this setting"
+"After finishing the payment","After finishing the payment"
+"The receipt of the money ( can be only detected with an account with SOFORT Bank)",The receipt of the money ( can be only detected with an account with Deutsche Handelsbank)
+"If the status shouldn't be updated for this event, please choose as status %s","If the status shouldn't be updated for this event, please choose as status %s"
+"Create credit memo automatically","Create credit memo automatically"
+"A credit memo will be created automatically if a transaction was refunded by using the SOFORT panel.",A credit memo will be created automatically if a transaction was fully refunded using the Sofort panel.
+en,en_gb
+"Send order confirmation","Send order confirmation"
+"Redirection to SOFORT Banking. Transaction not finished. Transaction ID: [[transaction_id]]. Time: [[date]]", "Redirection to Online Bank Transaction. Transaction not finished. Transaction ID: [[transaction_id]]. Time: [[date]]"
+"Payment is unfortunately not possible or has been cancelled by the customer. Please select another payment method.", "Payment is unfortunately not possible or has been cancelled by the customer. Please select another payment method."
+"Module Configuration","Module Configuration"
+Payment Applicable From,Payment Applicable From
+Countries Payment Applicable From,Countries Payment Applicable From
+Accepted Currency,Accepted Currency
+"(recommended payment methode)","(recommended payment methode)"
+"Recommended payment method","Recommended payment method"
+"Enable Logging","Enable Logging"
+"Position in Checkout","Position in Checkout"
+"Order Status configuration","Order Status configuration"
+CUSTOMER_LANDINGPAGE,"https://documents.sofort.com/sb/customer-information/"

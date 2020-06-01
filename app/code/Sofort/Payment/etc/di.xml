@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2008-2017 dotSource GmbH.
+ * All rights reserved.
+ * http://www.dotsource.de
+ *
+ * Contributors:
+ * Stefan Jauck - initial contents
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="SofortFacade" type="Magento\Payment\Model\Method\Adapter">
+        <arguments>
+            <argument name="code" xsi:type="const">Sofort\Payment\Model\Ui\ConfigProvider::CODE</argument>
+            <argument name="formBlockType" xsi:type="string">Sofort\Payment\Block\Info\Sofort</argument>
+            <argument name="infoBlockType" xsi:type="string">Sofort\Payment\Block\Info\Sofort</argument>
+            <argument name="valueHandlerPool" xsi:type="object">SofortValueHandlerPool</argument>
+            <argument name="validatorPool" xsi:type="object">SofortValidatorPool</argument>
+            <argument name="commandPool" xsi:type="object">SofortCommandPool</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="SofortValueHandlerPool"  type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">SofortConfigValueHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="SofortConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">Sofort\Payment\Gateway\Config\Config</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="SofortValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
+        <arguments>
+            <argument name="error" xsi:type="string">Sofort\Payment\Gateway\Validator\ErrorValidator</argument>
+            <argument name="test" xsi:type="string">Sofort\Payment\Gateway\Validator\BaseValidator</argument>
+        </arguments>
+    </virtualType>
+    
+    <virtualType name="SofortCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="initialize" xsi:type="string">SofortInitiateCommand</item>
+                <item name="authorize" xsi:type="string">SofortInitiateCommand</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    
+    <virtualType name="SofortInitiateCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">SofortInitiateRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Sofort\Payment\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Sofort\Payment\Gateway\Http\Client\SofortClient</argument>
+            <argument name="handler" xsi:type="object">SofortInitiateHandler</argument><!-- Response Handler -->
+            <argument name="validator" xsi:type="object">Sofort\Payment\Gateway\Validator\BaseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="SofortInitiateRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="base" xsi:type="string">Sofort\Payment\Gateway\Request\BaseDataBuilder</item>
+                <item name="reasons" xsi:type="string">Sofort\Payment\Gateway\Request\ReasonDataBuilder</item>
+                <item name="orderData" xsi:type="string">Sofort\Payment\Gateway\Request\OrderDataBuilder</item>
+                <item name="suData" xsi:type="string">Sofort\Payment\Gateway\Request\SuDataBuilder</item>
+                <item name="urlData" xsi:type="string">Sofort\Payment\Gateway\Request\UrlDataBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Sofort\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Sofort\Payment\Model\Ui\ConfigProvider::CODE</argument>
+        </arguments>
+    </type>
+    
+    <type name="Sofort\Payment\Controller\Payment\TransactionAction">
+        <arguments>
+            <argument name="sofortFacade" xsi:type="object">SofortFacade</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="SofortInitiateHandler" type="Magento\Payment\Gateway\Response\HandlerChain">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="txn_id" xsi:type="string">Sofort\Payment\Gateway\Response\SofortTransactionIdHandler</item>
+                <item name="order_state" xsi:type="string">Sofort\Payment\Gateway\Response\SofortOrderStateHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="SofortGetTransactionDataCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">SofortGetTransactionDataRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Sofort\Payment\Gateway\Http\TransactionDataTransferFactory</argument>
+            <argument name="client" xsi:type="object">Sofort\Payment\Gateway\Http\Client\SofortClient</argument>
+            <argument name="handler" xsi:type="object">SofortGetTransactionHandler</argument><!-- Response Handler -->
+            <argument name="validator" xsi:type="object">Sofort\Payment\Gateway\Validator\BaseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="SofortGetTransactionDataRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <!--<item name="base" xsi:type="string">Sofort\Payment\Gateway\Request\BaseDataBuilder</item>-->
+                <item name="transaction" xsi:type="string">Sofort\Payment\Gateway\Request\TransactionRequestDataBuilder</item>
+                <!--<item name="suData" xsi:type="string">Sofort\Payment\Gateway\Request\SuDataBuilder</item>-->
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="SofortGetTransactionHandler" type="Magento\Payment\Gateway\Response\HandlerChain">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="txn_id" xsi:type="string">Sofort\Payment\Gateway\Response\SofortTransactionDataHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <preference for="Magento\Payment\Gateway\Data\Order\OrderAdapter" type="Sofort\Payment\Gateway\Data\Rewrite\Order\OrderAdapter" />
+
+    <preference for="Sofort\Payment\Gateway\Logger\SofortLoggerInterface"
+                type="Sofort\Payment\Gateway\Logger\SofortLogger" />
+
+    <type name="Sofort\Payment\Gateway\Logger\SofortLogger">
+        <arguments>
+            <argument name="name" xsi:type="string">SofortLogHandler</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">Sofort\Payment\Gateway\Logger\SofortLoggerHandler</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -125,6 +125,7 @@ body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-w
 
 body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem * {
     cursor: pointer;
+    color: #017f4e;
 }
 
 body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts{
@@ -141,7 +142,7 @@ body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-w
 }
 
 body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts .widget.block-category-link > a{
-    background-image: none;
+/*    background-image: none;
     cursor: pointer;
     display: inline-block;
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
@@ -154,7 +155,8 @@ body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-w
     color: #fff;
     border-radius: 0 !important;
     font-weight: 100;
-    margin-top: 10px;
+    margin-top: 10px;*/
+    color: #017f4e;
 }
 
 body.cms-hochbeete-bauen .gartenhaus-second-row-wrapper .gartenhaus-second-row-wrapper-elem .gartenhaus-second-row-wrapper-texts .gartenhaus-second-row-wrapper-header{
