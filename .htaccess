@@ -150,6 +150,9 @@
     SetEnvIf Host hochbeete-bauen.at MAGE_RUN_CODE=hochbeete
     SetEnvIf Host hochbeete-bauen.at MAGE_RUN_TYPE=website
 
+    RewriteCond %{HTTP_HOST} ^fr.hochbeete-bauen.at$ [NC]
+    RewriteRule ^(.*)$ http://hochbeete-bauen.at/FR/$1 [L,R=301]
+
 ############################################
 ## you can put here your magento root folder
 ## path relative to web root

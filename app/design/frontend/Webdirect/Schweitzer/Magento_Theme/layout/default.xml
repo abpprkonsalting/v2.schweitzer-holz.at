@@ -29,7 +29,6 @@
             </referenceContainer>
             <referenceContainer name="header.panel.wrapper">
                 <referenceContainer name="header.panel">
-                    <referenceBlock name="store_language" remove="true"/>
                     <block class="Magento\Framework\View\Element\Template" name="top.search.bottom" as="topSearchBottom" template="Magento_Theme::form.mini.phtml" before="-"/>
                     <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe.bottom" as="subscribeBottom" after="topSearchBottom" template="Magento_Theme::subscribe_bottom.phtml" ifconfig="newsletter/general/active"/>
                 </referenceContainer>

@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Cynoinfotech Team
+ * @package Cynoinfotech_ShipPerProduct
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="carriers" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="cishipperproduct" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Cynoinfotech Shipping Per Product </label>
+				
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				
+				<field id="title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+				
+                <field id="name" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Method Name</label>
+                </field>
+				
+				<field id="enable_default_rate" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled Default Rate</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "Yes", the default rate per product will be used. If set to "No", 0 will be used for all products which do not have shipping rate.
+                    </comment>
+                </field>
+				
+                <field id="default_rate" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Default Rate Per Product</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+					<comment>The default rate per product will be used for all products which do not have a shipping rate assigned.  </comment>
+					<depends>
+						<field id="enable_default_rate">1</field>
+					</depends>
+                </field>
+				
+				<field id="handling_fee" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Handling Fee</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+				
+				<field id="method_type" translate="label" type="select" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Calculate Each Item Individual </label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>If set to "Yes", Shipping price will be calculated per item in cart. If set to "No", Shipping price will be calculated per order based on with the Min / Max configuration.
+					</comment>
+				</field>	
+				
+				<field id="qty_multiply" translate="label" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="0">
+					<label>Multiply Qty</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>If same product added multiple time.</comment>
+					<depends>
+						<field id="method_type">1</field>
+					</depends>
+				</field>
+				
+				<field id="order_max_min" translate="label" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Min/Max</label>
+                    <source_model>Cynoinfotech\ShipPerProduct\Model\Config\Source\MinMax</source_model>
+					<depends>
+						<field id="method_type">0</field>
+					</depends>
+					<comment>If set to "Min", Shipping Price will be the lowest shipping value from all items in cart. If set to "Max", Shipping price will be the highest shipping value from all items in cart.
+					</comment>
+				</field>
+				
+				<field id="enable_free_shipping" translate="label" type="select" sortOrder="95" showInDefault="1" showInWebsite="1" showInStore="0">
+					<label>Enable Free Shipping</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Enable Free Shipping over order total</comment>
+				</field>
+				
+				<field id="free_shipping_over_total" translate="label" type="text" sortOrder="96" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Free Shipping Over Total</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+					<depends>
+						<field id="enable_free_shipping">1</field>
+					</depends>
+					<comment>e.g. 500</comment>
+                </field>
+				
+                <field id="sallowspecific" translate="label" type="select" sortOrder="97" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                
+				<field id="specificcountry" translate="label" type="multiselect" sortOrder="98" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+				
+                <field id="specificerrmsg" translate="label" type="textarea" sortOrder="99" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Displayed Error Message</label>
+                </field>
+				
+				<field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                </field>
+				
+            </group>
+            <!-- carrier-group -->
+        </section>
+    </system>
+</config>

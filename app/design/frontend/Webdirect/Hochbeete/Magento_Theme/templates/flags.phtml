@@ -1,0 +1,22 @@
+<?php if (count($block->getStores())>1) : ?>
+
+    <div class="dropdown-block language-block">
+		
+		<div class="lang-switcher">
+			<div class="dropdown-toggle">
+				<div class="flag"><?= $block->getCurrentStoreCode()?></div>
+			</div>
+			<ul class="dropdown-list">
+                <?php foreach ($block->getStores() as $_lang) : ?>
+                    <li><a href="<?= $block->escapeUrl($_lang->getCurrentUrl()) ?>">
+                            <span class="dropdown-icon flag-icon" style="background-image:url('<?= $block->escapeUrl($block->getViewFileUrl('images/flags/flag_' . $_lang->getCode() . '.png')) ?>');"><?= $block->escapeHtml($_lang->getName()) ?></span>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+
+<?php endif; ?>
+
+

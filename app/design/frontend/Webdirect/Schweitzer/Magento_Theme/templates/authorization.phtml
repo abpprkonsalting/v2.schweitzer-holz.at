@@ -12,7 +12,7 @@ if ($block->isLoggedIn()) {
 }
 ?>
 <a <?= /* @noEscape */ $block->getLinkAttributes() ?><?= /* @noEscape */ $dataPostParam ?> style="display:flex;align-items: center;">
-    <span style="margin-right: 15px;font-size: 110%;">Login</span>
+    <span style="margin-right: 15px;font-size: 110%;"><?= $block->escapeHtml(__('Login')) ?></span>
     <img src="<?php echo $block->escapeUrl($block->getViewFileUrl('images/user.png'))?>">
 </a>
 

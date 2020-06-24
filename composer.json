@@ -13,6 +13,7 @@
     "require": {
         "heidelpay/magento2": "^20.2",
         "magento/product-community-edition": "2.3.1",
+        "mageplaza/magento-2-french-language-pack": "dev-master",
         "mageplaza/magento-2-german-language-pack": "dev-master"
     },
     "require-dev": {

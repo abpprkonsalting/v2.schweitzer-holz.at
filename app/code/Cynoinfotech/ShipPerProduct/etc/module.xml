@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Cynoinfotech Team
+ * @package Cynoinfotech_ShipPerProduct
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNameSchemaLocation ="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Cynoinfotech_ShipPerProduct" setup_version="1.0.1" schema_version="1.0.1">
+    </module>
+</config>

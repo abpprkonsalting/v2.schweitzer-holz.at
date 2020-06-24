@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Cynoinfotech Team
+ * @package Cynoinfotech_ShipPerProduct
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+        <carriers>
+            <cishipperproduct>
+				<active>1</active>
+                <model>Cynoinfotech\ShipPerProduct\Model\Carrier\Cishipperproduct</model>
+				<title>Cynoinfotech</title>
+				<name>Shipping Per Product</name>
+				<enable_default_rate>1</enable_default_rate>
+				<default_rate>1</default_rate>
+				<handling_fee>0</handling_fee>
+				<method_type>1</method_type>
+				<qty_multiply>1</qty_multiply>
+				<order_max_min>max</order_max_min>
+				<enable_free_shipping>1</enable_free_shipping>
+				<free_shipping_over_total>500</free_shipping_over_total>
+				<sallowspecific>0</sallowspecific>
+				<specificerrmsg>Cynoinfotech Shipping Per Product is not available for your area. Please contact us.</specificerrmsg>
+            </cishipperproduct>
+            <!-- carrier-config -->
+        </carriers>
+    </default>
+</config>

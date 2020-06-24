@@ -5,6 +5,7 @@ return [
         'Magento_Store' => 1,
         'Magento_Directory' => 1,
         'Magento_Theme' => 1,
+        'Cynoinfotech_ShipPerProduct' => 1,
         'Magento_Backend' => 1,
         'Magento_Variable' => 1,
         'Magento_Config' => 1,
@@ -51,7 +52,7 @@ return [
         'Magento_CmsGraphQl' => 1,
         'Magento_CmsUrlRewrite' => 1,
         'Magento_CmsUrlRewriteGraphQl' => 1,
-        'Heidelpay_Gateway' => 0,
+        'Heidelpay_Gateway' => 1,
         'Magento_ConfigurableProduct' => 1,
         'Magento_CatalogRuleConfigurable' => 1,
         'Magento_CatalogGraphQl' => 1,
@@ -211,30 +212,11 @@ return [
         'Magento_WishlistAnalytics' => 1,
         'Magento_WishlistGraphQl' => 1,
         'Mageplaza_Core' => 1,
-        'Netresearch_Compatibility' => 0,
+        'Netresearch_Compatibility' => 1,
         'Sofort_Payment' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1,
         'WeltPixel_Backend' => 1,
         'WeltPixel_OwlCarouselSlider' => 1
-    ],
-    'system' => [
-        'default' => [
-            'admin' => [
-                'security' => [
-                    'use_form_key' => '1',
-                    'admin_account_sharing' => '1',
-                    'password_reset_protection_type' => '1',
-                    'max_number_password_reset_requests' => '5',
-                    'min_time_between_password_reset_requests' => '10',
-                    'password_reset_link_expiration_period' => '2',
-                    'lockout_failures' => '6',
-                    'lockout_threshold' => '30',
-                    'password_lifetime' => '90',
-                    'password_is_forced' => '1',
-                    'session_lifetime' => '900000'
-                ]
-            ]
-        ]
     ]
 ];
