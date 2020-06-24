@@ -9,6 +9,7 @@ return [
         'Magento_Backend' => 1,
         'Magento_Variable' => 1,
         'Magento_Config' => 1,
+        'Itonomy_ProductVisibilityGrid' => 1,
         'Magento_Eav' => 1,
         'Magento_AdminNotification' => 1,
         'Magento_Indexer' => 1,
