@@ -1,0 +1,28 @@
+.newsletter-wrapper{
+display:none
+}
+
+.custom-slider .content_slider{
+display:none
+}
+
+.page-header .links{
+display:none
+}
+
+.owl-nav{
+display:none
+}
+
+#product-review-container, #tab-label-reviews, #review-form{
+display:none
+}
+
+.page-product-configurable .delivery_time,
+.page-product-configurable .available{
+display:none!important
+}
+
+.payment-method-title img{
+display:none}
+.content_slider{display:none!important}

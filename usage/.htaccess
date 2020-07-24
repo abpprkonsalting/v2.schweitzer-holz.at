@@ -1,4 +1,4 @@
-AuthUserFile /www/htdocs/w012e775/v2.schweitzer-holz.at/usage/.htpasswd
+AuthUserFile /www/htdocs/w012e775/schweitzer-holz.at/shop/usage/.htpasswd
 AuthGroupFile /dev/null
 AuthName 'ByPassword'
 AuthType Basic
