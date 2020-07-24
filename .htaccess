@@ -1,3 +1,7 @@
+SetEnv TEMP /www/htdocs/w012e775/schweitzer-holz.at/shop/var/tmp
+SetEnv TMP /www/htdocs/w012e775/schweitzer-holz.at/shop/var/tmp
+SetEnv TMPDIR /www/htdocs/w012e775/schweitzer-holz.at/shop/var/tmp
+
 ############################################
 ## overrides deployment configuration mode value
 ## use command bin/magento deploy:mode:set to switch modes
@@ -143,8 +147,8 @@
     Options +FollowSymLinks
     RewriteEngine on
 
-    SetEnvIf Host shop.schweitzer-holz.at MAGE_RUN_CODE=gartenhaus
-    SetEnvIf Host shop.schweitzer-holz.at MAGE_RUN_TYPE=website
+    SetEnvIf Host schweitzer-holz.at MAGE_RUN_CODE=gartenhaus
+    SetEnvIf Host schweitzer-holz.at MAGE_RUN_TYPE=website
     SetEnvIf Host jungle-gym-kinderspielplatz.at MAGE_RUN_CODE=jungle_gym
     SetEnvIf Host jungle-gym-kinderspielplatz.at MAGE_RUN_TYPE=website
     SetEnvIf Host hochbeete-bauen.at MAGE_RUN_CODE=hochbeete
